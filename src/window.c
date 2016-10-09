@@ -148,7 +148,7 @@ HB_FUNC( UINEWWINDOW ) {
     int height = hb_parni( 3 );
     HB_BOOL hasMenu = hb_parl( 4 );
     uiWindow *w = uiNewWindow( title, width, height, hasMenu );
-	uiWindowOnClosing(w, onClosing, NULL);
-	uiOnShouldQuit(onShouldQuit, w);
+    uiWindowOnClosing(w, onClosing, NULL);
+    uiOnShouldQuit(onShouldQuit, w);
     hb_retptr( w );
 }
