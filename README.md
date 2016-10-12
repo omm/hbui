@@ -55,8 +55,6 @@ RETURN NIL
 
 ![With family Unix](docs/tutorial/window_freebsd.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
 
-![With family Unix](docs/tutorial/window_solaris.png "With family Unix Oracle Solaris desktop, based on GNOME 2.30.")
-
 ![GNU/Linux](docs/tutorial/window_elementary.png "With family Linux Elementary desktop Pantheon, based on GNOME")
 
 ![GNU/Linux](docs/tutorial/window_ubuntu.png "With family Linux Ubuntu desktop, based on GNOME")
