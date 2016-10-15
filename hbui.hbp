@@ -3,7 +3,7 @@
 -hblib
 -inc
 
--olib/${hb_arch}/${hb_comp}/${hb_name}
+-olib/${hb_plat}/${hb_comp}/${hb_name}
 
 -w3 -es2
 -gc3 -l
