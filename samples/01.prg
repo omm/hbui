@@ -4,9 +4,10 @@
 FUNCTION Main()
     LOCAL w
     LOCAL tab
+    LOCAL err
 
-    IF ! uiInit()
-        alert("Failed to initializa libui...")
+    IF ! HB_ISNULL( err := uiInit() )
+        alert("Failed to initialize libui: " + err)
         RETURN nil
     ENDIF
 
