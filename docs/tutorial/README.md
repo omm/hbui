@@ -19,7 +19,7 @@ $ sudo apt-get install git
 ```
 Installation Harbour.
 ```
-$ git clone git://github.com/harbour/core.git harbour
+$ git clone https://github.com/harbour/core.git harbour
 $ cd harbour
 $ make
 ```
@@ -33,7 +33,7 @@ $ sudo apt-get install cmake
 ```
 Installation libui.
 ```
-$ git cloce git://github.com/andlabs/libui
+$ git cloce https://github.com/andlabs/libui
 $ cd libui
 $ mkdir build
 $ cd build
@@ -46,7 +46,7 @@ $ cd
 ```
 Installation HBUI.
 ```
-$ git clone git://github.com/rjopek/hbui
+$ git clone https://github.com/rjopek/hbui
 ```
 Before compilation, we must do two things: open root account which is administrator of the system and then run text editor
 ```
