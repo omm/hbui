@@ -11,7 +11,7 @@ Graphical user interface library for the Harbour compiler, this is a wrapper lib
 
 You'll need Git version control software installed on your system, and issue this command:
 ```
-$ git clone git://github.com/rjopek/hbui
+$ git clone https://github.com/rjopek/hbui
 ```
 You can get subsequent updates using this command:
 
