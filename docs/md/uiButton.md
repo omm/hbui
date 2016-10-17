@@ -8,7 +8,7 @@
 - [uiButtonSetText( uiButton, text )](#uibuttonsettext-uibutton-text)
 - [uiButtonText( uiButton )](#uibuttontext-uibutton)
 
-## uiNewButton( text )
+## uiNewButton (text)
 Arguments
 - text
 
@@ -20,7 +20,7 @@ Simple example
 ```
 oButton := uiNewButton( "Open" )
 ```
-## uiButtonOnClicked( uiButton, uiButton, data )
+## uiButtonOnClicked (uiButton, uiButton, data)
 Arguments
 - uiButton
 - uiButton
@@ -34,7 +34,7 @@ Simple example
 ```
 
 ```
-## uiButtonSetText( uiButton, text )
+## uiButtonSetText (uiButton, text)
 Arguments
 - uiButton
 - text
@@ -47,7 +47,7 @@ Simple example
 ```
 
 ```
-## uiButtonText( uiButton )
+## uiButtonText (uiButton)
 Arguments
 - uiButton
 

@@ -22,7 +22,7 @@ Simple example
 ```
 oTab := uiNewTab()
 ```
-## uiTabAppend( uiTab, name, uiControl )
+## uiTabAppend (uiTab, name, uiControl)
 Arguments
 - uiTab
 - name
@@ -36,7 +36,7 @@ Simple example
 ```
 uiTabAppend( oTab, "Page 1", uiControl( page1 ) )
 ```
-## uiTabDelete( uiTab, index )
+## uiTabDelete (uiTab, index)
 Arguments
 - uiTab
 - index
@@ -49,7 +49,7 @@ Simple example
 ```
 uiTabDelete( oTab, 0 )
 ```
-## uiTabInsertAt( uiTab, name, before, uiControl )
+## uiTabInsertAt (uiTab, name, before, uiControl)
 Arguments
 - uiTab
 - name
@@ -64,7 +64,7 @@ Simple example
 ```
 uiTabInsertAt( oTab, "Page 1", 0, uiControl( page1 ) )
 ```
-## uiTabMargined( uiTab, page )
+## uiTabMargined (uiTab, page)
 Arguments
 - uiTab
 - page
@@ -77,7 +77,7 @@ Simple example
 ```
 uiTabMargined( oTab, page )
 ```
-## uiTabNumPages( uiTab )
+## uiTabNumPages (uiTab)
 Arguments
 - uiTab
 
@@ -89,7 +89,7 @@ Simple example
 ```
 uiTabNumPages( oTab )
 ```
-## uiTabSetMargined( uiTab, page, margined )
+## uiTabSetMargined (uiTab, page, margined)
 Arguments
 - uiTab
 - page

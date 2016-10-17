@@ -45,7 +45,7 @@ Simple example
 ```
 oSearchEntry := uiNewSearchEntry()
 ```
-## uiEntryText( uiEntry )
+## uiEntryText (uiEntry)
 Arguments
 - uiEntry
 
@@ -57,7 +57,7 @@ Simple example
 ```
 uiEntryText( oEntry )
 ```
-## uiEntrySetText( uiEntry, text )
+## uiEntrySetText (uiEntry, text)
 Arguments
 - uiEntry
 - text
@@ -70,7 +70,7 @@ Simple example
 ```
 uiEntrySetText( oEntry, "Name counterparty" )
 ```
-## uiEntryOnChanged( uiEntry, Function, data )
+## uiEntryOnChanged (uiEntry, Function, data)
 Arguments
 - uiEntry
 - Function
@@ -84,7 +84,7 @@ Simple example
 ```
 uiEntryOnChanged( uiEntry, onChanged, 0 )
 ```
-## uiEntryReadOnly( uiEntry )
+## uiEntryReadOnly (uiEntry)
 Arguments
 
 Return value
@@ -95,7 +95,7 @@ Simple example
 ```
 uiEntryReadOnly( oEntry )
 ```
-## uiEntrySetReadOnly( uiEntry, readonly )
+## uiEntrySetReadOnly (uiEntry, readonly)
 Arguments
 
 Return value

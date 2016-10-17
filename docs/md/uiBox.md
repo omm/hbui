@@ -32,7 +32,7 @@ Simple example
 ```
 oVerticalBox := uiNewVerticalBox()
 ```
-## uiBoxAppend( uiBox, uiControl, stretchy )
+## uiBoxAppend (uiBox, uiControl, stretchy)
 Arguments
 - uiBox
 - uiControl
@@ -46,7 +46,7 @@ Simple example
 ```
 uiBoxAppend( oHorizontalBox, uiControl( oTab ), 1 )
 ```
-## uiBoxDelete( uiBox, index )
+## uiBoxDelete (uiBox, index)
 Arguments
 - uiBox
 - index
@@ -59,7 +59,7 @@ Simple example
 ```
 
 ```
-## uiBoxPadded( uiBox )
+## uiBoxPadded (uiBox)
 Arguments
 - uiBox
 
@@ -71,7 +71,7 @@ Simple example
 ```
 
 ```
-## uiBoxSetPadded( uiBox, padded )
+## uiBoxSetPadded (uiBox, padded)
 Arguments
 - uiBox
 - padded
@@ -89,6 +89,5 @@ Simple example
 
 
 ```
-
 ## Screenshots
 ![Linux](../tutorial/uiBox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

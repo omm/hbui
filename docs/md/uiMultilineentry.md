@@ -34,7 +34,7 @@ Simple example
 ```
 oWrappingMultilineEntry() := uiNewNonWrappingMultilineEntry()
 ```
-## uiMultilineEntryAppend( uiMultilineEntry, text )
+## uiMultilineEntryAppend (uiMultilineEntry, text)
 Arguments
 - uiMultilineEntry
 - text
@@ -47,7 +47,7 @@ Simple example
 ```
 uiMultilineEntryAppend( oMultilineEntry, "append" )
 ```
-## uiMultilineEntryOnChanged( uiMultilineEntry, meChanged, data )
+## uiMultilineEntryOnChanged (uiMultilineEntry, meChanged, data)
 Arguments
 - uiMultilineEntry
 - meChanged
@@ -61,7 +61,7 @@ Simple example
 ```
 uiMultilineEntryOnChanged( oMultilineEntry, {|| meChanged() }, data )
 ```
-## uiMultilineEntryReadOnly( uiMultilineEntry )
+## uiMultilineEntryReadOnly (uiMultilineEntry)
 Arguments
 - uiMultilineEntry
 
@@ -73,7 +73,7 @@ Simple example
 ```
 uiMultilineEntryReadOnly( oMultilineEntry )
 ```
-## uiMultilineEntrySetReadOnly( uiMultilineEntry, readonly )
+## uiMultilineEntrySetReadOnly (uiMultilineEntry, readonly)
 Arguments
 - uiMultilineEntry
 - readonly
@@ -86,7 +86,7 @@ Simple example
 ```
 uiMultilineEntrySetReadOnly( oMultilineEntry, 1 )
 ```
-## uiMultilineEntrySetText( uiMultilineEntry, text )
+## uiMultilineEntrySetText (uiMultilineEntry, text)
 Arguments
 - uiMultilineEntry
 - text
@@ -99,7 +99,7 @@ Simple example
 ```
 uiMultilineEntrySetText( oMultilineEntry, "Set" )
 ```
-## uiMultilineEntryText( uiMultilineEntry )
+## uiMultilineEntryText (uiMultilineEntry)
 Arguments
 - uiMultilineEntry
 
