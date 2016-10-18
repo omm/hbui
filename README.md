@@ -51,7 +51,9 @@ RETURN NIL
 ```
 
 ### Screenshots
-![Windows](docs/tutorial/window_window.png "Windows 10 desktop")
+![Windows](docs/tutorial/window_window_01.png "Windows 10 desktop")
+![Windows](docs/tutorial/window_window_02.png "Windows 10 desktop")
+![Windows](docs/tutorial/window_window_03.png "Windows 10 desktop")
 
 ![With family Unix](docs/tutorial/window_freebsd.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
 
