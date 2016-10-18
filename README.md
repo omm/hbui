@@ -55,11 +55,11 @@ RETURN NIL
 ![Windows](docs/tutorial/window_window_02.png "Windows 10 desktop")
 ![Windows](docs/tutorial/window_window_03.png "Windows 10 desktop")
 
-![With family Unix](docs/tutorial/window_freebsd.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
-
 ![GNU/Linux](docs/tutorial/window_elementary.png "With family Linux Elementary desktop Pantheon, based on GNOME")
 
-![GNU/Linux](docs/tutorial/window_ubuntu.png "With family Linux Ubuntu desktop, based on GNOME")
+![GNU/Linux](docs/tutorial/window_ubuntu_01.png "With family Linux Ubuntu desktop, based on GNOME")
+![GNU/Linux](docs/tutorial/window_ubuntu_02.png "With family Linux Ubuntu desktop, based on GNOME")
+![GNU/Linux](docs/tutorial/window_ubuntu_03.png "With family Linux Ubuntu desktop, based on GNOME")
 
 ![OS X](docs/tutorial/window_darwin_01.png "Desktop Aqua in OS X  1/3")
 ![OS X](docs/tutorial/window_darwin_02.png "Desktop Aqua in OS X  2/3")
