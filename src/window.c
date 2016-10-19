@@ -2,13 +2,15 @@
 #include "hbapi.h"
 #include "ui.h"
 
-static int onClosing(uiWindow *w, void *data)
+static int onClosing( uiWindow *w, void *data )
 {
+    (void)w;
+    (void)data;
     uiQuit();
     return 1;
 }
 
-static int onShouldQuit(void *data)
+static int onShouldQuit( void *data )
 {
     uiWindow *mainwin = uiWindow( data );
     uiControlDestroy( uiControl( mainwin ) );
@@ -148,7 +150,7 @@ HB_FUNC( UINEWWINDOW ) {
     int height = hb_parni( 3 );
     HB_BOOL hasMenu = hb_parl( 4 );
     uiWindow *w = uiNewWindow( title, width, height, hasMenu );
-	uiWindowOnClosing(w, onClosing, NULL);
-	uiOnShouldQuit(onShouldQuit, w);
+	uiWindowOnClosing( w, onClosing, NULL );
+	uiOnShouldQuit( onShouldQuit, w );
     hb_retptr( w );
 }
