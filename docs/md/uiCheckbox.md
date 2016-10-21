@@ -66,7 +66,7 @@ Description
 
 Simple example
 ```
-uiCheckboxSetChecked( uiCheckbox, data != NULL )
+uiCheckboxSetChecked( uiCheckbox, 1 )
 ```
 ---
 #### uiCheckboxSetText (uiCheckbox, text)
@@ -98,8 +98,28 @@ uiCheckboxText( oCheckbox )
 ---
 ### Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oCheckbox
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "CheckBox example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oCheckbox := uiNewCheckbox( "GitHub" )
+  uiCheckboxSetChecked( oCheckbox, 1 )
+
+  uiWindowSetChild( oWindow, oCheckbox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 
 ### Screenshots

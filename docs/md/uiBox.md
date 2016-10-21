@@ -86,8 +86,61 @@ Simple example
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oButton
+  LOCAL oHorizontalBox
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "HorizontalBox example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oButton := uiNewButton( "Open" )
+
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+  uiBoxAppend( oHorizontalBox, oButton, 0 )
+
+  uiWindowSetChild( oWindow, oHorizontalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+
+```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oButton
+  LOCAL oVerticalBox
+
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "VerticalBox example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oButton := uiNewButton( "Open" )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiBoxAppend( oVerticalBox, oButton, 0 )
+
+  uiWindowSetChild( oWindow, oVerticalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiBox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

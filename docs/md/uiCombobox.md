@@ -74,8 +74,34 @@ uiComboboxSetSelected( oCombobox, 1 )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oCombobox
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "ComboBox example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oCombobox := uiNewCombobox()
+  uiComboboxAppend( oCombobox, " White   #FFFFFF ")
+  uiComboboxAppend( oCombobox, " Black   #000000 ")
+  uiComboboxAppend( oCombobox, " Green   #009F6B ")
+  uiComboboxAppend( oCombobox, " Red     #C40233 ")
+  uiComboboxAppend( oCombobox, " Yellow  #FFD300 ")
+  uiComboboxAppend( oCombobox, " Blue    #0087BD ")
+  uiComboboxSetSelected( oCombobox, 5 )
+
+  uiWindowSetChild( oWindow, oCombobox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiCombobox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

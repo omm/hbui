@@ -105,8 +105,42 @@ uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oTab
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Tab example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+  
+  oTab := uiNewTab()
+
+  uiTabAppend( oTab, "Page 1", NIL )
+  uiTabSetMargined( oTab, 0, 1 )
+
+  uiTabAppend( oTab, "Page 2", NIL )
+  uiTabSetMargined( oTab, 1, 1 )
+
+  uiTabAppend( oTab, "Page 3", NIL )
+  uiTabSetMargined( oTab, 2, 1 )
+
+  uiTabAppend( oTab, "Page 4", NIL )
+  uiTabSetMargined( oTab, 3, 1 )
+
+  uiTabAppend( oTab, "Page 5", NIL )
+  uiTabSetMargined( oTab, 4, 1 )
+
+  uiWindowSetChild( oWindow, oTab )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiTab_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

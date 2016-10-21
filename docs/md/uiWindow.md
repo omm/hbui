@@ -11,7 +11,7 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 - [uiWindowContentSize( uiWindow, width, height )](#uiwindowcontentsize-uiwindow-width-height)
 - [uiWindowFullscreen( uiWindow )](#uiwindowfullscreen-uiwindow)
 - [uiWindowMargined( uiWindow )](#uiwindowmargined-uiwindow)
-- [uiWindowOnClosing( uiWindow onClosing data )](#uiwindowonclosing-uiwindow-onclosing-data)
+- [uiWindowOnClosing( uiWindow, onClosing, data )](#uiwindowonclosing-uiwindow-onclosing-data)
 - [uiWindowOnContentSizeChanged( onShouldQuit, uiWindow )](#uiwindowoncontentsizechanged-onshouldquit-uiwindow)
 - [uiWindowOnPositionChanged( uiWindow, onMove, data )](#uiwindowonpositionchanged-uiwindow-onmove-data)
 - [uiWindowPosition( uiWindow, x, y )](#uiwindowposition-uiwindow-x-y)
@@ -113,7 +113,7 @@ Description
 
 Simple example
 ```
-uiWindowOnClosing( oWindow, onClosing, NULL )
+uiWindowOnClosing( oWindow, onClosing, NIL )
 ```
 ## uiWindowOnContentSizeChanged (onShouldQuit, uiWindow)
 Arguments
@@ -140,7 +140,7 @@ Description
 
 Simple example
 ```
-uiWindowOnPositionChanged( oWindow, onMove, NULL )
+uiWindowOnPositionChanged( oWindow, onMove, NIL )
 ```
 ## uiWindowPosition (uiWindow, x, y)
 Arguments
@@ -263,8 +263,22 @@ uiWindowTitle( oWindow )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Window example", 800, 600, .T. )
+
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 
 ## Screenshots

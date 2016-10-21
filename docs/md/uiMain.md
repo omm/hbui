@@ -29,7 +29,7 @@ Description
 Simple example
 ```
 IF ! HB_ISNULL( err := uiInit() )
-    uiMsgBox( "Failed to initialize libui: " + err )
+    Alert( "Failed to initialize libui: " + err )
     RETURN NIL
 ENDIF
 ```

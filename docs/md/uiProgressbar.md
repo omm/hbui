@@ -45,8 +45,33 @@ uiProgressBarValue( oProgressBar )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oVerticalBox
+  LOCAL oProgressBar
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "ProgressBar example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oProgressBar := uiNewProgressBar()
+  uiProgressBarSetValue( oProgressBar, -1 )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiBoxAppend( oVerticalBox, oProgressBar, 0 )
+
+  uiWindowSetChild( oWindow, oVerticalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiProgressbar_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
