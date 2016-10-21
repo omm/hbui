@@ -1,7 +1,7 @@
 # **Welcome to project HBUI**
 
 ### Hello!
-If we are going to spend a few hours together, I propose - call me Rafał. I will add more only that this project was created by my good friends from the group Harbour - Teo, Viktor. I am impressed clarity, simplicity and logical programming in Harbour so I propose you to spend a few moments in the land of programming Harbour with me.
+If we are going to spend a few hours together, I propose - call me Rafał. I will add more only that this project was created by my good friends from the group Harbour - Teo, Viktor, Bogdan. I am impressed clarity, simplicity and logical programming in Harbour so I propose you to spend a few moments in the land of programming Harbour with me.
 
 ### Preliminary assumptions
 This tutorial is designed for beginners who are getting started the adventure with Harbour, and I think that If I make mistake, you will correct me.
