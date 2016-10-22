@@ -16,7 +16,7 @@ $ git clone https://github.com/rjopek/hbui
 You can get subsequent updates using this command:
 
 ```
-git pull
+$ git pull
 ```
 
 ### How to build

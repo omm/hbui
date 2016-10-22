@@ -87,8 +87,37 @@ uiGroupTitle( oGroup )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oGroup
+  LOCAL oForm
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Group example", 800, -1, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oGroup := uiNewGroup("")
+	uiGroupSetMargined( oGroup, 1)
+
+	oForm := uiNewForm()
+	uiFormSetPadded( oForm, 1 )
+	uiGroupSetChild( oGroup, oForm )
+
+	uiFormAppend( oForm, "Username", uiNewEntry(), 0 )
+	uiFormAppend( oForm, "Email address", uiNewEntry(), 0 )
+	uiFormAppend( oForm, "Password", uiNewPasswordEntry(), 0 )
+
+  uiWindowSetChild( oWindow, oGroup )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiGroup_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
