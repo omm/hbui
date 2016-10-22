@@ -2,13 +2,15 @@
 #include "hbapi.h"
 #include "ui.h"
 
-static int onClosing(uiWindow *w, void *data)
+static int onClosing( uiWindow *w, void *data )
 {
+    (void)w;
+    (void)data;
     uiQuit();
     return 1;
 }
 
-static int onShouldQuit(void *data)
+static int onShouldQuit( void *data )
 {
     uiWindow *mainwin = uiWindow( data );
     uiControlDestroy( uiControl( mainwin ) );

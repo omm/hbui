@@ -11,7 +11,7 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 - [uiWindowContentSize( uiWindow, width, height )](#uiwindowcontentsize-uiwindow-width-height)
 - [uiWindowFullscreen( uiWindow )](#uiwindowfullscreen-uiwindow)
 - [uiWindowMargined( uiWindow )](#uiwindowmargined-uiwindow)
-- [uiWindowOnClosing( uiWindow onClosing data)](#uiwindowonclosing-uiwindow-onclosing-data)
+- [uiWindowOnClosing( uiWindow, onClosing, data )](#uiwindowonclosing-uiwindow-onclosing-data)
 - [uiWindowOnContentSizeChanged( onShouldQuit, uiWindow )](#uiwindowoncontentsizechanged-onshouldquit-uiwindow)
 - [uiWindowOnPositionChanged( uiWindow, onMove, data )](#uiwindowonpositionchanged-uiwindow-onmove-data)
 - [uiWindowPosition( uiWindow, x, y )](#uiwindowposition-uiwindow-x-y)
@@ -24,7 +24,7 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 - [uiWindowSetTitle( uiWindow, title )](#uiwindowsettitle-uiwindow-title)
 - [uiWindowTitle( uiWindow )](#uiwindowtitle-uiwindow)
 
-## uiNewWindow( title, width, height, hasMenubar )
+## uiNewWindow (title, width, height, hasMenubar)
 Arguments
 - title
 - width
@@ -39,7 +39,7 @@ Simple example
 ```
 oWindow := uiNewWindow( "Hello Harbour!", 800, 600, .T. )
 ```
-## uiWindowBorderless( uiWindow )
+## uiWindowBorderless (uiWindow)
 Arguments
 - uiWindow
 
@@ -51,7 +51,7 @@ Simple example
 ```
 uiWindowBorderless( oWindow )
 ```
-## uiWindowCenter( uiWindow )
+## uiWindowCenter (uiWindow)
 Arguments
 - uiWindow
 
@@ -63,7 +63,7 @@ Simple example
 ```
 uiWindowCenter( oWindow )
 ```
-## uiWindowContentSize( uiWindow, width, height )
+## uiWindowContentSize (uiWindow, width, height)
 Arguments
 - uiWindow
 - width
@@ -77,7 +77,7 @@ Simple example
 ```
 uiWindowContentSize( oWindow, 800, 600 )
 ```
-## uiWindowFullscreen( uiWindow )
+## uiWindowFullscreen (uiWindow)
 Arguments
 - uiWindow
 
@@ -89,7 +89,7 @@ Simple example
 ```
 uiWindowFullscreen( oWindow )
 ```
-## uiWindowMargined( uiWindow )
+## uiWindowMargined (uiWindow)
 Arguments
 - uiWindow
 
@@ -101,7 +101,7 @@ Simple example
 ```
 uiWindowMargined( oWindow )
 ```
-## uiWindowOnClosing( uiWindow, onClosing, data )
+## uiWindowOnClosing (uiWindow, onClosing, data)
 Arguments
 - uiWindow
 - onClosing
@@ -113,9 +113,9 @@ Description
 
 Simple example
 ```
-uiWindowOnClosing( oWindow, onClosing, NULL )
+uiWindowOnClosing( oWindow, onClosing, NIL )
 ```
-## uiWindowOnContentSizeChanged( onShouldQuit, uiWindow )
+## uiWindowOnContentSizeChanged (onShouldQuit, uiWindow)
 Arguments
 - onShouldQuit
 - uiWindow
@@ -128,7 +128,7 @@ Simple example
 ```
 uiWindowOnContentSizeChanged( onShouldQuit, oWindow )
 ```
-## uiWindowOnPositionChanged( uiWindow, onMove, data )
+## uiWindowOnPositionChanged (uiWindow, onMove, data)
 Arguments
 - uiWindow
 - onMove
@@ -140,9 +140,9 @@ Description
 
 Simple example
 ```
-uiWindowOnPositionChanged( oWindow, onMove, NULL )
+uiWindowOnPositionChanged( oWindow, onMove, NIL )
 ```
-## uiWindowPosition( uiWindow, x, y )
+## uiWindowPosition (uiWindow, x, y)
 Arguments
 - uiWindow
 - x
@@ -156,7 +156,7 @@ Simple example
 ```
 uiWindowPosition( oWindow, 50, 50 )
 ```
-## uiWindowSetBorderless( uiWindow, borderless )
+## uiWindowSetBorderless (uiWindow, borderless)
 Arguments
 - uiWindow
 - borderless
@@ -169,7 +169,7 @@ Simple example
 ```
 uiWindowSetBorderless( oWindow, uiCheckboxChecked( oCheckbox ) )
 ```
-## uiWindowSetChild( uiWindow, uiControl )
+## uiWindowSetChild (uiWindow, uiControl)
 Arguments
 - uiWindow
 - uiControl
@@ -182,7 +182,7 @@ Simple example
 ```
 uiWindowSetChild( oWindow, uiControl( oButton ) )
 ```
-## uiWindowSetContentSize( uiWindow, width, height )
+## uiWindowSetContentSize (uiWindow, width, height)
 Arguments
 - uiWindow
 - width
@@ -196,7 +196,7 @@ Simple example
 ```
 uiWindowSetContentSize( oWindow, 800, 600 )
 ```
-## uiWindowSetFullscreen( uiWindow, fullscreen )
+## uiWindowSetFullscreen (uiWindow, fullscreen)
 Arguments
 - uiWindow
 - fullscreen
@@ -209,7 +209,7 @@ Simple example
 ```
 uiWindowSetFullscreen( oWindow, uiCheckboxChecked( fullscreen ) )
 ```
-## uiWindowSetMargined( uiWindow, margined )
+## uiWindowSetMargined (uiWindow, margined)
 Arguments
 - uiWindow
 - margined
@@ -222,7 +222,7 @@ Simple example
 ```
 uiWindowSetMargined( oWindow, 1 )
 ```
-## uiWindowSetPosition( uiWindow, x, y )
+## uiWindowSetPosition (uiWindow, x, y)
 Arguments
 - uiWindow
 - x
@@ -236,7 +236,7 @@ Simple example
 ```
 uiWindowSetPosition( oWindow, 50, 50 )
 ```
-## uiWindowSetTitle( uiWindow, title )
+## uiWindowSetTitle (uiWindow, title)
 Arguments
 - uiWindow
 - title
@@ -249,7 +249,7 @@ Simple example
 ```
 uiWindowSetTitle( oWindow, "Hello world!" )
 ```
-## uiWindowTitle( uiWindow )
+## uiWindowTitle (uiWindow)
 Arguments
 - uiWindow
 
@@ -263,8 +263,22 @@ uiWindowTitle( oWindow )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Window example", 800, 600, .T. )
+
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 
 ## Screenshots

@@ -45,7 +45,7 @@ Simple example
 ```
 oSearchEntry := uiNewSearchEntry()
 ```
-## uiEntryText( uiEntry )
+## uiEntryText (uiEntry)
 Arguments
 - uiEntry
 
@@ -57,7 +57,7 @@ Simple example
 ```
 uiEntryText( oEntry )
 ```
-## uiEntrySetText( uiEntry, text )
+## uiEntrySetText (uiEntry, text)
 Arguments
 - uiEntry
 - text
@@ -70,7 +70,7 @@ Simple example
 ```
 uiEntrySetText( oEntry, "Name counterparty" )
 ```
-## uiEntryOnChanged( uiEntry, Function, data )
+## uiEntryOnChanged (uiEntry, Function, data)
 Arguments
 - uiEntry
 - Function
@@ -84,7 +84,7 @@ Simple example
 ```
 uiEntryOnChanged( uiEntry, onChanged, 0 )
 ```
-## uiEntryReadOnly( uiEntry )
+## uiEntryReadOnly (uiEntry)
 Arguments
 
 Return value
@@ -95,7 +95,7 @@ Simple example
 ```
 uiEntryReadOnly( oEntry )
 ```
-## uiEntrySetReadOnly( uiEntry, readonly )
+## uiEntrySetReadOnly (uiEntry, readonly)
 Arguments
 
 Return value
@@ -109,8 +109,37 @@ uiEntrySetReadOnly( oEntry, 1 )
 
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oGroup
+  LOCAL oForm
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Entry example", 800, -1, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oGroup := uiNewGroup("")
+	uiGroupSetMargined( oGroup, 1)
+
+	oForm := uiNewForm()
+	uiFormSetPadded( oForm, 1 )
+	uiGroupSetChild( oGroup, oForm )
+
+	uiFormAppend( oForm, "Username", uiNewEntry(), 0 )
+	uiFormAppend( oForm, "Email address", uiNewEntry(), 0 )
+	uiFormAppend( oForm, "Password", uiNewPasswordEntry(), 0 )
+
+  uiWindowSetChild( oWindow, oGroup )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 
 ## Screenshots

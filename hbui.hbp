@@ -13,7 +13,7 @@
 -depcontrol=libui:${HB_WITH_LIBUI}
 -depincpath=libui:/usr/include
 -depimplibs=libui:build/out/libui.dll
--depimplibd=libui:libui
+-depimplibd=libui:ui
 -depfinish=libui
 
 -iinclude

@@ -11,10 +11,10 @@ HB_FUNC( UICOLORBUTTONCOLOR ) {
         double bl;
         double a;
         uiColorButtonColor( b, &r, &g, &bl, &a );
-        hb_storni( r, 2 );
-        hb_storni( g, 3 );
-        hb_storni( bl, 4 );
-        hb_storni( a, 5 );
+        hb_stornd( r, 2 );
+        hb_stornd( g, 3 );
+        hb_stornd( bl, 4 );
+        hb_stornd( a, 5 );
     }
 }
 

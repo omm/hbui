@@ -14,7 +14,7 @@
 - [uiCheckboxText( uiCheckbox )](#uicheckboxtext-uicheckbox)
 
 ---
-#### uiNewCheckbox( text )
+#### uiNewCheckbox (text)
 Arguments
 - text
 
@@ -27,7 +27,7 @@ Simple example
 oCheckbox := uiNewCheckbox( "GitHub" )
 ```
 ---
-#### uiCheckboxChecked( uiCheckbox )
+#### uiCheckboxChecked (uiCheckbox)
 Arguments
 - uiCheckbox
 
@@ -40,7 +40,7 @@ Simple example
 uiCheckboxChecked( oCheckbox )
 ```
 ---
-#### uiCheckboxOnToggled( uiCheckbox, uiCheckbox, data )
+#### uiCheckboxOnToggled (uiCheckbox, uiCheckbox, data)
 Arguments
 - uiCheckbox
 - uiCheckbox
@@ -55,7 +55,7 @@ Simple example
 uiCheckboxOnToggled( uiCheckbox, toggleSpaced, NULL )
 ```
 ---
-#### uiCheckboxSetChecked( uiCheckbox, checked )
+#### uiCheckboxSetChecked (uiCheckbox, checked)
 Arguments
 - uiCheckbox
 - checked
@@ -66,10 +66,10 @@ Description
 
 Simple example
 ```
-uiCheckboxSetChecked( uiCheckbox, data != NULL )
+uiCheckboxSetChecked( uiCheckbox, 1 )
 ```
 ---
-#### uiCheckboxSetText( uiCheckbox, text )
+#### uiCheckboxSetText (uiCheckbox, text)
 Arguments
 - uiCheckbox
 - text
@@ -83,7 +83,7 @@ Simple example
 uiCheckboxSetText( oCheckbox, "it's free" )
 ```
 ---
-#### uiCheckboxText( uiCheckbox )
+#### uiCheckboxText (uiCheckbox)
 Arguments
 - uiCheckbox
 
@@ -98,8 +98,28 @@ uiCheckboxText( oCheckbox )
 ---
 ### Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oCheckbox
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "CheckBox example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oCheckbox := uiNewCheckbox( "GitHub" )
+  uiCheckboxSetChecked( oCheckbox, 1 )
+
+  uiWindowSetChild( oWindow, oCheckbox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 
 ### Screenshots

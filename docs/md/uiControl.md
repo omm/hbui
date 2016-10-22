@@ -19,8 +19,9 @@
 - [uiControlVisible( uiControl )](#uicontrolvisible-uicontrol)
 
 ---
-#### uiControlDestroy( uiControl )
+#### uiControlDestroy (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -31,8 +32,9 @@ Simple example
 
 ```
 ---
-#### uiControlDisable( uiControl )
+#### uiControlDisable (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -43,8 +45,9 @@ Simple example
 
 ```
 ---
-#### uiControlEnable( uiControl )
+#### uiControlEnable (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -55,8 +58,9 @@ Simple example
 
 ```
 ---
-#### uiControlEnabled( uiControl )
+#### uiControlEnabled (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -67,8 +71,9 @@ Simple example
 
 ```
 ---
-#### uiControlHandle( uiControl )
+#### uiControlHandle (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -79,8 +84,9 @@ Simple example
 
 ```
 ---
-#### uiControlHide( uiControl )
+#### uiControlHide (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -91,8 +97,9 @@ Simple example
 
 ```
 ---
-#### uiControlParent( uiControl )
+#### uiControlParent (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -103,8 +110,10 @@ Simple example
 
 ```
 ---
-#### uiControlSetParent( uiControl, uiControl )
+#### uiControlSetParent (uiControl, uiControl)
 Arguments
+- uiControl
+- uiControl
 
 Return value
 
@@ -115,8 +124,9 @@ Simple example
 
 ```
 ---
-#### uiControlShow( uiControl )
+#### uiControlShow (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -127,8 +137,9 @@ Simple example
 
 ```
 ---
-#### uiControlToplevel( uiControl )
+#### uiControlToplevel (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -139,8 +150,9 @@ Simple example
 
 ```
 ---
-#### uiControlVisible( uiControl )
+#### uiControlVisible (uiControl)
 Arguments
+- uiControl
 
 Return value
 
@@ -153,13 +165,6 @@ Simple example
 ---
 
 ### Sample source code
-Arguments
-
-Return value
-
-Description
-
-Simple example
 ```
 
 

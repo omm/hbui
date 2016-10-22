@@ -22,7 +22,7 @@ Simple example
 ```
 oTab := uiNewTab()
 ```
-## uiTabAppend( uiTab, name, uiControl )
+## uiTabAppend (uiTab, name, uiControl)
 Arguments
 - uiTab
 - name
@@ -36,7 +36,7 @@ Simple example
 ```
 uiTabAppend( oTab, "Page 1", uiControl( page1 ) )
 ```
-## uiTabDelete( uiTab, index )
+## uiTabDelete (uiTab, index)
 Arguments
 - uiTab
 - index
@@ -49,7 +49,7 @@ Simple example
 ```
 uiTabDelete( oTab, 0 )
 ```
-## uiTabInsertAt( uiTab, name, before, uiControl )
+## uiTabInsertAt (uiTab, name, before, uiControl)
 Arguments
 - uiTab
 - name
@@ -64,7 +64,7 @@ Simple example
 ```
 uiTabInsertAt( oTab, "Page 1", 0, uiControl( page1 ) )
 ```
-## uiTabMargined( uiTab, page )
+## uiTabMargined (uiTab, page)
 Arguments
 - uiTab
 - page
@@ -77,7 +77,7 @@ Simple example
 ```
 uiTabMargined( oTab, page )
 ```
-## uiTabNumPages( uiTab )
+## uiTabNumPages (uiTab)
 Arguments
 - uiTab
 
@@ -89,7 +89,7 @@ Simple example
 ```
 uiTabNumPages( oTab )
 ```
-## uiTabSetMargined( uiTab, page, margined )
+## uiTabSetMargined (uiTab, page, margined)
 Arguments
 - uiTab
 - page
@@ -105,8 +105,42 @@ uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
 ```
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oTab
 
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Tab example", 800, 600, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+  
+  oTab := uiNewTab()
+
+  uiTabAppend( oTab, "Page 1", NIL )
+  uiTabSetMargined( oTab, 0, 1 )
+
+  uiTabAppend( oTab, "Page 2", NIL )
+  uiTabSetMargined( oTab, 1, 1 )
+
+  uiTabAppend( oTab, "Page 3", NIL )
+  uiTabSetMargined( oTab, 2, 1 )
+
+  uiTabAppend( oTab, "Page 4", NIL )
+  uiTabSetMargined( oTab, 3, 1 )
+
+  uiTabAppend( oTab, "Page 5", NIL )
+  uiTabSetMargined( oTab, 4, 1 )
+
+  uiWindowSetChild( oWindow, oTab )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
 ## Screenshots
 ![Linux](../tutorial/uiTab_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

@@ -11,16 +11,17 @@ Graphical user interface library for the Harbour compiler, this is a wrapper lib
 
 You'll need Git version control software installed on your system, and issue this command:
 ```
-$ git clone git://github.com/rjopek/hbui
+$ git clone https://github.com/rjopek/hbui
 ```
 You can get subsequent updates using this command:
 
 ```
-git pull
+$ git pull
 ```
 
 ### How to build
 For all systems, use the command:
+- [Read tutorial](https://github.com/rjopek/HBUI/blob/master/samples/README.md)
 - (you must (i.e.) export HB_WITH_LIBUI="/the/path/to/libui")
 -   ( Darwin: you must export where the LIBUI dynamic library is (i.e.): DYLD_LIBRARY_PATH="/the/path/to/libui/build/out" )  
 
@@ -29,7 +30,7 @@ $ hbmk2 hbui.hbp
 ```
 To test it, type:
 ```
-$ cd docs/tutorial
+$ cd samples
 $ hbmk2 window.prg -run
 ```
 
@@ -51,17 +52,19 @@ RETURN NIL
 ```
 
 ### Screenshots
-![Windows](docs/tutorial/window_window.png "Windows 10 desktop")
+![Windows](samples/window_window_01.png "Windows 10 desktop")
+![Windows](samples/window_window_02.png "Windows 10 desktop")
+![Windows](samples/window_window_03.png "Windows 10 desktop")
 
-![With family Unix](docs/tutorial/window_freebsd.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
+![GNU/Linux](samples/window_elementary.png "With family Linux Elementary desktop Pantheon, based on GNOME")
 
-![GNU/Linux](docs/tutorial/window_elementary.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![GNU/Linux](samples/window_ubuntu_01.png "With family Linux Ubuntu desktop, based on GNOME")
+![GNU/Linux](samples/window_ubuntu_02.png "With family Linux Ubuntu desktop, based on GNOME")
+![GNU/Linux](samples/window_ubuntu_03.png "With family Linux Ubuntu desktop, based on GNOME")
 
-![GNU/Linux](docs/tutorial/window_ubuntu.png "With family Linux Ubuntu desktop, based on GNOME")
-
-![OS X](docs/tutorial/window_darwin_01.png "Desktop Aqua in OS X  1/3")
-![OS X](docs/tutorial/window_darwin_02.png "Desktop Aqua in OS X  2/3")
-![OS X](docs/tutorial/window_darwin_03.png "Desktop Aqua in OS X  3/3")
+![OS X](samples/window_darwin_01.png "Desktop Aqua in OS X  1/3")
+![OS X](samples/window_darwin_02.png "Desktop Aqua in OS X  2/3")
+![OS X](samples/window_darwin_03.png "Desktop Aqua in OS X  3/3")
 
 ### License
 ---
