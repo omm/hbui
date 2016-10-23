@@ -3,7 +3,7 @@
 #include "ui.h"
 
 //_UI_EXTERN uiMenuItem *uiMenuAppendItem(uiMenu *m, const char *name);
-HB_FUNC( uiMenuAppendItem ) {
+HB_FUNC( UIMENUAPPENDITEM ) {
     uiMenuItem *m = uiMenuAppendItem( hb_parptr( 1 ), hb_parc( 2 ) );
     hb_retptr( m );
 }
@@ -39,6 +39,7 @@ HB_FUNC( UIMENUAPPENDSEPARATOR ) {
 
 //_UI_EXTERN uiMenu *uiNewMenu(const char *name);
 HB_FUNC( UINEWMENU ) {
-    uiMenu *name = uiNewMenu( hb_parc( 1 ) );
-    hb_retptr( name );
+    const char *name = hb_parc( 1 )
+    uiMenu *m = uiNewMenu( name );
+    hb_retptr( m );
 }
