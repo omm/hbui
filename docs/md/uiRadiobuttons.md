@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oRadioButtons := uiNewRadioButtons()
 ```
 ## uiRadioButtonsAppend (uiRadioButtons, text)
@@ -30,7 +30,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiRadioButtonsAppend( oRadioButtons, "text" )
 ```
 ## uiRadioButtonsOnSelected (uiRadioButtons, uiRadioButtons, data)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiRadioButtonsOnSelected( oRadioButtons, FRadioButtons(), nil )
 ```
 ## uiRadioButtonsSelected (uiRadioButtons)
@@ -56,7 +56,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiRadioButtonsSelected( oRadioButtons )
 ```
 ## uiRadioButtonsSetSelected (uiRadioButtons, n)
@@ -69,11 +69,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiRadioButtonsSetSelected( oRadioButtons, 10 )
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

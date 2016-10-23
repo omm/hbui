@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oForm := uiNewForm()
 ```
 ## uiFormAppend (uiForm, label, uiControl, stretchy)
@@ -32,7 +32,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFormAppend( oForm, "Password Entry", uiNewPasswordEntry(), 0 )
 ```
 ## uiFormDelete (uiForm, index)
@@ -45,7 +45,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFormDelete( oForm, 1 )
 ```
 ## uiFormPadded (uiForm)
@@ -57,7 +57,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFormPadded( oForm )
 ```
 ## uiFormSetPadded (uiForm, padded)
@@ -70,11 +70,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFormSetPadded( oForm, 1 )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oGroup

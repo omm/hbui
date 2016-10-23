@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oCombobox() := uiNewCombobox()
 ```
 ## uiComboboxAppend (uiCombobox, text)
@@ -30,7 +30,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiComboboxAppend( oCombobox, "Beautiful F1" )
 ```
 ## uiComboboxOnSelected (uiCombobox, uiCombobox, data)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiComboboxOnSelected( oCombobox, onComboboxChanged(), data )
 ```
 ## uiComboboxSelected (uiCombobox)
@@ -56,7 +56,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiComboboxSelected( oCombobox )
 ```
 ## uiComboboxSetSelected (uiCombobox, n)
@@ -69,11 +69,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiComboboxSetSelected( oCombobox, 1 )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oCombobox

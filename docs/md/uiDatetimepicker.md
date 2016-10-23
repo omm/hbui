@@ -15,7 +15,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiNewDatePicker()
@@ -26,7 +26,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiNewDateTimePicker()
@@ -37,11 +37,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

@@ -4,8 +4,8 @@
 
 static int onClosing( uiWindow *w, void *data )
 {
-    (void)w;
-    (void)data;
+    (void) w;
+    (void) data;
     uiQuit();
     return 1;
 }
@@ -153,4 +153,42 @@ HB_FUNC( UINEWWINDOW ) {
     uiWindowOnClosing(w, onClosing, NULL);
     uiOnShouldQuit(onShouldQuit, w);
     hb_retptr( w );
+}
+
+/*
+*/
+//_UI_EXTERN char *uiOpenFile(uiWindow *parent);
+HB_FUNC( uiOpenFile ) {
+    uiWindow *parent = hb_parptr( 1 );
+    if( parent ) {
+        hb_retc( uiOpenFile( parent ) );
+    }
+}
+
+//_UI_EXTERN char *uiSaveFile(uiWindow *parent);
+HB_FUNC( UISAVEFILE ) {
+    uiWindow *parent = hb_parptr( 1 );
+    if( parent ) {
+        hb_retc( uiSaveFile( parent ) );
+    }
+}
+
+//_UI_EXTERN void uiMsgBox(uiWindow *parent, const char *title, const char *description);
+HB_FUNC( UIMSGBOX ) {
+    uiWindow *parent = hb_parptr( 1 );
+    if( parent ) {
+        const char *title = hb_parc( 2 );
+        const char *description = hb_parc( 3 );
+        uiMsgBox( parent, title, description );
+    }
+}
+
+//_UI_EXTERN void uiMsgBoxError(uiWindow *parent, const char *title, const char *description);
+HB_FUNC( UIMSGBOXERROR ) {
+    uiWindow *parent = hb_parptr( 1 );
+    if( parent ) {
+        const char *title = hb_parc( 2 );
+        const char *description = hb_parc( 3 );
+        uiMsgBoxError( parent, title, description );
+    }
 }

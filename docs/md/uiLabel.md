@@ -16,7 +16,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oLabel := uiNewLabel( "Good morning" )
 ```
 ## uiLabelSetText (uiLabel, text)
@@ -29,7 +29,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiLabelSetText( oLabel, "If you are going through hell, keep going!" )
 ```
 ## uiLabelText (uiLabel)
@@ -41,11 +41,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiLabelText( oLabel )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oLabel

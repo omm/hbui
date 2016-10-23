@@ -20,7 +20,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oMultilineEntry := uiNewMultilineEntry()
 ```
 ## uiNewNonWrappingMultilineEntry()
@@ -31,7 +31,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oWrappingMultilineEntry() := uiNewNonWrappingMultilineEntry()
 ```
 ## uiMultilineEntryAppend (uiMultilineEntry, text)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntryAppend( oMultilineEntry, "append" )
 ```
 ## uiMultilineEntryOnChanged (uiMultilineEntry, meChanged, data)
@@ -58,7 +58,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntryOnChanged( oMultilineEntry, {|| meChanged() }, data )
 ```
 ## uiMultilineEntryReadOnly (uiMultilineEntry)
@@ -70,7 +70,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntryReadOnly( oMultilineEntry )
 ```
 ## uiMultilineEntrySetReadOnly (uiMultilineEntry, readonly)
@@ -83,7 +83,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntrySetReadOnly( oMultilineEntry, 1 )
 ```
 ## uiMultilineEntrySetText (uiMultilineEntry, text)
@@ -96,7 +96,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntrySetText( oMultilineEntry, "Set" )
 ```
 ## uiMultilineEntryText (uiMultilineEntry)
@@ -108,11 +108,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiMultilineEntryText( oMultilineEntry )
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

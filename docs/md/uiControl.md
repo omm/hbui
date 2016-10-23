@@ -28,7 +28,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -41,7 +41,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -54,7 +54,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -67,7 +67,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -80,7 +80,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -93,7 +93,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -106,7 +106,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -120,7 +120,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -133,7 +133,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -146,7 +146,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
@@ -159,13 +159,13 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ---
 
 ### Sample source code
-```
+```harbour
 
 
 ```

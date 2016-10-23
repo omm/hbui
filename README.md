@@ -35,13 +35,11 @@ $ hbmk2 window.prg -run
 ```
 
 ### Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
 
-  oWindow := uiNewWindow( "main Window", 800, 600, .T. )
-
-  ? "pointer:", oWindow
+  oWindow := uiNewWindow( "Main Window", 800, 600, .T. )
 
   uiControlShow( oWindow )
 

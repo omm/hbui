@@ -19,7 +19,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oTab := uiNewTab()
 ```
 ## uiTabAppend (uiTab, name, uiControl)
@@ -33,7 +33,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabAppend( oTab, "Page 1", uiControl( page1 ) )
 ```
 ## uiTabDelete (uiTab, index)
@@ -46,7 +46,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabDelete( oTab, 0 )
 ```
 ## uiTabInsertAt (uiTab, name, before, uiControl)
@@ -61,7 +61,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabInsertAt( oTab, "Page 1", 0, uiControl( page1 ) )
 ```
 ## uiTabMargined (uiTab, page)
@@ -74,7 +74,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabMargined( oTab, page )
 ```
 ## uiTabNumPages (uiTab)
@@ -86,7 +86,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabNumPages( oTab )
 ```
 ## uiTabSetMargined (uiTab, page, margined)
@@ -100,11 +100,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oTab
@@ -116,7 +116,7 @@ FUNCTION Main()
 
   oWindow := uiNewWindow( "Tab example", 800, 600, .T. )
   uiWindowSetMargined( oWindow, 1 )
-  
+
   oTab := uiNewTab()
 
   uiTabAppend( oTab, "Page 1", NIL )
