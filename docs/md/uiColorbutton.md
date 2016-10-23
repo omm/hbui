@@ -16,7 +16,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oColorButton := uiNewColorButton()
 ```
 ## uiColorButtonColor (uiColorButton, r, g, bl, a)
@@ -32,7 +32,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiColorButtonColor( oColorButton,  r, g, bl, a )
 ```
 ## uiColorButtonOnChanged (uiColorButton, uiColorButton, data)
@@ -46,7 +46,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiColorButtonSetColor (uiColorButton, r, g, bl, a)
@@ -62,11 +62,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

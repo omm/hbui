@@ -13,11 +13,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiUninit()
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

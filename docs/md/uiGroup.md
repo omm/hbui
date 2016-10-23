@@ -19,7 +19,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oGroup := uiNewGroup( "title" )
 ```
 ## uiGroupMargined (uiGroup)
@@ -31,7 +31,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGroupMargined( oGroup )
 ```
 ## uiGroupSetChild (uiGroup, uiControl)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGroupSetChild( oGroup, oVerticalBox )
 ```
 ## uiGroupSetMargined (uiGroup, margined)
@@ -57,7 +57,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGroupSetMargined( oGroup, 2 )
 ```
 ## uiGroupSetTitle (uiGroup, title)
@@ -70,7 +70,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGroupSetTitle( oGroup, "new title" )
 ```
 ## uiGroupTitle (uiGroup)
@@ -82,11 +82,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGroupTitle( oGroup )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oGroup

@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oButton := uiNewButton( "Open" )
 ```
 ## uiButtonOnClicked (uiButton, uiButton, data)
@@ -31,7 +31,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiButtonSetText (uiButton, text)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiButtonText (uiButton)
@@ -56,11 +56,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oButton
@@ -76,7 +76,6 @@ FUNCTION Main()
   oButton := uiNewButton( "Open" )
 
   uiWindowSetChild( oWindow, oButton )
-
   uiControlShow( oWindow )
 
   uiMain()
@@ -84,8 +83,9 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
-```
+![Linux](ss/button_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oButton
@@ -113,8 +113,9 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
-```
+![Linux](ss/button_02.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oButton
@@ -142,5 +143,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiButton_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/button_02.png "With family Linux Ubuntu desktop, based on GNOME")

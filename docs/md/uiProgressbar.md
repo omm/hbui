@@ -15,7 +15,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oProgressBar := uiNewProgressBar()
 ```
 ## uiProgressBarSetValue (uiProgressBar, n)
@@ -28,7 +28,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiProgressBarSetValue( oProgressBar, 100 )
 ```
 ## uiProgressBarValue (uiProgressBar)
@@ -40,11 +40,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiProgressBarValue( oProgressBar )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oVerticalBox

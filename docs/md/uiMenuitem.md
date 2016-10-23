@@ -18,7 +18,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuItemDisable (uiMenuItem)
@@ -30,7 +30,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuItemOnClicked (uiMenuItem, uiMenuItem, data)
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuItemChecked (uiMenuItem)
@@ -56,7 +56,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuItemSetChecked (uiMenuItem, checked)
@@ -69,11 +69,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

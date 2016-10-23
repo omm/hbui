@@ -20,7 +20,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oEntry := uiNewEntry()
 ```
 ## uiNewPasswordEntry()
@@ -31,7 +31,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oPasswordEntry := uiNewPasswordEntry()
 ```
 ## uiNewSearchEntry()
@@ -42,7 +42,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oSearchEntry := uiNewSearchEntry()
 ```
 ## uiEntryText (uiEntry)
@@ -54,7 +54,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEntryText( oEntry )
 ```
 ## uiEntrySetText (uiEntry, text)
@@ -67,7 +67,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEntrySetText( oEntry, "Name counterparty" )
 ```
 ## uiEntryOnChanged (uiEntry, Function, data)
@@ -81,7 +81,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEntryOnChanged( uiEntry, onChanged, 0 )
 ```
 ## uiEntryReadOnly (uiEntry)
@@ -92,7 +92,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEntryReadOnly( oEntry )
 ```
 ## uiEntrySetReadOnly (uiEntry, readonly)
@@ -103,12 +103,12 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEntrySetReadOnly( oEntry, 1 )
 ```
 
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oGroup
@@ -125,13 +125,13 @@ FUNCTION Main()
   oGroup := uiNewGroup("")
 	uiGroupSetMargined( oGroup, 1)
 
-	oForm := uiNewForm()
-	uiFormSetPadded( oForm, 1 )
-	uiGroupSetChild( oGroup, oForm )
+  oForm := uiNewForm()
+  uiFormSetPadded( oForm, 1 )
+  uiGroupSetChild( oGroup, oForm )
 
-	uiFormAppend( oForm, "Username", uiNewEntry(), 0 )
-	uiFormAppend( oForm, "Email address", uiNewEntry(), 0 )
-	uiFormAppend( oForm, "Password", uiNewPasswordEntry(), 0 )
+  uiFormAppend( oForm, "Username", uiNewEntry(), 0 )
+  uiFormAppend( oForm, "Email address", uiNewEntry(), 0 )
+  uiFormAppend( oForm, "Password", uiNewPasswordEntry(), 0 )
 
   uiWindowSetChild( oWindow, oGroup )
   uiControlShow( oWindow )
@@ -141,6 +141,5 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
 ## Screenshots
 ![Linux](../tutorial/uiEntry_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

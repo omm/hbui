@@ -24,6 +24,14 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 - [uiWindowSetTitle( uiWindow, title )](#uiwindowsettitle-uiwindow-title)
 - [uiWindowTitle( uiWindow )](#uiwindowtitle-uiwindow)
 
+<br>
+
+- [uiMsgBox( uiWindow, title,r description )](#uimsgbox-uiwindow-title-r-description)
+- [uiMsgBoxError( uiWindow, title, description )](#uimsgboxerror-uiwindow-title-description)
+- [uiOpenFile( uiWindow )](#uiopenfile-uiwindow)
+- [uiSaveFile( uiWindow )](#uisavefile-uiwindow)
+
+
 ## uiNewWindow (title, width, height, hasMenubar)
 Arguments
 - title
@@ -36,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oWindow := uiNewWindow( "Hello Harbour!", 800, 600, .T. )
 ```
 ## uiWindowBorderless (uiWindow)
@@ -48,7 +56,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowBorderless( oWindow )
 ```
 ## uiWindowCenter (uiWindow)
@@ -60,7 +68,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowCenter( oWindow )
 ```
 ## uiWindowContentSize (uiWindow, width, height)
@@ -74,7 +82,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowContentSize( oWindow, 800, 600 )
 ```
 ## uiWindowFullscreen (uiWindow)
@@ -86,7 +94,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowFullscreen( oWindow )
 ```
 ## uiWindowMargined (uiWindow)
@@ -98,7 +106,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowMargined( oWindow )
 ```
 ## uiWindowOnClosing (uiWindow, onClosing, data)
@@ -112,7 +120,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowOnClosing( oWindow, onClosing, NIL )
 ```
 ## uiWindowOnContentSizeChanged (onShouldQuit, uiWindow)
@@ -125,7 +133,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowOnContentSizeChanged( onShouldQuit, oWindow )
 ```
 ## uiWindowOnPositionChanged (uiWindow, onMove, data)
@@ -139,7 +147,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowOnPositionChanged( oWindow, onMove, NIL )
 ```
 ## uiWindowPosition (uiWindow, x, y)
@@ -153,7 +161,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowPosition( oWindow, 50, 50 )
 ```
 ## uiWindowSetBorderless (uiWindow, borderless)
@@ -166,7 +174,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetBorderless( oWindow, uiCheckboxChecked( oCheckbox ) )
 ```
 ## uiWindowSetChild (uiWindow, uiControl)
@@ -179,7 +187,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetChild( oWindow, uiControl( oButton ) )
 ```
 ## uiWindowSetContentSize (uiWindow, width, height)
@@ -193,7 +201,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetContentSize( oWindow, 800, 600 )
 ```
 ## uiWindowSetFullscreen (uiWindow, fullscreen)
@@ -206,7 +214,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetFullscreen( oWindow, uiCheckboxChecked( fullscreen ) )
 ```
 ## uiWindowSetMargined (uiWindow, margined)
@@ -219,7 +227,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetMargined( oWindow, 1 )
 ```
 ## uiWindowSetPosition (uiWindow, x, y)
@@ -233,7 +241,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetPosition( oWindow, 50, 50 )
 ```
 ## uiWindowSetTitle (uiWindow, title)
@@ -246,7 +254,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowSetTitle( oWindow, "Hello world!" )
 ```
 ## uiWindowTitle (uiWindow)
@@ -258,11 +266,58 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiWindowTitle( oWindow )
 ```
-## Sample source code
+
+<br>
+
+## uiMsgBox (uiWindow, title,r description)
+Arguments
+
+Return value
+
+Description
+
+Simple example
+```harbour
+
 ```
+## uiMsgBoxError (uiWindow, title, description)
+Arguments
+
+Return value
+
+Description
+
+Simple example
+```harbour
+
+```
+## uiOpenFile (uiWindow)
+Arguments
+
+Return value
+
+Description
+
+Simple example
+```harbour
+
+```
+## uiSaveFile (uiWindow)
+Arguments
+
+Return value
+
+Description
+
+Simple example
+```harbour
+
+```
+## Sample source code
+```harbour
 FUNCTION Main()
   LOCAL oWindow
 
@@ -280,6 +335,5 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
 ## Screenshots
 ![Linux](../tutorial/uiWindow_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

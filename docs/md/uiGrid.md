@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oGrid := uiNewGrid()
 ```
 ## uiGridAppend (uiGrid, uiControl, left, top, xspan, yspan, hexpand, uiAlign halign, vexpand, uiAlign valign)
@@ -38,7 +38,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
 ```
 ## uiGridInsertAt (uiGrid, uiControl, uiControl, uiAt at, xspan, yspan, hexpand, uiAlign halign, vexpand, uiAlign valign)
@@ -59,7 +59,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiGridPadded (uiGrid)
@@ -71,7 +71,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiGridSetPadded (uiGrid, padded)
@@ -84,11 +84,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

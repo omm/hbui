@@ -17,7 +17,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oEditableCombobox := uiNewEditableCombobox()
 ```
 ## uiEditableComboboxAppend( uiEditableCombobox, text )
@@ -30,7 +30,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEditableComboboxAppend( oEditableCombobox, "text" )
 ```
 ## uiEditableComboboxOnChanged( uiEditableCombobox, uiEditableCombobox, data )
@@ -44,7 +44,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEditableComboboxOnChanged( oEditableCombobox, onEditableComboboxChanged(), data )
 ```
 ## uiEditableComboboxSetText( uiEditableCombobox, text )
@@ -57,7 +57,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEditableComboboxSetText( oEditableCombobox, "text" )
 ```
 ## uiEditableComboboxText( uiEditableCombobox )
@@ -69,11 +69,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiEditableComboboxText( oEditableCombobox )
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

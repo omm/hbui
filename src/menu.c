@@ -39,7 +39,7 @@ HB_FUNC( UIMENUAPPENDSEPARATOR ) {
 
 //_UI_EXTERN uiMenu *uiNewMenu(const char *name);
 HB_FUNC( UINEWMENU ) {
-    const char *name = hb_parc( 1 )
+    const char *name = hb_parc( 1 );
     uiMenu *m = uiNewMenu( name );
     hb_retptr( m );
 }

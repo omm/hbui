@@ -15,7 +15,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFreeInitError( err )
 ```
 ## uiInit (uiInitOptions)
@@ -27,14 +27,14 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 IF ! HB_ISNULL( err := uiInit() )
     Alert( "Failed to initialize libui: " + err )
     RETURN NIL
 ENDIF
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

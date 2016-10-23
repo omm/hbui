@@ -23,7 +23,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oCheckbox := uiNewCheckbox( "GitHub" )
 ```
 ---
@@ -36,7 +36,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiCheckboxChecked( oCheckbox )
 ```
 ---
@@ -51,7 +51,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiCheckboxOnToggled( uiCheckbox, toggleSpaced, NULL )
 ```
 ---
@@ -65,7 +65,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiCheckboxSetChecked( uiCheckbox, 1 )
 ```
 ---
@@ -79,7 +79,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiCheckboxSetText( oCheckbox, "it's free" )
 ```
 ---
@@ -92,12 +92,12 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiCheckboxText( oCheckbox )
 ```
 ---
 ### Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oCheckbox
@@ -121,6 +121,5 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
 ### Screenshots
 ![Linux](../tutorial/uiCheckbox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")

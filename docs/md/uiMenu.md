@@ -20,7 +20,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oMenu := uiNewMenu( "File" )
 ```
 ## uiMenuAppendAboutItem (uiMenu)
@@ -32,7 +32,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuAppendCheckItem (uiMenu, name)
@@ -45,7 +45,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuAppendItem (uiMenu, name)		
@@ -58,7 +58,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuAppendPreferencesItem (uiMenu)
@@ -70,7 +70,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuAppendQuitItem (uiMenu)
@@ -82,7 +82,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiMenuAppendSeparator (uiMenu)
@@ -94,11 +94,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

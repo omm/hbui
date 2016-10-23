@@ -18,7 +18,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oSlider := uiNewSlider( 0, 60 )
 ```
 ## uiSliderOnChanged (uiSlider, uiSlider, data)
@@ -32,7 +32,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiSliderOnChanged( oSlider, onSliderChanged, nil )
 ```
 ## uiSliderSetValue (uiSlider, value)
@@ -45,7 +45,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiSliderSetValue( oSlider, value )
 ```
 ## uiSliderValue (uiSlider)
@@ -57,11 +57,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiSliderValue( oSlider )
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

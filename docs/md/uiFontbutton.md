@@ -15,7 +15,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oFontButton := uiNewFontButton()
 ```
 ## uiFontButtonFont (uiFontButton)
@@ -27,7 +27,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFontButtonFont( oFontButton )
 ```
 ## uiFontButtonOnChanged (uiFontButton, uiFontButton, data)
@@ -41,11 +41,11 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiFontButtonOnChanged( oFontButton, onFontChanged(), 0 )
 ```
 ## Sample source code
-```
+```harbour
 
 
 ```

@@ -18,7 +18,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oHorizontalBox := uiNewHorizontalBox()
 ```
 ## uiNewVerticalBox()
@@ -29,7 +29,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 oVerticalBox := uiNewVerticalBox()
 ```
 ## uiBoxAppend (uiBox, uiControl, stretchy)
@@ -43,7 +43,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 uiBoxAppend( oHorizontalBox, uiControl( oTab ), 1 )
 ```
 ## uiBoxDelete (uiBox, index)
@@ -56,7 +56,7 @@ Return value
 Description
 
 Simple example
-```
+```harbour
 
 ```
 ## uiBoxPadded (uiBox)
@@ -68,8 +68,8 @@ Return value
 Description
 
 Simple example
-```
-
+```harbour
+uiBoxPadded( oHorizontalBox )
 ```
 ## uiBoxSetPadded (uiBox, padded)
 Arguments
@@ -81,11 +81,11 @@ Return value
 Description
 
 Simple example
-```
-
+```harbour
+uiBoxSetPadded ( oHorizontalBox, 1 )
 ```
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
   LOCAL oWindow
   LOCAL oButton
@@ -96,7 +96,7 @@ FUNCTION Main()
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "HorizontalBox example", 800, 600, .T. )
+  oWindow := uiNewWindow( "HorizontalBox example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oButton := uiNewButton( "Open" )
@@ -113,7 +113,8 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
+![Linux](ss/box_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
 ```
 FUNCTION Main()
   LOCAL oWindow
@@ -125,7 +126,7 @@ FUNCTION Main()
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "VerticalBox example", 800, 600, .T. )
+  oWindow := uiNewWindow( "VerticalBox example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oButton := uiNewButton( "Open" )
@@ -142,5 +143,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiBox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/box_02.png "With family Linux Ubuntu desktop, based on GNOME")
