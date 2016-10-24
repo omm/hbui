@@ -1,12 +1,17 @@
 
 #include "hbapi.h"
+#include "hbapierr.h"
 #include "ui.h"
 
 //_UI_EXTERN void uiTabAppend(uiTab *t, const char *name, uiControl *c);
 HB_FUNC( UITABAPPEND ) {
     void *t = hb_parptr( 1 );
-    if( t ) {
-        uiTabAppend( uiTab( t ), hb_parc( 2 ), uiControl( hb_parptr( 3 ) ) );
+    void *c = hb_parptr( 3 );
+    if( t && c ) {
+        uiTabAppend( uiTab( t ), hb_parc( 2 ), uiControl( c ) );
+    }
+    else {
+        hb_errRT_BASE_SubstR( EG_ARG, 0, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
     }
 }
 
