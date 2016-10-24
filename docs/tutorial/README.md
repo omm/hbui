@@ -119,7 +119,7 @@ c:\libui\build>make
 
 We can build examples for libui:
 ```
-c:\libui\build>make example
+c:\libui\build>make examples
 ```
 
 Now we can proceed to compilation our library:
