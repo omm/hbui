@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiRadioButtonsAppend(uiRadioButtons *r, const char *text);
 HB_FUNC( UIRADIOBUTTONSAPPEND ) {

@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiColorButtonColor(uiColorButton *b, double *r, double *g, double *bl, double *a);
 HB_FUNC( UICOLORBUTTONCOLOR ) {

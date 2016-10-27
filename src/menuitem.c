@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiMenuItemEnable(uiMenuItem *m);
 HB_FUNC( uiMenuItemEnable ) {

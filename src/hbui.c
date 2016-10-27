@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 HB_FUNC( UIUNINIT ) {
     uiUninit();

@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN uiMenuItem *uiMenuAppendItem(uiMenu *m, const char *name);
 HB_FUNC( UIMENUAPPENDITEM ) {

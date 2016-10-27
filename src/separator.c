@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN uiSeparator *uiNewHorizontalSeparator(void);
 HB_FUNC( UINEWHORIZONTALSEPARATOR ) {

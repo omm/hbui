@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiComboboxAppend(uiCombobox *c, const char *text);
 HB_FUNC( UICOMBOBOXAPPEND ) {

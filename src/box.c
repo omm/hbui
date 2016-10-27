@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiBoxAppend(uiBox *b, uiControl *child, int stretchy);
 HB_FUNC( UIBOXAPPEND ) {

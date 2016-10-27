@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN uiDrawTextFont *uiFontButtonFont(uiFontButton *b);
 HB_FUNC( UIFONTBUTTONFONT ) {

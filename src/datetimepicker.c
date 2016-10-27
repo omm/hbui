@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN uiDateTimePicker *uiNewDateTimePicker(void);
 HB_FUNC( UINEWDATETIMEPICKER ) {

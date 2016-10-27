@@ -1,6 +1,5 @@
 
-#include "hbapi.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiFormAppend(uiForm *f, const char *label, uiControl *c, int stretchy);
 HB_FUNC( UIFORMAPPEND ) {
