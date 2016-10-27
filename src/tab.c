@@ -18,8 +18,12 @@ HB_FUNC( UITABAPPEND ) {
 //_UI_EXTERN void uiTabInsertAt(uiTab *t, const char *name, int before, uiControl *c);
 HB_FUNC( UITABINSERTAT ) {
     void *t = hb_parptr( 1 );
-    if( t ) {
-        uiTabInsertAt( uiTab( t ), hb_parc( 2 ), hb_parni( 3 ), uiControl( hb_parptr( 4 ) ) );
+    void *c = hb_parptr( 4 );
+    if( t && c ) {
+        uiTabInsertAt( uiTab( t ), hb_parc( 2 ), hb_parni( 3 ), uiControl( c ) );
+    }
+    else {
+        hb_errRT_BASE_SubstR( EG_ARG, 0, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );
     }
 }
 
