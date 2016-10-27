@@ -18,7 +18,7 @@
 
 -iinclude
 
--hbx=${hb_name}
+-hbx=${hb_name}.hbx
 
 src/*.c
 src/*.prg
