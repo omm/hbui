@@ -2,7 +2,7 @@
 #include "hbui.h"
 
 HB_FUNC( UICONTROLDESTROY ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiControlDestroy( uiControl( c ) );
@@ -10,7 +10,7 @@ HB_FUNC( UICONTROLDESTROY ) {
 }
 
 HB_FUNC( UICONTROLHANDLE ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         hb_retnl( uiControlHandle( uiControl( c ) ) );
@@ -18,16 +18,16 @@ HB_FUNC( UICONTROLHANDLE ) {
 }
 
 HB_FUNC( UICONTROLPARENT ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
-        hb_retptr( uiControlParent( uiControl( c ) ) );
+        hbui_ret( uiControlParent( uiControl( c ) ) );
     }
 }
 
 HB_FUNC( UICONTROLSETPARENT ) {
-    void *c = hb_parptr( 1 );
-    void *parent = hb_parptr( 2 );
+    void *c = hbui_param( 1 );
+    void *parent = hbui_param( 2 );
 
     if( c && parent ) {
         uiControlSetParent( uiControl( c ), uiControl( parent ) );
@@ -35,7 +35,7 @@ HB_FUNC( UICONTROLSETPARENT ) {
 }
 
 HB_FUNC( UICONTROLTOPLEVEL ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         hb_retni( uiControlToplevel( uiControl( c ) ) );
@@ -43,7 +43,7 @@ HB_FUNC( UICONTROLTOPLEVEL ) {
 }
 
 HB_FUNC( UICONTROLVISIBLE ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         hb_retni( uiControlVisible( uiControl( c ) ) );
@@ -51,7 +51,7 @@ HB_FUNC( UICONTROLVISIBLE ) {
 }
 
 HB_FUNC( UICONTROLSHOW ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiControlShow( uiControl( c ) );
@@ -59,7 +59,7 @@ HB_FUNC( UICONTROLSHOW ) {
 }
 
 HB_FUNC( UICONTROLHIDE ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiControlHide( uiControl( c ) );
@@ -67,7 +67,7 @@ HB_FUNC( UICONTROLHIDE ) {
 }
 
 HB_FUNC( UICONTROLENABLED ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         hb_retni( uiControlEnabled( uiControl( c ) ) );
@@ -75,7 +75,7 @@ HB_FUNC( UICONTROLENABLED ) {
 }
 
 HB_FUNC( UICONTROLENABLE ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiControlEnable( uiControl( c ) );
@@ -83,7 +83,7 @@ HB_FUNC( UICONTROLENABLE ) {
 }
 
 HB_FUNC( UICONTROLDISABLE ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiControlDisable( uiControl( c ) );
@@ -102,7 +102,7 @@ HB_FUNC( UICONTROLDISABLE ) {
 //}
 
 HB_FUNC( UIFREECONTROL ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         uiFreeControl( uiControl( c ) );
@@ -110,8 +110,8 @@ HB_FUNC( UIFREECONTROL ) {
 }
 
 HB_FUNC( UICONTROLVERIFYSETPARENT ) {
-    void *c = hb_parptr( 1 );
-    void *parent = hb_parptr( 2 );
+    void *c = hbui_param( 1 );
+    void *parent = hbui_param( 2 );
 
     if( c && parent ) {
         uiControlVerifySetParent( uiControl( c ), uiControl( parent ) );
@@ -119,7 +119,7 @@ HB_FUNC( UICONTROLVERIFYSETPARENT ) {
 }
 
 HB_FUNC( UICONTROLENABLEDTOUSER ) {
-    void *c = hb_parptr( 1 );
+    void *c = hbui_param( 1 );
 
     if( c ) {
         hb_retni( uiControlEnabledToUser( uiControl( c ) ) );

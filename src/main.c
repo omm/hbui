@@ -16,3 +16,7 @@ HB_FUNC( UIINIT ) {
 HB_FUNC( UIMAIN ) {
     uiMain();
 }
+
+HB_FUNC( UIUNINIT ) {
+    uiUninit();
+}

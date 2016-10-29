@@ -3,7 +3,7 @@
 
 //_UI_EXTERN void uiEditableComboboxAppend(uiEditableCombobox *c, const char *text);
 HB_FUNC( UIEDITABLECOMBOBOXAPPEND ) {
-    uiEditableCombobox *c = hb_parptr( 1 );
+    uiEditableCombobox *c = hbui_param( 1 );
     if( c ) {
         uiEditableComboboxAppend( c, hb_parc( 2 ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UIEDITABLECOMBOBOXAPPEND ) {
 
 //_UI_EXTERN char *uiEditableComboboxText(uiEditableCombobox *c);
 HB_FUNC( UIEDITABLECOMBOBOXTEXT ) {
-    uiEditableCombobox *c = hb_parptr( 1 );
+    uiEditableCombobox *c = hbui_param( 1 );
     if( c ) {
         hb_retc( uiEditableComboboxText( c ) );
     }
@@ -19,7 +19,7 @@ HB_FUNC( UIEDITABLECOMBOBOXTEXT ) {
 
 //_UI_EXTERN void uiEditableComboboxSetText(uiEditableCombobox *c, const char *text);
 HB_FUNC( UIEDITABLECOMBOBOXSETTEXT ) {
-    uiEditableCombobox *c = hb_parptr( 1 );
+    uiEditableCombobox *c = hbui_param( 1 );
     if( c ) {
         uiEditableComboboxSetText( c, hb_parc( 2 ) );
     }
@@ -29,5 +29,5 @@ HB_FUNC( UIEDITABLECOMBOBOXSETTEXT ) {
 
 //_UI_EXTERN uiEditableCombobox *uiNewEditableCombobox(void);
 HB_FUNC( UINEWEDITABLECOMBOBOX ) {
-    hb_retptr( uiNewEditableCombobox() );
+    hbui_ret( uiNewEditableCombobox() );
 }

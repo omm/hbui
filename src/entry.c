@@ -3,7 +3,7 @@
 
 //_UI_EXTERN char *uiEntryText(uiEntry *e);
 HB_FUNC( UIENTRYTEXT ) {
-    uiEntry *e = hb_parptr( 1 );
+    uiEntry *e = hbui_param( 1 );
     if( e ) {
         hb_retc( uiEntryText( e ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UIENTRYTEXT ) {
 
 //_UI_EXTERN void uiEntrySetText(uiEntry *e, const char *text);
 HB_FUNC( UIENTRYSETTEXT ) {
-    uiEntry *e = hb_parptr( 1 );
+    uiEntry *e = hbui_param( 1 );
     if( e ) {
         uiEntrySetText( e, hb_parc( 2 ) );
     }
@@ -21,7 +21,7 @@ HB_FUNC( UIENTRYSETTEXT ) {
 
 //_UI_EXTERN int uiEntryReadOnly(uiEntry *e);
 HB_FUNC( UIENTRYREADONLY ) {
-    uiEntry *e = hb_parptr( 1 );
+    uiEntry *e = hbui_param( 1 );
     if( e ) {
         hb_retni( uiEntryReadOnly( e ) );
     }
@@ -29,7 +29,7 @@ HB_FUNC( UIENTRYREADONLY ) {
 
 //_UI_EXTERN void uiEntrySetReadOnly(uiEntry *e, int readonly);
 HB_FUNC( UIENTRYSETREADONLY ) {
-    uiEntry *e = hb_parptr( 1 );
+    uiEntry *e = hbui_param( 1 );
     if( e ) {
         uiEntrySetReadOnly( e, hb_parni( 2 ) );
     }
@@ -37,15 +37,15 @@ HB_FUNC( UIENTRYSETREADONLY ) {
 
 //_UI_EXTERN uiEntry *uiNewEntry(void);
 HB_FUNC( UINEWENTRY ) {
-    hb_retptr( uiNewEntry() );
+    hbui_ret( uiNewEntry() );
 }
 
 //_UI_EXTERN uiEntry *uiNewPasswordEntry(void);
 HB_FUNC( UINEWPASSWORDENTRY ) {
-    hb_retptr( uiNewPasswordEntry() );
+    hbui_ret( uiNewPasswordEntry() );
 }
 
 //_UI_EXTERN uiEntry *uiNewSearchEntry(void);
 HB_FUNC( UINEWSEARCHENTRY ) {
-    hb_retptr( uiNewSearchEntry() );
+    hbui_ret( uiNewSearchEntry() );
 }

@@ -18,7 +18,7 @@ static int onShouldQuit( void *data )
 
 //_UI_EXTERN char *uiWindowTitle(uiWindow *w);
 HB_FUNC( UIWINDOWTITLE ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         hb_retc( uiWindowTitle( w ) );
     }
@@ -26,7 +26,7 @@ HB_FUNC( UIWINDOWTITLE ) {
 
 //_UI_EXTERN void uiWindowSetTitle(uiWindow *w, const char *title);
 HB_FUNC( UIWINDOWSETTITLE ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetTitle( w, hb_parc( 2 ) );
     }
@@ -34,7 +34,7 @@ HB_FUNC( UIWINDOWSETTITLE ) {
 
 //_UI_EXTERN void uiWindowPosition(uiWindow *w, int *x, int *y);
 HB_FUNC( UIWINDOWPOSITION ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w && HB_IS_BYREF( 2 ) && HB_IS_BYREF( 3 ) ) {
         int x;
         int y;
@@ -46,7 +46,7 @@ HB_FUNC( UIWINDOWPOSITION ) {
 
 //_UI_EXTERN void uiWindowSetPosition(uiWindow *w, int x, int y);
 HB_FUNC( UIWINDOWSETPOSITION ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetPosition( w, hb_parni( 2 ), hb_parni( 3 ) );
     }
@@ -54,7 +54,7 @@ HB_FUNC( UIWINDOWSETPOSITION ) {
 
 //_UI_EXTERN void uiWindowCenter(uiWindow *w);
 HB_FUNC( UIWINDOWCENTER ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowCenter( w );
     }
@@ -64,7 +64,7 @@ HB_FUNC( UIWINDOWCENTER ) {
 
 //_UI_EXTERN void uiWindowContentSize(uiWindow *w, int *width, int *height);
 HB_FUNC( UIWINDOWCONTENTSIZE ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w && HB_IS_BYREF( 2 ) && HB_IS_BYREF( 3 ) ) {
         int x;
         int y;
@@ -76,14 +76,14 @@ HB_FUNC( UIWINDOWCONTENTSIZE ) {
 
 //_UI_EXTERN void uiWindowSetContentSize(uiWindow *w, int width, int height);
 HB_FUNC( UIWINDOWSETCONTENTSIZE ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetContentSize( w, hb_parni( 2 ), hb_parni( 3 ) );
     }
 }
 //_UI_EXTERN int uiWindowFullscreen(uiWindow *w);
 HB_FUNC( UIWINDOWFULLSCREEN ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         hb_retni( uiWindowFullscreen( w ) );
     }
@@ -91,7 +91,7 @@ HB_FUNC( UIWINDOWFULLSCREEN ) {
 
 //_UI_EXTERN void uiWindowSetFullscreen(uiWindow *w, int fullscreen);
 HB_FUNC( UIWINDOWSETFULLSCREEN ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetFullscreen( w, hb_parni( 2 ) );
     }
@@ -103,7 +103,7 @@ HB_FUNC( UIWINDOWSETFULLSCREEN ) {
 
 //_UI_EXTERN int uiWindowBorderless(uiWindow *w);
 HB_FUNC( UIWINDOWBORDERLESS ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         hb_retni( uiWindowBorderless( w ) );
     }
@@ -111,7 +111,7 @@ HB_FUNC( UIWINDOWBORDERLESS ) {
 
 //_UI_EXTERN void uiWindowSetBorderless(uiWindow *w, int borderless);
 HB_FUNC( UIWINDOWSETBORDERLESS ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetBorderless( w, hb_parni( 2 ) );
     }
@@ -119,8 +119,8 @@ HB_FUNC( UIWINDOWSETBORDERLESS ) {
 
 //_UI_EXTERN void uiWindowSetChild(uiWindow *w, uiControl *child);
 HB_FUNC( UIWINDOWSETCHILD ) {
-    uiWindow *w = hb_parptr( 1 );
-    uiControl *child = hb_parptr( 2 );
+    uiWindow *w = hbui_param( 1 );
+    uiControl *child = hbui_param( 2 );
     if( w && child ) {
         uiWindowSetChild( w, child );
     }
@@ -128,7 +128,7 @@ HB_FUNC( UIWINDOWSETCHILD ) {
 
 //_UI_EXTERN int uiWindowMargined(uiWindow *w);
 HB_FUNC( UIWINDOWMARGINED ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         hb_retni( uiWindowMargined( w ) );
     }
@@ -136,7 +136,7 @@ HB_FUNC( UIWINDOWMARGINED ) {
 
 //_UI_EXTERN void uiWindowSetMargined(uiWindow *w, int margined);
 HB_FUNC( UIWINDOWSETMARGINED ) {
-    uiWindow *w = hb_parptr( 1 );
+    uiWindow *w = hbui_param( 1 );
     if( w ) {
         uiWindowSetMargined( w, hb_parni( 2 ) );
     }
@@ -151,14 +151,14 @@ HB_FUNC( UINEWWINDOW ) {
     uiWindow *w = uiNewWindow( title, width, height, hasMenu );
     uiWindowOnClosing(w, onClosing, NULL);
     uiOnShouldQuit(onShouldQuit, w);
-    hb_retptr( w );
+    hbui_ret( w );
 }
 
 /*
 */
 //_UI_EXTERN char *uiOpenFile(uiWindow *parent);
 HB_FUNC( uiOpenFile ) {
-    uiWindow *parent = hb_parptr( 1 );
+    uiWindow *parent = hbui_param( 1 );
     if( parent ) {
         hb_retc( uiOpenFile( parent ) );
     }
@@ -166,7 +166,7 @@ HB_FUNC( uiOpenFile ) {
 
 //_UI_EXTERN char *uiSaveFile(uiWindow *parent);
 HB_FUNC( UISAVEFILE ) {
-    uiWindow *parent = hb_parptr( 1 );
+    uiWindow *parent = hbui_param( 1 );
     if( parent ) {
         hb_retc( uiSaveFile( parent ) );
     }
@@ -174,7 +174,7 @@ HB_FUNC( UISAVEFILE ) {
 
 //_UI_EXTERN void uiMsgBox(uiWindow *parent, const char *title, const char *description);
 HB_FUNC( UIMSGBOX ) {
-    uiWindow *parent = hb_parptr( 1 );
+    uiWindow *parent = hbui_param( 1 );
     if( parent ) {
         const char *title = hb_parc( 2 );
         const char *description = hb_parc( 3 );
@@ -184,7 +184,7 @@ HB_FUNC( UIMSGBOX ) {
 
 //_UI_EXTERN void uiMsgBoxError(uiWindow *parent, const char *title, const char *description);
 HB_FUNC( UIMSGBOXERROR ) {
-    uiWindow *parent = hb_parptr( 1 );
+    uiWindow *parent = hbui_param( 1 );
     if( parent ) {
         const char *title = hb_parc( 2 );
         const char *description = hb_parc( 3 );

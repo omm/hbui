@@ -3,7 +3,7 @@
 
 //_UI_EXTERN int uiSpinboxValue(uiSpinbox *s);
 HB_FUNC( UISPINBOXVALUE ) {
-    uiSpinbox *s = hb_parptr( 1 );
+    uiSpinbox *s = hbui_param( 1 );
     if( s ) {
         hb_retni( uiSpinboxValue( s ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UISPINBOXVALUE ) {
 
 //_UI_EXTERN void uiSpinboxSetValue(uiSpinbox *s, int value);
 HB_FUNC( UISPINBOXSETVALUE ) {
-    uiSpinbox *s = hb_parptr( 1 );
+    uiSpinbox *s = hbui_param( 1 );
     if( s ) {
         uiSpinboxSetValue( s, hb_parni( 2 ) );
     }
@@ -21,5 +21,5 @@ HB_FUNC( UISPINBOXSETVALUE ) {
 
 //_UI_EXTERN uiSpinbox *uiNewSpinbox(int min, int max);
 HB_FUNC( UINEWSPINBOX ) {
-    hb_retptr( uiNewSpinbox( hb_parni( 1 ), hb_parni( 2 ) ) );
+    hbui_ret( uiNewSpinbox( hb_parni( 1 ), hb_parni( 2 ) ) );
 }

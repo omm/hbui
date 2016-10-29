@@ -3,7 +3,7 @@
 
 //_UI_EXTERN int uiSliderValue(uiSlider *s);
 HB_FUNC( UISLIDERVALUE ) {
-    uiSlider *s = hb_parptr( 1 );
+    uiSlider *s = hbui_param( 1 );
     if( s ) {
         hb_retni( uiSliderValue( s ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UISLIDERVALUE ) {
 
 //_UI_EXTERN void uiSliderSetValue(uiSlider *s, int value);
 HB_FUNC( UISLIDERSETVALUE ) {
-    uiSlider *s = hb_parptr( 1 );
+    uiSlider *s = hbui_param( 1 );
     if( s ) {
         uiSliderSetValue( s, hb_parni( 2 ) );
     }
@@ -21,5 +21,5 @@ HB_FUNC( UISLIDERSETVALUE ) {
 
 //_UI_EXTERN uiSlider *uiNewSlider(int min, int max);
 HB_FUNC( UINEWSLIDER ) {
-    hb_retptr( uiNewSlider( hb_parni( 1 ), hb_parni( 2 ) ) );
+    hbui_ret( uiNewSlider( hb_parni( 1 ), hb_parni( 2 ) ) );
 }

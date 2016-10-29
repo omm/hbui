@@ -3,7 +3,7 @@
 
 //_UI_EXTERN int uiProgressBarValue(uiProgressBar *p);
 HB_FUNC( UIPROGRESSBARVALUE ) {
-    uiProgressBar *p = hb_parptr( 1 );
+    uiProgressBar *p = hbui_param( 1 );
     if( p ) {
         hb_retni( uiProgressBarValue( p ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UIPROGRESSBARVALUE ) {
 
 //_UI_EXTERN void uiProgressBarSetValue(uiProgressBar *p, int n);
 HB_FUNC( UIPROGRESSBARSETVALUE ) {
-    uiProgressBar *p = hb_parptr( 1 );
+    uiProgressBar *p = hbui_param( 1 );
     if( p ) {
         uiProgressBarSetValue( p, hb_parni( 2 ) );
     }
@@ -19,5 +19,5 @@ HB_FUNC( UIPROGRESSBARSETVALUE ) {
 
 //_UI_EXTERN uiProgressBar *uiNewProgressBar(void);
 HB_FUNC( UINEWPROGRESSBAR ) {
-    hb_retptr( uiNewProgressBar() );
+    hbui_ret( uiNewProgressBar() );
 }

@@ -3,7 +3,7 @@
 
 //_UI_EXTERN void uiComboboxAppend(uiCombobox *c, const char *text);
 HB_FUNC( UICOMBOBOXAPPEND ) {
-    uiCombobox *c = hb_parptr( 1 );
+    uiCombobox *c = hbui_param( 1 );
     if( c ) {
         uiComboboxAppend( c, hb_parc( 2 ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UICOMBOBOXAPPEND ) {
 
 //_UI_EXTERN int uiComboboxSelected(uiCombobox *c);
 HB_FUNC( UICOMBOBOXSELECTED ) {
-    uiCombobox *c = hb_parptr( 1 );
+    uiCombobox *c = hbui_param( 1 );
     if( c ) {
         hb_retni( uiComboboxSelected( c ) );
     }
@@ -19,7 +19,7 @@ HB_FUNC( UICOMBOBOXSELECTED ) {
 
 //_UI_EXTERN void uiComboboxSetSelected(uiCombobox *c, int n);
 HB_FUNC( UICOMBOBOXSETSELECTED ) {
-    uiCombobox *c = hb_parptr( 1 );
+    uiCombobox *c = hbui_param( 1 );
     if( c ) {
         uiComboboxSetSelected( c, hb_parni( 2 ) );
     }
@@ -29,5 +29,5 @@ HB_FUNC( UICOMBOBOXSETSELECTED ) {
 
 //_UI_EXTERN uiCombobox *uiNewCombobox(void);
 HB_FUNC( UINEWCOMBOBOX ) {
-    hb_retptr( uiNewCombobox() );
+    hbui_ret( uiNewCombobox() );
 }

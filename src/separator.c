@@ -3,10 +3,10 @@
 
 //_UI_EXTERN uiSeparator *uiNewHorizontalSeparator(void);
 HB_FUNC( UINEWHORIZONTALSEPARATOR ) {
-    hb_retptr( uiNewHorizontalSeparator() );
+    hbui_ret( uiNewHorizontalSeparator() );
 }
 
 //_UI_EXTERN uiSeparator *uiNewVerticalSeparator(void);
 HB_FUNC( UINEWVERTICALSEPARATOR ) {
-    hb_retptr( uiNewVerticalSeparator() );
+    hbui_ret( uiNewVerticalSeparator() );
 }

@@ -3,9 +3,9 @@
 
 //_UI_EXTERN uiDrawTextFont *uiFontButtonFont(uiFontButton *b);
 HB_FUNC( UIFONTBUTTONFONT ) {
-    uiFontButton *b = hb_parptr( 1 );
+    uiFontButton *b = hbui_param( 1 );
     if( b ) {
-        hb_retptr( uiFontButtonFont( b ) );
+        hbui_ret( uiFontButtonFont( b ) );
     }
 }
 
@@ -13,5 +13,5 @@ HB_FUNC( UIFONTBUTTONFONT ) {
 
 //_UI_EXTERN uiFontButton *uiNewFontButton(void);
 HB_FUNC( UINEWFONTBUTTON ) {
-    hb_retptr( uiNewFontButton() );
+    hbui_ret( uiNewFontButton() );
 }

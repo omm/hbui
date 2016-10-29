@@ -3,7 +3,7 @@
 
 //_UI_EXTERN char *uiMultilineEntryText(uiMultilineEntry *e);
 HB_FUNC( UIMULTILINEENTRYTEXT ) {
-    uiMultilineEntry *e = hb_parptr( 1 );
+    uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
         hb_retc( uiMultilineEntryText( e ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UIMULTILINEENTRYTEXT ) {
 
 //_UI_EXTERN void uiMultilineEntrySetText(uiMultilineEntry *e, const char *text);
 HB_FUNC( UIMULTILINEENTRYSETTEXT ) {
-    uiMultilineEntry *e = hb_parptr( 1 );
+    uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
         uiMultilineEntrySetText( e, hb_parc( 2 ) );
     }
@@ -19,7 +19,7 @@ HB_FUNC( UIMULTILINEENTRYSETTEXT ) {
 
 //_UI_EXTERN void uiMultilineEntryAppend(uiMultilineEntry *e, const char *text);
 HB_FUNC( UIMULTILINEENTRYAPPEND ) {
-    uiMultilineEntry *e = hb_parptr( 1 );
+    uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
         uiMultilineEntryAppend( e, hb_parc( 2 ) );
     }
@@ -29,7 +29,7 @@ HB_FUNC( UIMULTILINEENTRYAPPEND ) {
 
 //_UI_EXTERN int uiMultilineEntryReadOnly(uiMultilineEntry *e);
 HB_FUNC( UIMULTILINEENTRYREADONLY ) {
-    uiMultilineEntry *e = hb_parptr( 1 );
+    uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
         hb_retni( uiMultilineEntryReadOnly( e ) );
     }
@@ -37,7 +37,7 @@ HB_FUNC( UIMULTILINEENTRYREADONLY ) {
 
 //_UI_EXTERN void uiMultilineEntrySetReadOnly(uiMultilineEntry *e, int readonly);
 HB_FUNC( UIMULTILINEENTRYSETREADONLY ) {
-    uiMultilineEntry *e = hb_parptr( 1 );
+    uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
         uiMultilineEntrySetReadOnly( e, hb_parni( 2 ) );
     }
@@ -45,10 +45,10 @@ HB_FUNC( UIMULTILINEENTRYSETREADONLY ) {
 
 //_UI_EXTERN uiMultilineEntry *uiNewMultilineEntry(void);
 HB_FUNC( UINEWMULTILINEENTRY ) {
-    hb_retptr( uiNewMultilineEntry() );
+    hbui_ret( uiNewMultilineEntry() );
 }
 
 //_UI_EXTERN uiMultilineEntry *uiNewNonWrappingMultilineEntry(void);
 HB_FUNC( UINEWNONWRAPPINGMULTILINEENTRY ) {
-    hb_retptr( uiNewNonWrappingMultilineEntry() );
+    hbui_ret( uiNewNonWrappingMultilineEntry() );
 }

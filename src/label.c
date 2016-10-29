@@ -3,7 +3,7 @@
 
 //_UI_EXTERN char *uiLabelText(uiLabel *l);
 HB_FUNC( UILABELTEXT ) {
-    uiLabel *l = hb_parptr( 1 );
+    uiLabel *l = hbui_param( 1 );
     if( l ) {
         hb_retc( uiLabelText( l ) );
     }
@@ -11,7 +11,7 @@ HB_FUNC( UILABELTEXT ) {
 
 //_UI_EXTERN void uiLabelSetText(uiLabel *l, const char *text);
 HB_FUNC( UILABELSETTEXT ) {
-    uiLabel *l = hb_parptr( 1 );
+    uiLabel *l = hbui_param( 1 );
     if( l ) {
         uiLabelSetText( l, hb_parc( 2 ) );
     }
@@ -19,5 +19,5 @@ HB_FUNC( UILABELSETTEXT ) {
 
 //_UI_EXTERN uiLabel *uiNewLabel(const char *text);
 HB_FUNC( UINEWLABEL ) {
-    hb_retptr( uiNewLabel( hb_parc( 1 ) ) );
+    hbui_ret( uiNewLabel( hb_parc( 1 ) ) );
 }

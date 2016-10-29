@@ -3,7 +3,7 @@
 
 //_UI_EXTERN void uiColorButtonColor(uiColorButton *b, double *r, double *g, double *bl, double *a);
 HB_FUNC( UICOLORBUTTONCOLOR ) {
-    uiColorButton *b = hb_parptr( 1 );
+    uiColorButton *b = hbui_param( 1 );
     if( b && HB_IS_BYREF( 2 ) && HB_IS_BYREF( 3 ) && HB_IS_BYREF( 4 ) && HB_IS_BYREF( 5 ) ) {
         double r;
         double g;
@@ -19,7 +19,7 @@ HB_FUNC( UICOLORBUTTONCOLOR ) {
 
 //_UI_EXTERN void uiColorButtonSetColor(uiColorButton *b, double r, double g, double bl, double a);
 HB_FUNC( UICOLORBUTTONSETCOLOR ) {
-    uiColorButton *b = hb_parptr( 1 );
+    uiColorButton *b = hbui_param( 1 );
     if( b ) {
         uiColorButtonSetColor( b, hb_parnd( 2 ), hb_parnd( 3 ), hb_parnd( 4 ), hb_parnd( 5 ) );
     }
@@ -29,5 +29,5 @@ HB_FUNC( UICOLORBUTTONSETCOLOR ) {
 
 //_UI_EXTERN uiColorButton *uiNewColorButton(void);
 HB_FUNC( UINEWCOLORBUTTON ) {
-    hb_retptr( uiNewColorButton() );
+    hbui_ret( uiNewColorButton() );
 }
