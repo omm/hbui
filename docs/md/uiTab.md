@@ -106,11 +106,12 @@ uiTabSetMargined( oTab, page, margined )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oTab
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
@@ -142,5 +143,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiTab_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/tab_01.png "With family Linux Ubuntu desktop, based on GNOME")

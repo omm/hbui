@@ -62,15 +62,16 @@ Simple example
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oButton
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Button example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Button example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oButton := uiNewButton( "Open" )
@@ -87,16 +88,17 @@ RETURN NIL
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oButton
   LOCAL oHorizontalBox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Button example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Button example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oButton := uiNewButton( "Open" )
@@ -117,16 +119,17 @@ RETURN NIL
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oButton
   LOCAL oVerticalBox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Button example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Button example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oButton := uiNewButton( "Open" )
@@ -143,4 +146,37 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-![Linux](ss/button_02.png "With family Linux Ubuntu desktop, based on GNOME")
+![Linux](ss/button_03.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+#include "hbui.ch"
+
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oButton
+  LOCAL oGrid
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Button example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oButton := uiNewButton( "Open" )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+	
+  uiWindowSetChild( oWindow, oGrid )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/button_04.png "With family Linux Ubuntu desktop, based on GNOME")

@@ -87,12 +87,13 @@ uiBoxSetPadded ( oHorizontalBox, 1 )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oButton
   LOCAL oHorizontalBox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
@@ -115,14 +116,15 @@ RETURN NIL
 ```
 ![Linux](ss/box_01.png "With family Linux Ubuntu desktop, based on GNOME")
 ## Sample source code
-```
+```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oButton
   LOCAL oVerticalBox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error :=  uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 

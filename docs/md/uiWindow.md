@@ -26,7 +26,7 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 
 <br>
 
-- [uiMsgBox( uiWindow, title,r description )](#uimsgbox-uiwindow-title-r-description)
+- [uiMsgBox( uiWindow, title description )](#uimsgbox-uiwindow-title-description)
 - [uiMsgBoxError( uiWindow, title, description )](#uimsgboxerror-uiwindow-title-description)
 - [uiOpenFile( uiWindow )](#uiopenfile-uiwindow)
 - [uiSaveFile( uiWindow )](#uisavefile-uiwindow)
@@ -272,7 +272,7 @@ uiWindowTitle( oWindow )
 
 <br>
 
-## uiMsgBox (uiWindow, title,r description)
+## uiMsgBox (uiWindow, title description)
 Arguments
 
 Return value
@@ -319,14 +319,16 @@ Simple example
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Window example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Window example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
 
   uiControlShow( oWindow )
 
@@ -335,5 +337,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiWindow_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/window_01.png "With family Linux Ubuntu desktop, based on GNOME")

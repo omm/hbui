@@ -83,16 +83,16 @@ FUNCTION Main()
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "ComboBox example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Combo box example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oCombobox := uiNewCombobox()
-  uiComboboxAppend( oCombobox, " White   #FFFFFF ")
-  uiComboboxAppend( oCombobox, " Black   #000000 ")
-  uiComboboxAppend( oCombobox, " Green   #009F6B ")
-  uiComboboxAppend( oCombobox, " Red     #C40233 ")
-  uiComboboxAppend( oCombobox, " Yellow  #FFD300 ")
-  uiComboboxAppend( oCombobox, " Blue    #0087BD ")
+  uiComboboxAppend( oCombobox, " White  #FFFFFF ")
+  uiComboboxAppend( oCombobox, " Black  #000000 ")
+  uiComboboxAppend( oCombobox, " Green  #009F6B ")
+  uiComboboxAppend( oCombobox, " Red    #C40233 ")
+  uiComboboxAppend( oCombobox, " Yellow #FFD300 ")
+  uiComboboxAppend( oCombobox, " Blue   #0087BD ")
   uiComboboxSetSelected( oCombobox, 5 )
 
   uiWindowSetChild( oWindow, oCombobox )
@@ -103,5 +103,42 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiCombobox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/combobox_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+#include "hbui.ch"
+
+FUNCTION Main()
+  LOCAL oWindow
+  LOCAL oCombobox
+  LOCAL oGrid
+
+  IF ! HB_ISNULL( uiInit() )
+    Alert( "Failed to initializa libui..." )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Combo box example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oCombobox := uiNewCombobox()
+  uiComboboxAppend( oCombobox, " White  #FFFFFF ")
+  uiComboboxAppend( oCombobox, " Black  #000000 ")
+  uiComboboxAppend( oCombobox, " Green  #009F6B ")
+  uiComboboxAppend( oCombobox, " Red    #C40233 ")
+  uiComboboxAppend( oCombobox, " Yellow #FFD300 ")
+  uiComboboxAppend( oCombobox, " Blue   #0087BD ")
+  uiComboboxSetSelected( oCombobox, 5 )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oCombobox, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+
+  uiWindowSetChild( oWindow, oGrid )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```

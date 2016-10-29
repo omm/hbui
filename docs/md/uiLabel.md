@@ -47,15 +47,16 @@ uiLabelText( oLabel )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oLabel
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Label example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Label example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oLabel := uiNewLabel( "Each day is dri­ve through his­to­ry." )
@@ -70,4 +71,38 @@ FUNCTION Main()
 RETURN NIL
 ```
 ## Screenshots
-![Linux](../tutorial/uiLabel_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/label_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+- an example of using functions [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oLabel
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Label example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oLabel := uiNewLabel( Version()     + hb_eol() + ;
+                                        hb_eol() + ;
+                        hb_Compiler() + hb_eol() + ;
+                                        hb_eol() + ;
+                        OS()          + hb_eol() + ;
+                                        hb_eol() + ;
+                        "HBUI 0.00"  )
+
+  uiWindowSetChild( oWindow, oLabel )
+
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/label_02.png "With family Linux Ubuntu desktop, based on GNOME")

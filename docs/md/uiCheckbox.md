@@ -66,7 +66,7 @@ Description
 
 Simple example
 ```harbour
-uiCheckboxSetChecked( uiCheckbox, 1 )
+uiCheckboxSetChecked( oCheckbox, 1 )
 ```
 ---
 #### uiCheckboxSetText (uiCheckbox, text)
@@ -99,15 +99,16 @@ uiCheckboxText( oCheckbox )
 ### Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oCheckbox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "CheckBox example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Check box example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oCheckbox := uiNewCheckbox( "GitHub" )
@@ -121,5 +122,37 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-### Screenshots
-![Linux](../tutorial/uiCheckbox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/checkbox_01.png "With family Linux Ubuntu desktop, based on GNOME")
+```harbour
+#include "hbui.ch"
+
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oCheckbox
+  LOCAL oGrid
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Check box example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oCheckbox := uiNewCheckbox( "GitHub" )
+  uiCheckboxSetChecked( oCheckbox, 1 )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oCheckbox, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+	
+  uiWindowSetChild( oWindow, oGrid )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/checkbox_02.png "With family Linux Ubuntu desktop, based on GNOME")
