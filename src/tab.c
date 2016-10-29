@@ -1,7 +1,5 @@
 
-#include "hbapi.h"
-#include "hbapierr.h"
-#include "ui.h"
+#include "hbui.h"
 
 //_UI_EXTERN void uiTabAppend(uiTab *t, const char *name, uiControl *c);
 HB_FUNC( UITABAPPEND ) {

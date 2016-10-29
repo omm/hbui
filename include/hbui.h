@@ -1,5 +1,6 @@
 
 #include "hbapi.h"
+#include "hbapierr.h"
 #include "ui.h"
 
 typedef struct {
