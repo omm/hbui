@@ -104,7 +104,13 @@ Simple example
 uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
+Example use function:
+- [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
+- [CDOW()](http://harbour.edu.pl/clipper/en/C53G01C/ng19116.html)
+- [DATE()](http://harbour.edu.pl/clipper/en/C53G01C/ng1baff.html)
 ```harbour
+#include "hbui.ch"
+
 FUNCTION Main()
   LOCAL error
   LOCAL oWindow
@@ -115,24 +121,24 @@ FUNCTION Main()
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Tab example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Tab example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oTab := uiNewTab()
 
-  uiTabAppend( oTab, "Page 1", NIL )
+  uiTabAppend( oTab, "Label", Label() )
   uiTabSetMargined( oTab, 0, 1 )
 
-  uiTabAppend( oTab, "Page 2", NIL )
+  uiTabAppend( oTab, "Button", Button() )
   uiTabSetMargined( oTab, 1, 1 )
 
-  uiTabAppend( oTab, "Page 3", NIL )
+  uiTabAppend( oTab, "Checkbox", Checkbox() )
   uiTabSetMargined( oTab, 2, 1 )
 
-  uiTabAppend( oTab, "Page 4", NIL )
+  uiTabAppend( oTab, "Radiobuttons", Radiobuttons() )
   uiTabSetMargined( oTab, 3, 1 )
 
-  uiTabAppend( oTab, "Page 5", NIL )
+  uiTabAppend( oTab, "What day is today", WhatDayIsToday() )
   uiTabSetMargined( oTab, 4, 1 )
 
   uiWindowSetChild( oWindow, oTab )
@@ -142,5 +148,75 @@ FUNCTION Main()
   uiUninit()
 
 RETURN NIL
+
+FUNCTION Label()
+  LOCAL oLabel
+  LOCAL oGrid
+
+  oLabel := uiNewLabel( Version()     + hb_eol() + ;
+                                        hb_eol() + ;
+                        hb_Compiler() + hb_eol() + ;
+                                        hb_eol() + ;
+                        OS()          + hb_eol() + ;
+                                        hb_eol() + ;
+                        "HBUI 0.00"  )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oLabel, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
+
+RETURN oGrid
+
+FUNCTION Button()
+  LOCAL oButton
+  LOCAL oGrid
+
+  oButton := uiNewButton( "Open" )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
+
+RETURN oGrid
+
+FUNCTION Checkbox()
+  LOCAL oCheckbox
+  LOCAL oGrid
+
+  oCheckbox := uiNewCheckbox( "GitHub" )
+  uiCheckboxSetChecked( oCheckbox, 1 )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oCheckbox, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+
+RETURN oGrid
+
+FUNCTION Radiobuttons()
+  LOCAL oRadiobuttons
+  LOCAL oGrid
+
+  oRadiobuttons := uiNewRadioButtons()
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 1" )
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 2" )
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 3" )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oRadiobuttons, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
+
+RETURN oGrid
+
+FUNCTION WhatDayIsToday()
+  LOCAL oLabel
+  LOCAL oGrid
+
+  oLabel := uiNewLabel( "Today is " + CDOW( DATE() ) )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oLabel, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
+
+RETURN oGrid
 ```
 ![Linux](ss/tab_01.png "With family Linux Ubuntu desktop, based on GNOME")

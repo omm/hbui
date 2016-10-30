@@ -76,28 +76,35 @@ uiFormSetPadded( oForm, 1 )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oGroup
   LOCAL oForm
+  LOCAL oEntry, oPasswordEntry, oSearchEntry
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Form example", 800, -1, .T. )
+  oWindow := uiNewWindow( "Form example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oGroup := uiNewGroup("")
-	uiGroupSetMargined( oGroup, 1)
+  uiGroupSetMargined( oGroup, 1)
 
-	oForm := uiNewForm()
-	uiFormSetPadded( oForm, 1 )
-	uiGroupSetChild( oGroup, oForm )
+  oForm := uiNewForm()
+  uiFormSetPadded( oForm, 1 )
+  uiGroupSetChild( oGroup, oForm )
 
-	uiFormAppend( oForm, "Username", uiNewEntry(), 0 )
-	uiFormAppend( oForm, "Email address", uiNewEntry(), 0 )
-	uiFormAppend( oForm, "Password", uiNewPasswordEntry(), 0 )
+  oEntry         := uiNewEntry()
+  oPasswordEntry := uiNewPasswordEntry()
+  oSearchEntry   := uiNewSearchEntry()
+
+  uiFormAppend( oForm, "Username", oEntry, 0 )
+  uiFormAppend( oForm, "Email address", oPasswordEntry, 0 )
+  uiFormAppend( oForm, "Password", oSearchEntry, 0 )
 
   uiWindowSetChild( oWindow, oGroup )
   uiControlShow( oWindow )
@@ -107,5 +114,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiForm_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/form_01.png "With family Linux Ubuntu desktop, based on GNOME")

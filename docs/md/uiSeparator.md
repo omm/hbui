@@ -31,8 +31,65 @@ VSeparator := uiNewVerticalSeparator()
 ```
 ## Sample source code
 ```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oButton
+  LOCAL oVerticalBox
 
+  IF ! HB_ISNULL( error :=  uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Horizontal Separator example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oButton := uiNewButton( "Open" )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiBoxAppend( oVerticalBox, oButton, 0 )
+  uiBoxAppend ( oVerticalBox, uiNewHorizontalSeparator(), 0 )
+
+  uiWindowSetChild( oWindow, oVerticalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiSeparator_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/horizontalseparator_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oButton
+  LOCAL oHorizontalBox
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Vertical separator example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oButton := uiNewButton( "Open" )
+
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+  uiBoxAppend( oHorizontalBox, oButton, 0 )
+  uiBoxAppend ( oHorizontalBox, uiNewVerticalSeparator(), 0 )
+
+  uiWindowSetChild( oWindow, oHorizontalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/verticalseparator_01.png "With family Linux Ubuntu desktop, based on GNOME")

@@ -75,11 +75,12 @@ uiComboboxSetSelected( oCombobox, 1 )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oCombobox
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
@@ -109,12 +110,13 @@ RETURN NIL
 #include "hbui.ch"
 
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oCombobox
   LOCAL oGrid
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
@@ -142,3 +144,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
+![Linux](ss/combobox_02.png "With family Linux Ubuntu desktop, based on GNOME")

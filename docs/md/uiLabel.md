@@ -73,7 +73,8 @@ RETURN NIL
 ## Screenshots
 ![Linux](ss/label_01.png "With family Linux Ubuntu desktop, based on GNOME")
 ## Sample source code
-- an example of using functions [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
+Example use function:
+- [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
 ```harbour
 FUNCTION Main()
   LOCAL error

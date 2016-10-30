@@ -19,7 +19,7 @@ Description
 
 Simple example
 ```harbour
-oSlider := uiNewSlider( 0, 60 )
+oSlider := uiNewSlider( 0, 100 )
 ```
 ## uiSliderOnChanged (uiSlider, uiSlider, data)
 Arguments
@@ -33,7 +33,7 @@ Description
 
 Simple example
 ```harbour
-uiSliderOnChanged( oSlider, onSliderChanged, nil )
+uiSliderOnChanged( oSlider, onSliderChanged, NIL )
 ```
 ## uiSliderSetValue (uiSlider, value)
 Arguments
@@ -62,8 +62,43 @@ uiSliderValue( oSlider )
 ```
 ## Sample source code
 ```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+  LOCAL oVerticalBox
+  LOCAL oSlider
+  
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Slider example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
 
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+
+  oGroup := uiNewGroup("")
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiGroupSetChild( oGroup, oVerticalBox )
+
+  oSlider := uiNewSlider( 0, 100 )
+
+  uiBoxAppend( oVerticalBox, oSlider, 0 )
+
+  uiWindowSetChild( oWindow, oHorizontalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiSlider_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/slider_01.png "With family Linux Ubuntu desktop, based on GNOME")

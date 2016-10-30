@@ -19,7 +19,7 @@ Description
 
 Simple example
 ```harbour
-oSpinbox := uiNewSpinbox( 0, 50 )
+oSpinbox := uiNewSpinbox( 0, 100 )
 ```
 ## uiSpinboxOnChanged (uiSpinbox, uiSpinbox, data)
 Arguments
@@ -62,8 +62,43 @@ uiSpinboxValue( oSpinbox )
 ```
 ## Sample source code
 ```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+  LOCAL oVerticalBox
+  LOCAL oSpinbox
+  
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
 
+  oWindow := uiNewWindow( "Spin box example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
 
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+
+  oGroup := uiNewGroup("")
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiGroupSetChild( oGroup, oVerticalBox )
+
+  oSpinbox := uiNewSpinbox( 0, 100 )
+
+  uiBoxAppend( oVerticalBox, oSpinbox, 0 )
+
+  uiWindowSetChild( oWindow, oHorizontalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiSpinbox_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/spinbox_01.png "With family Linux Ubuntu desktop, based on GNOME")

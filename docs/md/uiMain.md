@@ -28,10 +28,10 @@ Description
 
 Simple example
 ```harbour
-IF ! HB_ISNULL( err := uiInit() )
-    Alert( "Failed to initialize libui: " + err )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
-ENDIF
+  ENDIF
 ```
 ## Sample source code
 ```harbour

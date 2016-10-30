@@ -109,7 +109,7 @@ FUNCTION Main()
 
   oGrid := uiNewGrid()
   uiGridSetPadded( oGrid, 1 )
-  uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+  uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
 	
   uiWindowSetChild( oWindow, oGrid )
   uiControlShow( oWindow )
@@ -119,5 +119,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
 ![Linux](ss/grid_01.png "With family Linux Ubuntu desktop, based on GNOME")

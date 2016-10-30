@@ -46,16 +46,17 @@ uiProgressBarValue( oProgressBar )
 ## Sample source code
 ```harbour
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
   LOCAL oVerticalBox
   LOCAL oProgressBar
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "ProgressBar example", 800, 600, .T. )
+  oWindow := uiNewWindow( "Progress bar example", 300, 300, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oProgressBar := uiNewProgressBar()
@@ -73,5 +74,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiProgressbar_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/progressbar_01.png "With family Linux Ubuntu desktop, based on GNOME")

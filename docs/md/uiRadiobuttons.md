@@ -45,7 +45,7 @@ Description
 
 Simple example
 ```harbour
-uiRadioButtonsOnSelected( oRadioButtons, FRadioButtons(), nil )
+uiRadioButtonsOnSelected( oRadioButtons, FRadioButtons(), NIL )
 ```
 ## uiRadioButtonsSelected (uiRadioButtons)
 Arguments
@@ -74,8 +74,37 @@ uiRadioButtonsSetSelected( oRadioButtons, 10 )
 ```
 ## Sample source code
 ```harbour
+#include "hbui.ch"
 
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oRadiobuttons
+  LOCAL oGrid
 
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Radio buttons example", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oRadiobuttons := uiNewRadioButtons()
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 1" )
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 2" )
+  uiRadioButtonsAppend( oRadiobuttons, "Choose me 3" )
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oRadiobuttons, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter )
+	
+  uiWindowSetChild( oWindow, oGrid )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiRadiobuttons_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/radiobuttons_01.png "With family Linux Ubuntu desktop, based on GNOME")

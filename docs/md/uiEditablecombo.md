@@ -74,8 +74,37 @@ uiEditableComboboxText( oEditableCombobox )
 ```
 ## Sample source code
 ```harbour
+#include "hbui.ch"
 
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oEditableCombobox
+  LOCAL oGrid
 
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Editable combobox", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+  
+  oEditableCombobox := uiNewEditableCombobox()
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 1")
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 2")
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 3")
+
+  oGrid := uiNewGrid()
+  uiGridSetPadded( oGrid, 1 )
+  uiGridAppend( oGrid, oEditableCombobox, 0, 0, 1, 1, 1, uiAlignCenter, 1, uiAlignCenter)
+	
+  uiWindowSetChild( oWindow, oGrid )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
 ```
-## Screenshots
-![Linux](../tutorial/uiEditablecombo_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/editablecombo_01.png "With family Linux Ubuntu desktop, based on GNOME")
