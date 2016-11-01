@@ -34,7 +34,7 @@ Description
 
 Simple example
 ```harbour
-uiTabAppend( oTab, "Page 1", uiControl( page1 ) )
+uiTabAppend( oTab, "Customer base", UserFunction() )
 ```
 ## uiTabDelete (uiTab, index)
 Arguments
@@ -105,9 +105,12 @@ uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
 Example use function:
-- [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
-- [CDOW()](http://harbour.edu.pl/clipper/en/C53G01C/ng19116.html)
-- [DATE()](http://harbour.edu.pl/clipper/en/C53G01C/ng1baff.html)
+- [CDOW()](http://harbour.edu.pl/clipper/en/C53G01C/ng19116.html)				
+- [DATE()](http://harbour.edu.pl/clipper/en/C53G01C/ng1baff.html)				
+- [hb_Compiler()]()				
+- [hb_eol()](http://harbour.edu.pl/harbour/doc/harbour.html#hb_eol)				
+- [OS()](http://harbour.edu.pl/harbour/doc/harbour.html#os)				
+- [Version()](http://harbour.edu.pl/harbour/doc/harbour.html#version)				
 ```harbour
 #include "hbui.ch"
 

@@ -74,7 +74,7 @@ RETURN NIL
 ![Linux](ss/label_01.png "With family Linux Ubuntu desktop, based on GNOME")
 ## Sample source code
 Example use function:
-- [hb_eol()](http://harbour.edu.pl/harbour/harbour.html#hb_eol)
+- [hb_eol()](http://harbour.edu.pl/harbour/doc/harbour.html#hb_eol)
 ```harbour
 FUNCTION Main()
   LOCAL error
