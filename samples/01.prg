@@ -1,13 +1,38 @@
 
 #include "hbui.ch"
 
+STATIC PROCEDURE update(a,value)
+    LOCAL spinbox := a[1]
+    LOCAL slider := a[2]
+    LOCAL progressbar := a[3]
+
+    uiSpinboxSetValue(spinbox, value)
+    uiSliderSetValue(slider, value)
+    uiProgressBarSetValue(progressbar, value)
+
+RETURN
+
+STATIC PROCEDURE onSpinboxChanged(s, a)
+    LOCAL spinbox
+    spinbox := a[1]
+    HB_SYMBOL_UNUSED( s )
+	update(a,uiSpinboxValue(spinbox))
+RETURN
+
+STATIC PROCEDURE onSliderChanged(s,a)
+    LOCAL spinbox := a[1]
+    LOCAL pbar := a[3]
+	uiSpinboxSetValue(spinbox, uiSliderValue(s))
+	uiProgressBarSetValue(pbar, uiSliderValue(s))
+RETURN
+
 FUNCTION Main()
   LOCAL error
   LOCAL oWindow
   LOCAL oTab
 
   IF ! HB_ISNULL( error := uiInit() )
-    Alert( "Failed to initializa libui... " + error )
+    Alert( "Failed to initialize libui... " + error )
     RETURN NIL
   ENDIF
 
@@ -94,8 +119,9 @@ STATIC FUNCTION makeNumbersPage()
   oSpinbox := uiNewSpinbox( 0, 100 )
   oSlider := uiNewSlider( 0, 100 )
   oProgressBar1 := uiNewProgressBar()
-//	uiSpinboxOnChanged( oSpinbox, onSpinboxChanged(), NIL )
-//	uiSliderOnChanged( oSlider, onSliderChanged(), NIL )
+//  uiSpinboxOnChanged( oSpinbox, {|...| onSpinboxChanged(...) }, {oSpinbox,oSlider,oProgressBar1} )
+  uiSpinboxOnChanged( oSpinbox, @onSpinboxChanged(), {oSpinbox,oSlider,oProgressBar1} )
+  uiSliderOnChanged( oSlider, @onSliderChanged(), {oSpinbox,oSlider,oProgressBar1} )
   uiBoxAppend( oVerticalBox, oSpinbox, 0 )
   uiBoxAppend( oVerticalBox, oSlider, 0 )
   uiBoxAppend( oVerticalBox, oProgressBar1, 0 )
