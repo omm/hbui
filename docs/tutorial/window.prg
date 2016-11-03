@@ -6,7 +6,7 @@ FUNCTION Main()
   LOCAL oWindow
 
   IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initializa libui..." )
+    Alert( "Failed to initialize libui..." )
     RETURN NIL
   ENDIF
 

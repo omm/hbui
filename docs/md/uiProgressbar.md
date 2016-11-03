@@ -52,7 +52,7 @@ FUNCTION Main()
   LOCAL oProgressBar
 
   IF ! HB_ISNULL( error := uiInit() )
-    Alert( "Failed to initializa libui... " + error )
+    Alert( "Failed to initialize libui... " + error )
     RETURN NIL
   ENDIF
 

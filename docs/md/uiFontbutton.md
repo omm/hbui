@@ -55,7 +55,7 @@ FUNCTION Main()
   LOCAL oGrid
 
   IF ! HB_ISNULL( error := uiInit() )
-    Alert( "Failed to initializa libui... " + error )
+    Alert( "Failed to initialize libui... " + error )
     RETURN NIL
   ENDIF
 
