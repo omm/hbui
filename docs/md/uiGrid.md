@@ -39,7 +39,7 @@ Description
 
 Simple example
 ```harbour
-uiGridAppend( oGrid, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
+uiGridAppend( oGrid, oButton, 0, 0, 1, 1, .T., uiAlignFill, .T., uiAlignFill )
 ```
 ## uiGridInsertAt (uiGrid, uiControl, uiControl, uiAt at, xspan, yspan, hexpand, uiAlign halign, vexpand, uiAlign valign)
 - Arguments
@@ -60,7 +60,7 @@ Description
 
 Simple example
 ```harbour
-
+uiGridAppend( oGrid, oButton, 0, 0, 1, 1, .T., uiAlignFill, .T., uiAlignFill )
 ```
 ## uiGridPadded (uiGrid)
 Arguments

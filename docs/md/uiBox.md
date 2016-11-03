@@ -44,7 +44,7 @@ Description
 
 Simple example
 ```harbour
-uiBoxAppend( oHorizontalBox, uiControl( oTab ), 1 )
+uiBoxAppend( oHorizontalBox, uiControl( oTab ), .T. )
 ```
 ## uiBoxDelete (uiBox, index)
 Arguments
@@ -82,7 +82,7 @@ Description
 
 Simple example
 ```harbour
-uiBoxSetPadded ( oHorizontalBox, 1 )
+uiBoxSetPadded ( oHorizontalBox, .T. )
 ```
 ## Sample source code
 ```harbour

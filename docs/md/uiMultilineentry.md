@@ -84,7 +84,7 @@ Description
 
 Simple example
 ```harbour
-uiMultilineEntrySetReadOnly( oMultilineEntry, 1 )
+uiMultilineEntrySetReadOnly( oMultilineEntry, .T. )
 ```
 ## uiMultilineEntrySetText (uiMultilineEntry, text)
 Arguments

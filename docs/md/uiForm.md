@@ -33,7 +33,7 @@ Description
 
 Simple example
 ```harbour
-uiFormAppend( oForm, "Password Entry", uiNewPasswordEntry(), 0 )
+uiFormAppend( oForm, "Password Entry", uiNewPasswordEntry(), .F. )
 ```
 ## uiFormDelete (uiForm, index)
 Arguments
@@ -71,7 +71,7 @@ Description
 
 Simple example
 ```harbour
-uiFormSetPadded( oForm, 1 )
+uiFormSetPadded( oForm, .T. )
 ```
 ## Sample source code
 ```harbour

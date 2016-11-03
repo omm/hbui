@@ -86,6 +86,7 @@ uiEntryOnChanged( uiEntry, onChanged, 0 )
 ```
 ## uiEntryReadOnly (uiEntry)
 Arguments
+- uiEntry
 
 Return value
 
@@ -97,6 +98,8 @@ uiEntryReadOnly( oEntry )
 ```
 ## uiEntrySetReadOnly (uiEntry, readonly)
 Arguments
+- uiEntry
+- readonly
 
 Return value
 
@@ -104,9 +107,8 @@ Description
 
 Simple example
 ```harbour
-uiEntrySetReadOnly( oEntry, 1 )
+uiEntrySetReadOnly( oEntry, .T. )
 ```
-
 ## Sample source code
 ```harbour
 FUNCTION Main()

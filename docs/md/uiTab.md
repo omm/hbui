@@ -101,7 +101,7 @@ Description
 
 Simple example
 ```harbour
-uiTabSetMargined( oTab, page, margined )
+uiTabSetMargined( oTab, 1, .T. )
 ```
 ## Sample source code
 Example use function:

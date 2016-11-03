@@ -34,10 +34,10 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 
 ## uiNewWindow (title, width, height, hasMenubar)
 Arguments
-- title
-- width
-- height
-- hasMenubar
+- title - sets a window's title.
+- width - sets the width of the application window in pixels.
+- height - sets the height of the application window in pixels.
+- hasMenubar - is an logical value that specifies whether a window has a menu bar .T. or .F.
 
 Return value
 
@@ -228,7 +228,7 @@ Description
 
 Simple example
 ```harbour
-uiWindowSetMargined( oWindow, 1 )
+uiWindowSetMargined( oWindow, .T. )
 ```
 ## uiWindowSetPosition (uiWindow, x, y)
 Arguments
