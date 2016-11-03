@@ -31,7 +31,8 @@ HB_FUNC( UIENTRYREADONLY ) {
 HB_FUNC( UIENTRYSETREADONLY ) {
     uiEntry *e = hbui_param( 1 );
     if( e ) {
-        uiEntrySetReadOnly( e, hb_parni( 2 ) );
+        HB_BOOL readonly = hb_parl( 2 );
+        uiEntrySetReadOnly( e, readonly );
     }
 }
 

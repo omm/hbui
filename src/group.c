@@ -38,7 +38,8 @@ HB_FUNC( UIGROUPMARGINED ) {
 HB_FUNC( UIGROUPSETMARGINED ) {
     uiGroup *g = hbui_param( 1 );
     if( g ) {
-        uiGroupSetMargined( g, hb_parni( 2 ) );
+        HB_BOOL margined = hb_parl( 2 );
+        uiGroupSetMargined( g, margined );
     }
 }
 

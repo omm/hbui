@@ -53,7 +53,8 @@ HB_FUNC( UITABMARGINED ) {
 HB_FUNC( UITABSETMARGINED ) {
     void *t = hbui_param( 1 );
     if( t ) {
-        uiTabSetMargined( uiTab( t ), hb_parni( 2 ), hb_parni( 3 ) );
+        HB_BOOL margined = hb_parl( 3 );
+        uiTabSetMargined( uiTab( t ), hb_parni( 2 ), margined );
     }
 }
 

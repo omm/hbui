@@ -6,7 +6,8 @@ HB_FUNC( UIFORMAPPEND ) {
     PHBUI_ITEM f;
     PHBUI_ITEM c;
     if( hbui_parParentChild( 1, 3, &f, &c ) ) {
-        uiFormAppend( uiForm( f->control ), hb_parc( 2 ), uiControl( c->control ), hb_parni( 4 ) );
+        HB_BOOL stretchy = hb_parl( 4 );
+        uiFormAppend( uiForm( f->control ), hb_parc( 2 ), uiControl( c->control ), stretchy );
     }
 }
 
@@ -30,7 +31,8 @@ HB_FUNC( UIFORMPADDED ) {
 HB_FUNC( UIFORMSETPADDED ) {
     uiForm *f = hbui_param( 1 );
     if( f ) {
-        uiFormSetPadded( f, hb_parni( 2 ) );
+        HB_BOOL padded = hb_parl( 2 );
+        uiFormSetPadded( f, padded );
     }
 }
 

@@ -138,7 +138,8 @@ HB_FUNC( UIWINDOWMARGINED ) {
 HB_FUNC( UIWINDOWSETMARGINED ) {
     uiWindow *w = hbui_param( 1 );
     if( w ) {
-        uiWindowSetMargined( w, hb_parni( 2 ) );
+        HB_BOOL margined = hb_parl( 2 );
+        uiWindowSetMargined( w, margined );
     }
 }
 
