@@ -3,10 +3,10 @@
 
 //_UI_EXTERN void uiBoxAppend(uiBox *b, uiControl *child, int stretchy);
 HB_FUNC( UIBOXAPPEND ) {
-    void *b = hbui_param( 1 );
-    void *child = hbui_paramChild( 2 );
-    if( b && child ) {
-        uiBoxAppend( uiBox( b ), uiControl( child ), hb_parni( 3 ) );
+    PHBUI_ITEM b;
+    PHBUI_ITEM child;
+    if( hbui_parParentChild( 1, 2, &b, &child ) ) {
+        uiBoxAppend( uiBox( b->control ), uiControl( child->control ), hb_parni( 3 ) );
     }
 }
 

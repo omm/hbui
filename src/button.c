@@ -21,5 +21,8 @@ HB_FUNC( UIBUTTONSETTEXT ) {
 
 //_UI_EXTERN uiButton *uiNewButton(const char *text);
 HB_FUNC( UINEWBUTTON ) {
-    hbui_ret( uiNewButton( hb_parc( 1 ) ) );
+    void * c = uiNewButton( hb_parc( 1 ) );
+    PHBUI_ITEM puiItem = hbui_gcAllocate( c );
+    puiItem->mark = 1;
+    hb_retptrGC( puiItem );
 }

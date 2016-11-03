@@ -19,10 +19,10 @@ HB_FUNC( UIGROUPSETTITLE ) {
 
 //_UI_EXTERN void uiGroupSetChild(uiGroup *g, uiControl *c);
 HB_FUNC( UIGROUPSETCHILD ) {
-    uiGroup *g = hbui_param( 1 );
-    uiControl *c = hbui_param( 2 );
-    if( g && c ) {
-        uiGroupSetChild( g, c );
+    PHBUI_ITEM g;
+    PHBUI_ITEM c;
+    if( hbui_parParentChild( 1, 2, &g, &c ) ) {
+        uiGroupSetChild( g->control, c->control );
     }
 }
 

@@ -3,10 +3,10 @@
 
 //_UI_EXTERN void uiTabAppend(uiTab *t, const char *name, uiControl *c);
 HB_FUNC( UITABAPPEND ) {
-    void *t = hbui_param( 1 );
-    void *c = hbui_param( 3 );
-    if( t && c ) {
-        uiTabAppend( uiTab( t ), hb_parc( 2 ), uiControl( c ) );
+    PHBUI_ITEM t;
+    PHBUI_ITEM c;
+    if( hbui_parParentChild( 1, 3, &t, &c ) ) {
+        uiTabAppend( uiTab( t->control ), hb_parc( 2 ), uiControl( c->control ) );
     }
     else {
         hb_errRT_BASE_SubstR( EG_ARG, 0, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );

@@ -3,9 +3,10 @@
 
 //_UI_EXTERN void uiFormAppend(uiForm *f, const char *label, uiControl *c, int stretchy);
 HB_FUNC( UIFORMAPPEND ) {
-    uiForm *f = hbui_param( 1 );
-    if( f ) {
-        uiFormAppend( f, hb_parc( 2 ), uiControl( hbui_param( 3 ) ), hb_parni( 4 ) );
+    PHBUI_ITEM f;
+    PHBUI_ITEM c;
+    if( hbui_parParentChild( 1, 3, &f, &c ) ) {
+        uiFormAppend( uiForm( f->control ), hb_parc( 2 ), uiControl( c->control ), hb_parni( 4 ) );
     }
 }
 
