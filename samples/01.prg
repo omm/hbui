@@ -2,190 +2,191 @@
 #include "hbui.ch"
 
 FUNCTION Main()
-    LOCAL w
-    LOCAL tab
-    LOCAL err
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oTab
 
-    IF ! HB_ISNULL( err := uiInit() )
-        alert("Failed to initialize libui: " + err)
-        RETURN nil
-    ENDIF
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
 
-    w := uiNewWindow("Welcome to Harbour HBUI (https://github.com/RJopek/HBUI) !",640,400,1)
+  oWindow := uiNewWindow( "Welcome to Harbour HBUI (https://github.com/rjopek/HBUI)", 640, 480, 1 )
 
-    tab := uiNewTab()
-    uiWindowSetChild( w, tab )
-    uiWindowSetMargined( w, 1 )
+  oTab := uiNewTab()
+  uiWindowSetChild( oWindow, oTab )
+  uiWindowSetMargined( oWindow, 1 )
 
-    uiTabAppend( tab, "Basic Controls", makeBasicControlsPage() )
-	uiTabSetMargined( tab, 0, 1 )
+  uiTabAppend( oTab, "Basic Controls", makeBasicControlsPage() )
+  uiTabSetMargined( oTab, 0, 1 )
 
-	uiTabAppend( tab, "Numbers and Lists", makeNumbersPage() )
-	uiTabSetMargined( tab, 1, 1 )
+  uiTabAppend( oTab, "Numbers and Lists", makeNumbersPage() )
+  uiTabSetMargined( oTab, 1, 1 )
 
-	uiTabAppend( tab, "Data Choosers", makeDataChoosersPage() )
-	uiTabSetMargined( tab, 2, 1 )
+  uiTabAppend( oTab, "Data Choosers", makeDataChoosersPage() )
+  uiTabSetMargined( oTab, 2, 1 )
 
-    uiControlShow( w )
-    uiMain()
+  uiControlShow( oWindow )
+  uiMain()
+  uiUninit()
 
-RETURN nil
+RETURN NIL
 
 STATIC FUNCTION makeBasicControlsPage()
-    LOCAL vbox
-	LOCAL hbox
-	LOCAL group
-	LOCAL entryForm
+  LOCAL oVerticalBox
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+  LOCAL oForm
 
-	vbox := uiNewVerticalBox()
-	uiBoxSetPadded(vbox, 1)
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
 
-	hbox := uiNewHorizontalBox()
-	uiBoxSetPadded(hbox, 1)
-	uiBoxAppend(vbox, hbox, 0)
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+  uiBoxAppend( oVerticalBox, oHorizontalBox, 0 )
 
-	uiBoxAppend(hbox, uiNewButton("Button"), 0)
-	uiBoxAppend(hbox, uiNewCheckbox("Checkbox"), 0)
+  uiBoxAppend( oHorizontalBox, uiNewButton( "oButton" ), 0 )
+  uiBoxAppend( oHorizontalBox, uiNewCheckbox( "Checkbox" ), 0 )
 
-	uiBoxAppend(vbox, uiNewLabel("This is a label. Right now, labels can only span one line."), 0)
+  uiBoxAppend( oVerticalBox, uiNewLabel( "This is a label. Right now, labels can only span one line." ), 0 )
 
-	uiBoxAppend(vbox, uiNewHorizontalSeparator(), 0)
+  uiBoxAppend( oVerticalBox, uiNewHorizontalSeparator(), 0 )
 
-	group := uiNewGroup("Entries")
-	uiGroupSetMargined(group, 1)
-	uiBoxAppend(vbox, group, 1)
+  oGroup := uiNewGroup( "Entries" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oVerticalBox, oGroup, 1 )
 
-	entryForm := uiNewForm()
-	uiFormSetPadded(entryForm, 1)
-	uiGroupSetChild(group, entryForm)
+  oForm := uiNewForm()
+  uiFormSetPadded( oForm, 1 )
+  uiGroupSetChild( oGroup, oForm )
 
-	uiFormAppend(entryForm, "Entry", uiNewEntry(), 0)
-	uiFormAppend(entryForm, "Password Entry", uiNewPasswordEntry(), 0)
-	uiFormAppend(entryForm, "Search Entry", uiNewSearchEntry(), 0)
-	uiFormAppend(entryForm, "Multiline Entry", uiNewMultilineEntry(), 1)
-	uiFormAppend(entryForm, "Multiline Entry No Wrap", uiNewNonWrappingMultilineEntry(), 1)
+  uiFormAppend( oForm, "oEntry", uiNewEntry(), 0 )
+  uiFormAppend( oForm, "Password oEntry", uiNewPasswordEntry(), 0 )
+  uiFormAppend( oForm, "Search oEntry", uiNewSearchEntry(), 0 )
+  uiFormAppend( oForm, "Multiline oEntry", uiNewMultilineEntry(), 1 )
+  uiFormAppend( oForm, "Multiline oEntry No Wrap", uiNewNonWrappingMultilineEntry(), 1 )
 
-RETURN vbox
+RETURN oVerticalBox
 
 STATIC FUNCTION makeNumbersPage()
-	LOCAL hbox
-	LOCAL group
-	LOCAL vbox
-	LOCAL ip
-    LOCAL cbox
-	LOCAL ecbox
-	LOCAL rb
-    LOCAL spinbox
-    LOCAL slider
-    LOCAL pbar
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+  LOCAL oVerticalBox
+  LOCAL oSpinbox
+  LOCAL oSlider
+  LOCAL oProgressBar1
+  LOCAL oProgressBar2
+  LOCAL oCombobox
+  LOCAL oEditableCombobox
+  LOCAL oRadioButtons
 
-	hbox := uiNewHorizontalBox()
-	uiBoxSetPadded(hbox, 1)
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
 
-	group := uiNewGroup("Numbers")
-	uiGroupSetMargined(group, 1)
-	uiBoxAppend(hbox, group, 1)
+  oGroup := uiNewGroup( "Numbers" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
 
-	vbox := uiNewVerticalBox()
-	uiBoxSetPadded(vbox, 1)
-	uiGroupSetChild(group, vbox)
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiGroupSetChild( oGroup, oVerticalBox )
 
-	spinbox := uiNewSpinbox(0, 100)
-	slider := uiNewSlider(0, 100)
-	pbar := uiNewProgressBar()
-//	uiSpinboxOnChanged(spinbox, onSpinboxChanged, nil)
-//	uiSliderOnChanged(slider, onSliderChanged, nil)
-	uiBoxAppend(vbox, spinbox, 0)
-	uiBoxAppend(vbox, slider, 0)
-	uiBoxAppend(vbox, pbar, 0)
+  oSpinbox := uiNewSpinbox( 0, 100 )
+  oSlider := uiNewSlider( 0, 100 )
+  oProgressBar1 := uiNewProgressBar()
+//	uiSpinboxOnChanged( oSpinbox, onSpinboxChanged(), NIL )
+//	uiSliderOnChanged( oSlider, onSliderChanged(), NIL )
+  uiBoxAppend( oVerticalBox, oSpinbox, 0 )
+  uiBoxAppend( oVerticalBox, oSlider, 0 )
+  uiBoxAppend( oVerticalBox, oProgressBar1, 0 )
 
-	ip := uiNewProgressBar()
-	uiProgressBarSetValue(ip, -1)
-	uiBoxAppend(vbox, ip, 0)
+  oProgressBar2 := uiNewProgressBar()
+  uiProgressBarSetValue( oProgressBar2, -1 )
+  uiBoxAppend( oVerticalBox, oProgressBar2, 0 )
 
-	group := uiNewGroup("Lists")
-	uiGroupSetMargined(group, 1)
-	uiBoxAppend(hbox, group, 1)
+  oGroup := uiNewGroup( "Lists" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
 
-	vbox := uiNewVerticalBox()
-	uiBoxSetPadded(vbox, 1)
-	uiGroupSetChild(group, vbox)
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiGroupSetChild( oGroup, oVerticalBox )
 
-	cbox := uiNewCombobox()
-	uiComboboxAppend(cbox, "Combobox Item 1")
-	uiComboboxAppend(cbox, "Combobox Item 2")
-	uiComboboxAppend(cbox, "Combobox Item 3")
-	uiBoxAppend(vbox, cbox, 0)
+  oCombobox := uiNewCombobox()
+  uiComboboxAppend( oCombobox, "Combobox Item 1" )
+  uiComboboxAppend( oCombobox, "Combobox Item 2" )
+  uiComboboxAppend( oCombobox, "Combobox Item 3" )
+  uiBoxAppend( oVerticalBox, oCombobox, 0 )
 
-	ecbox := uiNewEditableCombobox()
-	uiEditableComboboxAppend(ecbox, "Editable Item 1")
-	uiEditableComboboxAppend(ecbox, "Editable Item 2")
-	uiEditableComboboxAppend(ecbox, "Editable Item 3")
-	uiBoxAppend(vbox, ecbox, 0)
+  oEditableCombobox := uiNewEditableCombobox()
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 1" )
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 2" )
+  uiEditableComboboxAppend( oEditableCombobox, "Editable Item 3" )
+  uiBoxAppend( oVerticalBox, oEditableCombobox, 0 )
 
-	rb := uiNewRadioButtons()
-	uiRadioButtonsAppend(rb, "Radio Button 1")
-	uiRadioButtonsAppend(rb, "Radio Button 2")
-	uiRadioButtonsAppend(rb, "Radio Button 3")
-	uiBoxAppend(vbox, rb, 0)
+  oRadioButtons := uiNewRadioButtons()
+  uiRadioButtonsAppend( oRadioButtons, "Radio oButton 1" )
+  uiRadioButtonsAppend( oRadioButtons, "Radio oButton 2" )
+  uiRadioButtonsAppend( oRadioButtons, "Radio oButton 3" )
+  uiBoxAppend( oVerticalBox, oRadioButtons, 0 )
 
-RETURN hbox
+RETURN oHorizontalBox
 
 STATIC FUNCTION makeDataChoosersPage()
-	LOCAL hbox
-	LOCAL vbox
-	LOCAL grid
-	LOCAL button
-	LOCAL entry
-	LOCAL msggrid
+  LOCAL oHorizontalBox
+  LOCAL oVerticalBox
+  LOCAL oGrid1
+  LOCAL oButton
+  LOCAL oEntry
+  LOCAL oGrid2
 
-	hbox := uiNewHorizontalBox()
-	uiBoxSetPadded(hbox, 1)
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
 
-	vbox := uiNewVerticalBox()
-	uiBoxSetPadded(vbox, 1)
-	uiBoxAppend(hbox, vbox, 0)
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiBoxAppend( oHorizontalBox, oVerticalBox, 0 )
 
-	uiBoxAppend(vbox, uiNewDatePicker(), 0)
-	uiBoxAppend(vbox, uiNewTimePicker(), 0)
-	uiBoxAppend(vbox, uiNewDateTimePicker(), 0)
+  uiBoxAppend( oVerticalBox, uiNewDatePicker(), 0 )
+  uiBoxAppend( oVerticalBox, uiNewTimePicker(), 0 )
+  uiBoxAppend( oVerticalBox, uiNewDateTimePicker(), 0 )
 
-	uiBoxAppend(vbox, uiNewFontButton(), 0)
-	uiBoxAppend(vbox, uiNewColorButton(), 0)
+  uiBoxAppend( oVerticalBox, uiNewFontButton(), 0 )
+  uiBoxAppend( oVerticalBox, uiNewColorButton(), 0 )
 
-	uiBoxAppend(hbox, uiNewVerticalSeparator(), 0)
+  uiBoxAppend( oHorizontalBox, uiNewVerticalSeparator(), 0 )
 
-	vbox := uiNewVerticalBox()
-	uiBoxSetPadded(vbox, 1)
-	uiBoxAppend(hbox, vbox, 1)
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+  uiBoxAppend( oHorizontalBox, oVerticalBox, 1 )
 
-	grid := uiNewGrid()
-	uiGridSetPadded(grid, 1)
-	uiBoxAppend(vbox, grid, 0)
+  oGrid1 := uiNewGrid()
+  uiGridSetPadded( oGrid1, 1 )
+  uiBoxAppend( oVerticalBox, oGrid1, 0 )
 
-	button := uiNewButton("Open File")
-	entry := uiNewEntry()
-	uiEntrySetReadOnly(entry, 1)
-//	uiButtonOnClicked(button, onOpenFileClicked, entry)
-	uiGridAppend(grid, button, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill)
-	uiGridAppend(grid, entry, 1, 0, 1, 1, 1, uiAlignFill, 0, uiAlignFill)
+  oButton := uiNewButton( "Open File" )
+  oEntry := uiNewEntry()
+  uiEntrySetReadOnly( oEntry, 1 )
+//  uiButtonOnClicked( oButton, onOpenFileClicked(), oEntry )
+  uiGridAppend( oGrid1, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
+  uiGridAppend( oGrid1, oEntry, 1, 0, 1, 1, 1, uiAlignFill, 0, uiAlignFill )
 
-	button := uiNewButton("Save File")
-	entry := uiNewEntry()
-	uiEntrySetReadOnly(entry, 1)
-//	uiButtonOnClicked(button, onSaveFileClicked, entry)
-	uiGridAppend(grid, button, 0, 1, 1, 1, 0, uiAlignFill, 0, uiAlignFill)
-	uiGridAppend(grid, entry, 1, 1, 1, 1, 1, uiAlignFill, 0, uiAlignFill)
+  oButton := uiNewButton( "Save File" )
+  oEntry := uiNewEntry()
+  uiEntrySetReadOnly( oEntry, 1 )
+//  uiButtonOnClicked( oButton, onSaveFileClicked(), oEntry )
+  uiGridAppend( oGrid1, oButton, 0, 1, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
+  uiGridAppend( oGrid1, oEntry, 1, 1, 1, 1, 1, uiAlignFill, 0, uiAlignFill )
 
-	msggrid := uiNewGrid()
-	uiGridSetPadded(msggrid, 1)
-	uiGridAppend(grid, msggrid, 0, 2, 2, 1, 0, uiAlignCenter, 0, uiAlignStart)
+  oGrid2 := uiNewGrid()
+  uiGridSetPadded( oGrid2, 1 )
+  uiGridAppend( oGrid1, oGrid2, 0, 2, 2, 1, 0, uiAlignCenter, 0, uiAlignStart )
 
-	button := uiNewButton("Message Box")
-//	uiButtonOnClicked(button, onMsgBoxClicked, nil)
-	uiGridAppend(msggrid, button, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill)
-	button := uiNewButton("Error Box")
-//	uiButtonOnClicked(button, onMsgBoxErrorClicked, nil)
-	uiGridAppend(msggrid, button, 1, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill)
+  oButton := uiNewButton( "Message Box" )
+//  uiButtonOnClicked( oButton, onMsgBoxClicked(), NIL )
+  uiGridAppend( oGrid2, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
+  oButton := uiNewButton( "Error Box" )
+//  uiButtonOnClicked( oButton, onMsgBoxErrorClicked(), NIL )
+  uiGridAppend( oGrid2, oButton, 1, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
 
-RETURN hbox
+RETURN oHorizontalBox
