@@ -39,7 +39,8 @@ HB_FUNC( UIMULTILINEENTRYREADONLY ) {
 HB_FUNC( UIMULTILINEENTRYSETREADONLY ) {
     uiMultilineEntry *e = hbui_param( 1 );
     if( e ) {
-        uiMultilineEntrySetReadOnly( e, hb_parni( 2 ) );
+        HB_BOOL readonly = hb_parl( 2 );
+        uiMultilineEntrySetReadOnly( e, readonly );
     }
 }
 
