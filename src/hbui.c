@@ -6,7 +6,7 @@ static HB_GARBAGE_FUNC( hbui_gcFree )
     PHBUI_ITEM pItem = ( PHBUI_ITEM ) Cargo;
 
     if( pItem && pItem->control ) {
-        uiControlDestroy( uiControl( pItem->control ) );
+//        uiControlDestroy( uiControl( pItem->control ) );
         pItem->control = NULL;
     }
 }
@@ -43,6 +43,17 @@ HB_BOOL hbui_parParentChild( int iParent, int iChild, PHBUI_ITEM * parent, PHBUI
     return HB_FALSE;
 }
 
+HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * control, int iEvalItem, int iData ) {
+    PHB_ITEM pItemBlock = hb_param( iEvalItem, HB_IT_EVALITEM );
+    if( *control && pItemBlock ) {
+        PHB_ITEM pItemData = hb_param( iData, HB_IT_ANY );
+        (*control)->pEvalItem = hb_itemNew( pItemBlock );
+        (*control)->pData = pItemData ? hb_itemNew( pItemData ) : NULL;
+        return HB_TRUE;
+    }
+    return HB_FALSE;
+}
+
 PHBUI_ITEM hbui_parptrGC( int iParam )
 {
     PHBUI_ITEM pItem = ( PHBUI_ITEM ) hb_parptrGC( &s_gc_hbuiFuncs, iParam );
@@ -55,8 +66,10 @@ PHBUI_ITEM hbui_gcAllocate( void * c )
     PHBUI_ITEM pItem = ( PHBUI_ITEM ) hb_gcAllocate( sizeof( HBUI_ITEM ), &s_gc_hbuiFuncs );
 
     pItem->control = c;
-    pItem->pParentItem = NULL;
+    pItem->pData = NULL;
+    pItem->pEvalItem = NULL;
     pItem->pItem = NULL;
+    pItem->pParentItem = NULL;
     pItem->mark = 0;
 
     return pItem;
@@ -77,5 +90,23 @@ HB_FUNC( HB_GCREFCOUNT ) {
     }
     else {
         hb_retni( -1 );
+    }
+}
+
+void hbui_onControlChanged( PHBUI_ITEM pItem ) {
+
+    if( pItem && hb_vmRequestReenter() ) {
+        hb_vmPushEvalSym();
+        hb_vmPush( pItem->pEvalItem );
+        hb_vmPush( pItem->pItem );
+        if( pItem->pData ) {
+            hb_vmPush( pItem->pData );
+            hb_vmSend( 2 );
+        }
+        else {
+            hb_vmSend( 1 );
+        }
+
+        hb_vmRequestRestore();
     }
 }

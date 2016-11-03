@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onSpinboxChanged( uiSpinbox * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN int uiSpinboxValue(uiSpinbox *s);
 HB_FUNC( UISPINBOXVALUE ) {
     uiSpinbox *s = hbui_param( 1 );
@@ -18,6 +23,12 @@ HB_FUNC( UISPINBOXSETVALUE ) {
 }
 
 //_UI_EXTERN void uiSpinboxOnChanged(uiSpinbox *s, void (*f)(uiSpinbox *s, void *data), void *data);
+HB_FUNC( UISPINBOXONCHANGED ) {
+    PHBUI_ITEM s = hbui_parptrGC( 1 );
+    if( s && hbui_parSetEvalItem( &s, 2, 3 ) ) {
+        uiSpinboxOnChanged( s->control, onSpinboxChanged, s );
+    }
+}
 
 //_UI_EXTERN uiSpinbox *uiNewSpinbox(int min, int max);
 HB_FUNC( UINEWSPINBOX ) {
