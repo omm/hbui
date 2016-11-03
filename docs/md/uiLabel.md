@@ -70,7 +70,6 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-## Screenshots
 ![Linux](ss/label_01.png "With family Linux Ubuntu desktop, based on GNOME")
 ## Sample source code
 Example use function:

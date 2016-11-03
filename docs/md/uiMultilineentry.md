@@ -149,6 +149,47 @@ RETURN NIL
 ```
 ![Linux](ss/multilineentry_01.png "With family Linux Ubuntu desktop, based on GNOME")
 ## Sample source code
+Example use function:
+- [MEMOREAD()](http://harbour.edu.pl/harbour/doc/harbour.html#memoread)
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oGroup
+  LOCAL oForm
+  LOCAL oMultilineEntry
+  LOCAL cText := MEMOREAD( "test.prg" ) /* test.prg this example */  
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Multi line entry", 700, 660, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oGroup := uiNewGroup("")
+  uiGroupSetMargined( oGroup, 1)
+
+  oForm := uiNewForm()
+  uiFormSetPadded( oForm, 1 )
+  uiGroupSetChild( oGroup, oForm )
+
+  oMultilineEntry := uiNewMultilineEntry()
+  uiMultilineEntryAppend( oMultilineEntry, cText )  
+
+  uiFormAppend( oForm, "Multi line entry", oMultilineEntry, 1 )
+
+  uiWindowSetChild( oWindow, oGroup )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/multilineentry_02.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
 ```harbour
 FUNCTION Main()
   LOCAL error
@@ -185,3 +226,44 @@ FUNCTION Main()
 RETURN NIL
 ```
 ![Linux](ss/wrappingmultilineentry_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+Example use function:
+- [MEMOREAD()](http://harbour.edu.pl/harbour/doc/harbour.html#memoread)
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oGroup
+  LOCAL oForm
+  LOCAL oWrappingMultilineEntry
+  LOCAL cText := MEMOREAD( "test.prg" ) /* test.prg = this example */  
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Wrapping multi line entry", 300, 300, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oGroup := uiNewGroup("")
+  uiGroupSetMargined( oGroup, 1)
+
+  oForm := uiNewForm()
+  uiFormSetPadded( oForm, 1 )
+  uiGroupSetChild( oGroup, oForm )
+
+  oWrappingMultilineEntry := uiNewNonWrappingMultilineEntry()
+  uiMultilineEntryAppend( oWrappingMultilineEntry, cText )  
+
+  uiFormAppend( oForm, "Wrapping multi" + hb_eol() + "line entry", oWrappingMultilineEntry, 1 )
+
+  uiWindowSetChild( oWindow, oGroup )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/wrappingmultilineentry_02.png "With family Linux Ubuntu desktop, based on GNOME")

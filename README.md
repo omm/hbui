@@ -50,6 +50,9 @@ RETURN NIL
 ```
 
 ### Screenshots
+![Windows](samples/window_window_samples_02.png "Windows 10 desktop")
+![GNU/Linux](samples/window_ubuntu_samples_02.png "With family Linux Ubuntu desktop, based on GNOME")
+
 ![Windows](samples/window_window_01.png "Windows 10 desktop")
 ![Windows](samples/window_window_02.png "Windows 10 desktop")
 ![Windows](samples/window_window_03.png "Windows 10 desktop")

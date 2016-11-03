@@ -105,12 +105,17 @@ uiTabSetMargined( oTab, page, margined )
 ```
 ## Sample source code
 Example use function:
-- [CDOW()](http://harbour.edu.pl/clipper/en/C53G01C/ng19116.html)				
-- [DATE()](http://harbour.edu.pl/clipper/en/C53G01C/ng1baff.html)				
-- [hb_Compiler()]()				
-- [hb_eol()](http://harbour.edu.pl/harbour/doc/harbour.html#hb_eol)				
-- [OS()](http://harbour.edu.pl/harbour/doc/harbour.html#os)				
-- [Version()](http://harbour.edu.pl/harbour/doc/harbour.html#version)				
+- [CDOW()](http://harbour.edu.pl/clipper/en/C53G01C/ng19116.html)
+- [CMONTH()](http://harbour.edu.pl/clipper/en/C53G01C/ng19a13.html)
+- [DATE()](http://harbour.edu.pl/clipper/en/C53G01C/ng1baff.html)
+- [DAY()](http://harbour.edu.pl/clipper/en/C53G01C/ng1bec1.html)
+- [hb_Compiler()]()
+- [hb_eol()](http://harbour.edu.pl/harbour/doc/harbour.html#hb_eol)
+- [LTRIM()](http://harbour.edu.pl/clipper/en/C53G01C/ng6790f.html)
+- [OS()](http://harbour.edu.pl/harbour/doc/harbour.html#os)
+- [STR()](http://harbour.edu.pl/clipper/en/C53G01C/nga0e79.html)
+- [VERSION()](http://harbour.edu.pl/harbour/doc/harbour.html#version)
+- [YEAR()](http://harbour.edu.pl/clipper/en/C53G01C/nga91e1.html)
 ```harbour
 #include "hbui.ch"
 
@@ -124,7 +129,7 @@ FUNCTION Main()
     RETURN NIL
   ENDIF
 
-  oWindow := uiNewWindow( "Tab example", 300, 300, .T. )
+  oWindow := uiNewWindow( "Tab example", 500, 500, .T. )
   uiWindowSetMargined( oWindow, 1 )
 
   oTab := uiNewTab()
@@ -156,7 +161,7 @@ FUNCTION Label()
   LOCAL oLabel
   LOCAL oGrid
 
-  oLabel := uiNewLabel( Version()     + hb_eol() + ;
+  oLabel := uiNewLabel( VERSION()     + hb_eol() + ;
                                         hb_eol() + ;
                         hb_Compiler() + hb_eol() + ;
                                         hb_eol() + ;
@@ -213,8 +218,14 @@ RETURN oGrid
 FUNCTION WhatDayIsToday()
   LOCAL oLabel
   LOCAL oGrid
+  LOCAL cText := "Today is "
 
-  oLabel := uiNewLabel( "Today is " + CDOW( DATE() ) )
+  cText += CDOW( DATE() ) + ", "
+  cText += LTRIM( STR( DAY( DATE() ) ) ) + ". "
+  cText += CMONTH( DATE() ) + " "
+  cText += LTRIM( STR( YEAR( DATE() ) ) )
+
+  oLabel := uiNewLabel( cText )
 
   oGrid := uiNewGrid()
   uiGridSetPadded( oGrid, 1 )

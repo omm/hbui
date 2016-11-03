@@ -16,7 +16,7 @@ Description
 
 Simple example
 ```harbour
-oHSeparator := uiNewHorizontalSeparator()
+oHorizontalSeparator := uiNewHorizontalSeparator()
 ```
 ## uiNewVerticalSeparator()
 Arguments
@@ -27,7 +27,7 @@ Description
 
 Simple example
 ```harbour
-VSeparator := uiNewVerticalSeparator()
+oVerticalSeparator := uiNewVerticalSeparator()
 ```
 ## Sample source code
 ```harbour

@@ -50,7 +50,7 @@ uiGroupSetChild( oGroup, oVerticalBox )
 ## uiGroupSetMargined (uiGroup, margined)
 Arguments
 - uiGroup
-- margined
+- margined 
 
 Return value
 
@@ -58,7 +58,7 @@ Description
 
 Simple example
 ```harbour
-uiGroupSetMargined( oGroup, 2 )
+uiGroupSetMargined( oGroup, .T. )
 ```
 ## uiGroupSetTitle (uiGroup, title)
 Arguments
@@ -103,7 +103,7 @@ FUNCTION Main()
   uiWindowSetMargined( oWindow, 1 )
 
   oGroup := uiNewGroup( "Group" )
-  uiGroupSetMargined( oGroup, 2 )
+  uiGroupSetMargined( oGroup, .T. )
 
   oForm := uiNewForm()
   uiFormSetPadded( oForm, 1 )
@@ -115,7 +115,7 @@ FUNCTION Main()
 
   uiFormAppend( oForm, "Username", oEntry, 0 )
   uiFormAppend( oForm, "Email address", oPasswordEntry, 0 )
-  uiFormAppend( oForm, "Password", oSearchEntry, 0 )
+  uiFormAppend( oForm, "Search", oSearchEntry, 0 )
 
   uiWindowSetChild( oWindow, oGroup )
   uiControlShow( oWindow )
@@ -126,3 +126,77 @@ FUNCTION Main()
 RETURN NIL
 ```
 ![Linux](ss/group_01.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Group example", 300, 300, 1 )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+
+  uiWindowSetChild( oWindow, oHorizontalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/group_02.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oVerticalBox
+  LOCAL oGroup
+
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initializa libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Group example", 300, 300, 1 )
+  uiWindowSetMargined( oWindow, 1 )
+
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oVerticalBox, oGroup, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oVerticalBox, oGroup, 1 )
+
+
+  uiWindowSetChild( oWindow, oVerticalBox )
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/group_03.png "With family Linux Ubuntu desktop, based on GNOME")
