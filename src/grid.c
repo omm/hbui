@@ -6,9 +6,7 @@ HB_FUNC( UIGRIDAPPEND ) {
     PHBUI_ITEM g;
     PHBUI_ITEM c;
     if( hbui_parParentChild( 1, 2, &g, &c ) ) {
-        HB_BOOL hexpand = hb_parl( 7 );
-        HB_BOOL vexpand = hb_parl( 9 );
-        uiGridAppend( g->control, c->control, hb_parni( 3 ), hb_parni( 4 ), hb_parni( 5 ), hb_parni( 6 ), hexpand, hb_parni( 8 ), vexpand, hb_parni( 10 ) );
+        uiGridAppend( g->control, c->control, hb_parni( 3 ), hb_parni( 4 ), hb_parni( 5 ), hb_parni( 6 ), hb_parni( 7 ), hb_parni( 8 ), hb_parni( 9 ), hb_parni( 10 ) );
     }
 }
 
@@ -18,9 +16,7 @@ HB_FUNC( UIGRIDINSERTAT ) {
     PHBUI_ITEM c;
     uiControl *existing = hbui_param( 3 );
     if( hbui_parParentChild( 1, 2, &g, &c ) ) {
-        HB_BOOL hexpand = hb_parl( 7 );
-        HB_BOOL vexpand = hb_parl( 9 );
-        uiGridInsertAt( g->control, c->control, existing, hb_parni( 4 ), hb_parni( 5 ), hb_parni( 6 ), hexpand, hb_parni( 8 ), vexpand, hb_parni( 10 ) );
+        uiGridInsertAt( g->control, c->control, existing, hb_parni( 4 ), hb_parni( 5 ), hb_parni( 6 ), hb_parni( 7 ), hb_parni( 8 ), hb_parni( 9 ), hb_parni( 10 ) );
     }
 }
 
@@ -36,8 +32,7 @@ HB_FUNC( UIGRIDPADDED ) {
 HB_FUNC( UIGRIDSETPADDED ) {
     uiGrid *g = hbui_param( 1 );
     if( g ) {
-        HB_BOOL padded = hb_parl( 2 );
-        uiGridSetPadded( g, padded );
+        uiGridSetPadded( g, hb_parni( 2 ) );
     }
 }
 

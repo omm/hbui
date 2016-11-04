@@ -6,8 +6,7 @@ HB_FUNC( UIBOXAPPEND ) {
     PHBUI_ITEM b;
     PHBUI_ITEM child;
     if( hbui_parParentChild( 1, 2, &b, &child ) ) {
-        HB_BOOL stretchy = hb_parl( 3 );
-        uiBoxAppend( uiBox( b->control ), uiControl( child->control ), stretchy );
+        uiBoxAppend( uiBox( b->control ), uiControl( child->control ), hb_parni( 3 ) );
     }
 }
 
@@ -31,8 +30,7 @@ HB_FUNC( UIBOXPADDED ) {
 HB_FUNC( UIBOXSETPADDED ) {
     void *b = hbui_param( 1 );
     if( b ) {
-        HB_BOOL padded = hb_parl( 2 );
-        uiBoxSetPadded( uiBox( b ), padded );
+        uiBoxSetPadded( uiBox( b ), hb_parni( 2 ) );
     }
 }
 

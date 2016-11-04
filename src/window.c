@@ -138,18 +138,13 @@ HB_FUNC( UIWINDOWMARGINED ) {
 HB_FUNC( UIWINDOWSETMARGINED ) {
     uiWindow *w = hbui_param( 1 );
     if( w ) {
-        HB_BOOL margined = hb_parl( 2 );
-        uiWindowSetMargined( w, margined );
+        uiWindowSetMargined( w, hb_parni( 2 ) );
     }
 }
 
 //_UI_EXTERN uiWindow *uiNewWindow(const char *title, int width, int height, int hasMenubar);
 HB_FUNC( UINEWWINDOW ) {
-    const char *title = hb_parc( 1 );
-    int width = hb_parni( 2 );
-    int height = hb_parni( 3 );
-    HB_BOOL hasMenu = hb_parl( 4 );
-    uiWindow *w = uiNewWindow( title, width, height, hasMenu );
+    uiWindow *w = uiNewWindow( hb_parc( 1 ), hb_parni( 2 ), hb_parni( 3 ), hb_parni( 4 ) );
     uiWindowOnClosing(w, onClosing, NULL);
     uiOnShouldQuit(onShouldQuit, w);
     hbui_ret( w );
