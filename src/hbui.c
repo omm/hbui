@@ -3,20 +3,20 @@
 
 static HB_GARBAGE_FUNC( hbui_gcFree )
 {
-    PHBUI_ITEM pItem = ( PHBUI_ITEM ) Cargo;
+    PHBUI_ITEM phItem = ( PHBUI_ITEM ) Cargo;
 
-    if( pItem && pItem->control ) {
+    if( phItem && phItem->control ) {
 //        uiControlDestroy( uiControl( pItem->control ) );
-        pItem->control = NULL;
+        phItem->control = NULL;
     }
 }
 
 static HB_GARBAGE_FUNC( hbui_gcMark )
 {
-    PHBUI_ITEM pItem = ( PHBUI_ITEM ) Cargo;
+    PHBUI_ITEM phItem = ( PHBUI_ITEM ) Cargo;
 
-    if( pItem ) {
-        hb_gcMark( pItem );
+    if( phItem ) {
+        hb_gcMark( phItem );
     }
 }
 
@@ -28,27 +28,27 @@ static const HB_GC_FUNCS s_gc_hbuiFuncs =
 
 void * hbui_param( int iParam )
 {
-    PHBUI_ITEM pItem = hbui_parptrGC( iParam );
+    PHBUI_ITEM phItem = hbui_parptrGC( iParam );
 
-    return ( pItem && pItem->control ) ? pItem->control : NULL;
+    return ( phItem && phItem->control ) ? phItem->control : NULL;
 }
 
-HB_BOOL hbui_parParentChild( int iParent, int iChild, PHBUI_ITEM * parent, PHBUI_ITEM * child ) {
-    *parent = hbui_parptrGC( iParent );
-    *child = hbui_parptrGC( iChild );
-    if( *parent && *child && (*child)->pItem == NULL ) {
-        (*child)->pItem = hb_itemNew( hb_param( iChild, HB_IT_ANY ) );
+HB_BOOL hbui_parParentChild( int iParent, int iChild, PHBUI_ITEM * phParent, PHBUI_ITEM * phChild ) {
+    *phParent = hbui_parptrGC( iParent );
+    *phChild = hbui_parptrGC( iChild );
+    if( *phParent && *phChild && (*phChild)->pItem == NULL ) {
+        (*phChild)->pItem = hb_itemNew( hb_param( iChild, HB_IT_ANY ) );
         return HB_TRUE;
     }
     return HB_FALSE;
 }
 
-HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * control, int iEvalItem, int iData ) {
+HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * phControl, int iEvalItem, int iData ) {
     PHB_ITEM pItemBlock = hb_param( iEvalItem, HB_IT_EVALITEM );
-    if( *control && pItemBlock ) {
+    if( *phControl && pItemBlock ) {
         PHB_ITEM pItemData = hb_param( iData, HB_IT_ANY );
-        (*control)->pEvalItem = hb_itemNew( pItemBlock );
-        (*control)->pData = pItemData ? hb_itemNew( pItemData ) : NULL;
+        (*phControl)->pEvalItem = hb_itemNew( pItemBlock );
+        (*phControl)->pData = pItemData ? hb_itemNew( pItemData ) : NULL;
         return HB_TRUE;
     }
     return HB_FALSE;
@@ -56,23 +56,23 @@ HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * control, int iEvalItem, int iData ) {
 
 PHBUI_ITEM hbui_parptrGC( int iParam )
 {
-    PHBUI_ITEM pItem = ( PHBUI_ITEM ) hb_parptrGC( &s_gc_hbuiFuncs, iParam );
+    PHBUI_ITEM phItem = ( PHBUI_ITEM ) hb_parptrGC( &s_gc_hbuiFuncs, iParam );
 
-    return pItem ? pItem : NULL;
+    return phItem;
 }
 
 PHBUI_ITEM hbui_gcAllocate( void * c )
 {
-    PHBUI_ITEM pItem = ( PHBUI_ITEM ) hb_gcAllocate( sizeof( HBUI_ITEM ), &s_gc_hbuiFuncs );
+    PHBUI_ITEM phItem = ( PHBUI_ITEM ) hb_gcAllocate( sizeof( HBUI_ITEM ), &s_gc_hbuiFuncs );
 
-    pItem->control = c;
-    pItem->pData = NULL;
-    pItem->pEvalItem = NULL;
-    pItem->pItem = NULL;
-    pItem->pParentItem = NULL;
-    pItem->mark = 0;
+    phItem->control = c;
+    phItem->pData = NULL;
+    phItem->pEvalItem = NULL;
+    phItem->pItem = NULL;
+    phItem->pParentItem = NULL;
+    phItem->mark = 0;
 
-    return pItem;
+    return phItem;
 }
 
 void hbui_ret( void * c ) {
@@ -84,23 +84,23 @@ void hbui_ret( void * c ) {
 extern HB_COUNTER hb_gcRefCount( void * pAlloc );
 
 HB_FUNC( HB_GCREFCOUNT ) {
-    PHBUI_ITEM pItem = hbui_parptrGC( 1 );
-    if( pItem ) {
-        hb_retni( hb_gcRefCount( pItem ) );
+    PHBUI_ITEM phItem = hbui_parptrGC( 1 );
+    if( phItem ) {
+        hb_retni( hb_gcRefCount( phItem ) );
     }
     else {
         hb_retni( -1 );
     }
 }
 
-void hbui_onControlChanged( PHBUI_ITEM pItem ) {
+void hbui_onControlChanged( PHBUI_ITEM phItem ) {
 
-    if( pItem && hb_vmRequestReenter() ) {
+    if( phItem && hb_vmRequestReenter() ) {
         hb_vmPushEvalSym();
-        hb_vmPush( pItem->pEvalItem );
-        hb_vmPush( pItem->pItem );
-        if( pItem->pData ) {
-            hb_vmPush( pItem->pData );
+        hb_vmPush( phItem->pEvalItem );
+        hb_vmPush( phItem->pItem );
+        if( phItem->pData ) {
+            hb_vmPush( phItem->pData );
             hb_vmSend( 2 );
         }
         else {

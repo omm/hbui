@@ -22,7 +22,7 @@ PHBUI_ITEM hbui_parptrGC( int iParam );
 
 void * hbui_param( int iParam );
 void hbui_ret( void * c );
-void hbui_onControlChanged( PHBUI_ITEM pItem );
+void hbui_onControlChanged( PHBUI_ITEM phItem );
 
-HB_BOOL hbui_parParentChild( int iParent, int iChild, PHBUI_ITEM * parent, PHBUI_ITEM * child );
-HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * control, int iEvalItem, int iData );
+HB_BOOL hbui_parParentChild( int iParent, int iChild, PHBUI_ITEM * phParent, PHBUI_ITEM * phChild );
+HB_BOOL hbui_parSetEvalItem( PHBUI_ITEM * phControl, int iEvalItem, int iData );
