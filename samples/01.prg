@@ -1,6 +1,8 @@
 
 #include "hbui.ch"
 
+STATIC oWindow
+
 STATIC PROCEDURE update(a,value)
     LOCAL spinbox := a[1]
     LOCAL slider := a[2]
@@ -28,7 +30,6 @@ RETURN
 
 FUNCTION Main()
   LOCAL error
-  LOCAL oWindow
   LOCAL oTab
 
   IF ! HB_ISNULL( error := uiInit() )
@@ -158,6 +159,58 @@ STATIC FUNCTION makeNumbersPage()
 
 RETURN oHorizontalBox
 
+STATIC PROCEDURE onOpenFileClicked( b, entry )
+	LOCAL filename
+
+    HB_SYMBOL_UNUSED( b )
+
+	filename := uiOpenFile(oWindow)
+
+	IF hb_isNull( filename )
+		uiEntrySetText(entry, "(cancelled)")
+		RETURN
+    ENDIF
+
+	uiEntrySetText(entry, filename)
+
+RETURN
+
+STATIC PROCEDURE onSaveFileClicked( b, entry )
+	LOCAL filename
+
+    HB_SYMBOL_UNUSED( b )
+
+	filename := uiSaveFile(oWindow)
+
+	IF hb_isNull( filename )
+		uiEntrySetText(entry, "(cancelled)")
+		RETURN
+	ENDIF
+
+	uiEntrySetText(entry, filename)
+
+RETURN
+
+STATIC PROCEDURE onMsgBoxClicked( b, data )
+
+    HB_SYMBOL_UNUSED( b )
+    HB_SYMBOL_UNUSED( data )
+
+	uiMsgBox(oWindow,;
+		"This is a normal message box.",;
+		"More detailed information can be shown here.")
+RETURN
+
+STATIC PROCEDURE onMsgBoxErrorClicked( b, data )
+
+    HB_SYMBOL_UNUSED( b )
+    HB_SYMBOL_UNUSED( data )
+
+	uiMsgBoxError(oWindow,;
+		"This message box describes an error.",;
+		"More detailed information can be shown here.")
+RETURN
+
 STATIC FUNCTION makeDataChoosersPage()
   LOCAL oHorizontalBox
   LOCAL oVerticalBox
@@ -193,14 +246,14 @@ STATIC FUNCTION makeDataChoosersPage()
   oButton := uiNewButton( "Open File" )
   oEntry := uiNewEntry()
   uiEntrySetReadOnly( oEntry, 1 )
-//  uiButtonOnClicked( oButton, onOpenFileClicked(), oEntry )
+  uiButtonOnClicked( oButton, @onOpenFileClicked(), oEntry )
   uiGridAppend( oGrid1, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
   uiGridAppend( oGrid1, oEntry, 1, 0, 1, 1, 1, uiAlignFill, 0, uiAlignFill )
 
   oButton := uiNewButton( "Save File" )
   oEntry := uiNewEntry()
   uiEntrySetReadOnly( oEntry, 1 )
-//  uiButtonOnClicked( oButton, onSaveFileClicked(), oEntry )
+  uiButtonOnClicked( oButton, @onSaveFileClicked(), oEntry )
   uiGridAppend( oGrid1, oButton, 0, 1, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
   uiGridAppend( oGrid1, oEntry, 1, 1, 1, 1, 1, uiAlignFill, 0, uiAlignFill )
 
@@ -209,10 +262,10 @@ STATIC FUNCTION makeDataChoosersPage()
   uiGridAppend( oGrid1, oGrid2, 0, 2, 2, 1, 0, uiAlignCenter, 0, uiAlignStart )
 
   oButton := uiNewButton( "Message Box" )
-//  uiButtonOnClicked( oButton, onMsgBoxClicked(), NIL )
+  uiButtonOnClicked( oButton, @onMsgBoxClicked(), NIL )
   uiGridAppend( oGrid2, oButton, 0, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
   oButton := uiNewButton( "Error Box" )
-//  uiButtonOnClicked( oButton, onMsgBoxErrorClicked(), NIL )
+  uiButtonOnClicked( oButton, @onMsgBoxErrorClicked(), NIL )
   uiGridAppend( oGrid2, oButton, 1, 0, 1, 1, 0, uiAlignFill, 0, uiAlignFill )
 
 RETURN oHorizontalBox
