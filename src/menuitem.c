@@ -8,7 +8,7 @@ static void onMenuItemClicked( uiMenuItem * control, uiWindow * window, void * d
 }
 
 //_UI_EXTERN void uiMenuItemEnable(uiMenuItem *m);
-HB_FUNC( uiMenuItemEnable ) {
+HB_FUNC( UIMENUITEMENABLE ) {
     uiMenuItem *m = hbui_param( 1 );
     if( m ) {
         uiMenuItemEnable( m );
