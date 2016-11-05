@@ -1,4 +1,7 @@
 
+#include "hbvm.h"
+#include "hbapiitm.h"
+
 #include "hbui.h"
 
 static HB_GARBAGE_FUNC( hbui_gcFree )
