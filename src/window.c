@@ -32,6 +32,7 @@ HB_FUNC( UIWINDOWSETTITLE ) {
     }
 }
 
+#if 0
 //_UI_EXTERN void uiWindowPosition(uiWindow *w, int *x, int *y);
 HB_FUNC( UIWINDOWPOSITION ) {
     uiWindow *w = hbui_param( 1 );
@@ -43,7 +44,9 @@ HB_FUNC( UIWINDOWPOSITION ) {
         hb_storni( y, 3 );
     }
 }
+#endif
 
+#if 0
 //_UI_EXTERN void uiWindowSetPosition(uiWindow *w, int x, int y);
 HB_FUNC( UIWINDOWSETPOSITION ) {
     uiWindow *w = hbui_param( 1 );
@@ -51,7 +54,9 @@ HB_FUNC( UIWINDOWSETPOSITION ) {
         uiWindowSetPosition( w, hb_parni( 2 ), hb_parni( 3 ) );
     }
 }
+#endif
 
+#if 0
 //_UI_EXTERN void uiWindowCenter(uiWindow *w);
 HB_FUNC( UIWINDOWCENTER ) {
     uiWindow *w = hbui_param( 1 );
@@ -59,6 +64,7 @@ HB_FUNC( UIWINDOWCENTER ) {
         uiWindowCenter( w );
     }
 }
+#endif
 
 //_UI_EXTERN void uiWindowOnPositionChanged(uiWindow *w, void (*f)(uiWindow *, void *), void *data);
 
