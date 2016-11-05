@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onMultilineEntryChanged( uiMultilineEntry * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN char *uiMultilineEntryText(uiMultilineEntry *e);
 HB_FUNC( UIMULTILINEENTRYTEXT ) {
     uiMultilineEntry *e = hbui_param( 1 );
@@ -26,6 +31,12 @@ HB_FUNC( UIMULTILINEENTRYAPPEND ) {
 }
 
 //_UI_EXTERN void uiMultilineEntryOnChanged(uiMultilineEntry *e, void (*f)(uiMultilineEntry *e, void *data), void *data);
+HB_FUNC( UIMULTILINEENTRYONCHANGED ) {
+    PHBUI_ITEM e = hbui_parptrGC( 1 );
+    if( e && hbui_parSetEvalItem( &e, 2, 3 ) ) {
+        uiMultilineEntryOnChanged( e->control, onMultilineEntryChanged, e );
+    }
+}
 
 //_UI_EXTERN int uiMultilineEntryReadOnly(uiMultilineEntry *e);
 HB_FUNC( UIMULTILINEENTRYREADONLY ) {

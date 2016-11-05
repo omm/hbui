@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onRadioButtonsSelected( uiRadioButtons * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN void uiRadioButtonsAppend(uiRadioButtons *r, const char *text);
 HB_FUNC( UIRADIOBUTTONSAPPEND ) {
     uiRadioButtons *r = hbui_param( 1 );
@@ -26,6 +31,12 @@ HB_FUNC( UIRADIOBUTTONSSETSELECTED ) {
 }
 
 //_UI_EXTERN void uiRadioButtonsOnSelected(uiRadioButtons *r, void (*f)(uiRadioButtons *, void *), void *data);
+HB_FUNC( UIRADIOBUTTONSONSELECTED ) {
+    PHBUI_ITEM r = hbui_parptrGC( 1 );
+    if( r && hbui_parSetEvalItem( &r, 2, 3 ) ) {
+        uiRadioButtonsOnSelected( r->control, onRadioButtonsSelected, r );
+    }
+}
 
 //_UI_EXTERN uiRadioButtons *uiNewRadioButtons(void);
 HB_FUNC( UINEWRADIOBUTTONS ) {

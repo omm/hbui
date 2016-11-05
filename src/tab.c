@@ -15,10 +15,10 @@ HB_FUNC( UITABAPPEND ) {
 
 //_UI_EXTERN void uiTabInsertAt(uiTab *t, const char *name, int before, uiControl *c);
 HB_FUNC( UITABINSERTAT ) {
-    void *t = hbui_param( 1 );
-    void *c = hbui_param( 4 );
-    if( t && c ) {
-        uiTabInsertAt( uiTab( t ), hb_parc( 2 ), hb_parni( 3 ), uiControl( c ) );
+    PHBUI_ITEM t;
+    PHBUI_ITEM c;
+    if( hbui_parParentChild( 1, 4, &t, &c ) ) {
+        uiTabInsertAt( uiTab( t->control ), hb_parc( 2 ), hb_parni( 3 ), uiControl( c->control ) );
     }
     else {
         hb_errRT_BASE_SubstR( EG_ARG, 0, NULL, HB_ERR_FUNCNAME, HB_ERR_ARGS_BASEPARAMS );

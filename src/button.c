@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onButtonClicked( uiButton * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN char *uiButtonText(uiButton *b);
 HB_FUNC( UIBUTTONTEXT ) {
     uiButton *b = hbui_param( 1 );
@@ -18,6 +23,12 @@ HB_FUNC( UIBUTTONSETTEXT ) {
 }
 
 //_UI_EXTERN void uiButtonOnClicked(uiButton *b, void (*f)(uiButton *b, void *data), void *data);
+HB_FUNC( UIBUTTONONCLICKED ) {
+    PHBUI_ITEM b = hbui_parptrGC( 1 );
+    if( b && hbui_parSetEvalItem( &b, 2, 3 ) ) {
+        uiButtonOnClicked( b->control, onButtonClicked, b );
+    }
+}
 
 //_UI_EXTERN uiButton *uiNewButton(const char *text);
 HB_FUNC( UINEWBUTTON ) {

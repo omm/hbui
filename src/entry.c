@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onEntryChanged( uiEntry * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN char *uiEntryText(uiEntry *e);
 HB_FUNC( UIENTRYTEXT ) {
     uiEntry *e = hbui_param( 1 );
@@ -18,6 +23,12 @@ HB_FUNC( UIENTRYSETTEXT ) {
 }
 
 //_UI_EXTERN void uiEntryOnChanged(uiEntry *e, void (*f)(uiEntry *e, void *data), void *data);
+HB_FUNC( UIENTRYONCHANGED ) {
+    PHBUI_ITEM e = hbui_parptrGC( 1 );
+    if( e && hbui_parSetEvalItem( &e, 2, 3 ) ) {
+        uiEntryOnChanged( e->control, onEntryChanged, e );
+    }
+}
 
 //_UI_EXTERN int uiEntryReadOnly(uiEntry *e);
 HB_FUNC( UIENTRYREADONLY ) {
@@ -31,8 +42,7 @@ HB_FUNC( UIENTRYREADONLY ) {
 HB_FUNC( UIENTRYSETREADONLY ) {
     uiEntry *e = hbui_param( 1 );
     if( e ) {
-        HB_BOOL readonly = hb_parl( 2 );
-        uiEntrySetReadOnly( e, readonly );
+        uiEntrySetReadOnly( e, hb_parni( 2 ) );
     }
 }
 

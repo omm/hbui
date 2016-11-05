@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onColorButtonChanged( uiColorButton * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN void uiColorButtonColor(uiColorButton *b, double *r, double *g, double *bl, double *a);
 HB_FUNC( UICOLORBUTTONCOLOR ) {
     uiColorButton *b = hbui_param( 1 );
@@ -26,6 +31,12 @@ HB_FUNC( UICOLORBUTTONSETCOLOR ) {
 }
 
 //_UI_EXTERN void uiColorButtonOnChanged(uiColorButton *b, void (*f)(uiColorButton *, void *), void *data);
+HB_FUNC( UICOLORBUTTONONCHANGED ) {
+    PHBUI_ITEM b = hbui_parptrGC( 1 );
+    if( b && hbui_parSetEvalItem( &b, 2, 3 ) ) {
+        uiColorButtonOnChanged( b->control, onColorButtonChanged, b );
+    }
+}
 
 //_UI_EXTERN uiColorButton *uiNewColorButton(void);
 HB_FUNC( UINEWCOLORBUTTON ) {

@@ -1,6 +1,11 @@
 
 #include "hbui.h"
 
+static void onComboboxSelected( uiCombobox * control, void * data ) {
+    HB_SYMBOL_UNUSED( control );
+    hbui_onControlChanged( data );
+}
+
 //_UI_EXTERN void uiComboboxAppend(uiCombobox *c, const char *text);
 HB_FUNC( UICOMBOBOXAPPEND ) {
     uiCombobox *c = hbui_param( 1 );
@@ -26,6 +31,12 @@ HB_FUNC( UICOMBOBOXSETSELECTED ) {
 }
 
 //_UI_EXTERN void uiComboboxOnSelected(uiCombobox *c, void (*f)(uiCombobox *c, void *data), void *data);
+HB_FUNC( UICOMBOBOXONSELECTED ) {
+    PHBUI_ITEM c = hbui_parptrGC( 1 );
+    if( c && hbui_parSetEvalItem( &c, 2, 3 ) ) {
+        uiComboboxOnSelected( c->control, onComboboxSelected, c );
+    }
+}
 
 //_UI_EXTERN uiCombobox *uiNewCombobox(void);
 HB_FUNC( UINEWCOMBOBOX ) {
