@@ -1,6 +1,7 @@
 # **uiGroup**
 
-## Description
+## Description <br>
+uiGroup is a labeled rectangular frame that surrounds a set of related controls
 
 ## Functions
 - [uiNewGroup( title )](#uinewgroup-title)
@@ -153,7 +154,6 @@ FUNCTION Main()
   uiGroupSetMargined( oGroup, 1 )
   uiBoxAppend( oHorizontalBox, oGroup, 1 )
 
-
   uiWindowSetChild( oWindow, oHorizontalBox )
   uiControlShow( oWindow )
 
@@ -190,7 +190,6 @@ FUNCTION Main()
   uiGroupSetMargined( oGroup, 1 )
   uiBoxAppend( oVerticalBox, oGroup, 1 )
 
-
   uiWindowSetChild( oWindow, oVerticalBox )
   uiControlShow( oWindow )
 
@@ -200,3 +199,46 @@ FUNCTION Main()
 RETURN NIL
 ```
 ![Linux](ss/group_03.png "With family Linux Ubuntu desktop, based on GNOME")
+## Sample source code
+```harbour
+FUNCTION Main()
+  LOCAL error
+  LOCAL oWindow
+  LOCAL oVerticalBox
+  LOCAL oHorizontalBox
+  LOCAL oGroup
+  
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initialize libui... " + error )
+    RETURN NIL
+  ENDIF
+
+  oWindow := uiNewWindow( "Group example", 640, 480, .T. )
+  uiWindowSetMargined( oWindow, 1 )
+	
+  oVerticalBox := uiNewVerticalBox()
+  uiBoxSetPadded( oVerticalBox, 1 )
+ 
+  oHorizontalBox := uiNewHorizontalBox()
+  uiBoxSetPadded( oHorizontalBox, 1 )
+  uiBoxAppend( oVerticalBox, oHorizontalBox, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+  oGroup := uiNewGroup( "" )
+  uiGroupSetMargined( oGroup, 1 )
+  uiBoxAppend( oHorizontalBox, oGroup, 1 )
+
+  uiBoxAppend( oVerticalBox, uiNewButton( "Button" ), 0 )
+
+  uiWindowSetChild( oWindow, oVerticalBox ) 
+  uiControlShow( oWindow )
+
+  uiMain()
+  uiUninit()
+
+RETURN NIL
+```
+![Linux](ss/group_04.png "With family Linux Ubuntu desktop, based on GNOME")

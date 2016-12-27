@@ -1,7 +1,7 @@
 # **uiWindow**
 
 
-## Description
+## Description <br>
 Provides the ability to create, configure, show, and manage the lifetime of windows and dialog boxes.
 
 ## Functions
@@ -23,14 +23,6 @@ Provides the ability to create, configure, show, and manage the lifetime of wind
 - [uiWindowSetPosition( uiWindow, x, y )](#uiwindowsetposition-uiwindow-x-y)
 - [uiWindowSetTitle( uiWindow, title )](#uiwindowsettitle-uiwindow-title)
 - [uiWindowTitle( uiWindow )](#uiwindowtitle-uiwindow)
-
-<br>
-
-- [uiMsgBox( uiWindow, title description )](#uimsgbox-uiwindow-title-description)
-- [uiMsgBoxError( uiWindow, title, description )](#uimsgboxerror-uiwindow-title-description)
-- [uiOpenFile( uiWindow )](#uiopenfile-uiwindow)
-- [uiSaveFile( uiWindow )](#uisavefile-uiwindow)
-
 
 ## uiNewWindow (title, width, height, hasMenubar)
 Arguments
@@ -268,53 +260,6 @@ Description
 Simple example
 ```harbour
 uiWindowTitle( oWindow )
-```
-
-<br>
-
-## uiMsgBox (uiWindow, title description)
-Arguments
-
-Return value
-
-Description
-
-Simple example
-```harbour
-
-```
-## uiMsgBoxError (uiWindow, title, description)
-Arguments
-
-Return value
-
-Description
-
-Simple example
-```harbour
-
-```
-## uiOpenFile (uiWindow)
-Arguments
-
-Return value
-
-Description
-
-Simple example
-```harbour
-
-```
-## uiSaveFile (uiWindow)
-Arguments
-
-Return value
-
-Description
-
-Simple example
-```harbour
-
 ```
 ## Sample source code
 ```harbour

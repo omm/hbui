@@ -1,6 +1,7 @@
 # **uiTab**
 
-## Description
+## Description <br>
+Tab provide a way to present related information on separate labeled pages.
 
 ## Functions
 - [uiNewTab()](#uinewtab)

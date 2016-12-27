@@ -1,6 +1,7 @@
 # **uiButton**
 
 ### Description
+uiButton allow users to perform an immediate action.
 
 ## Functions
 - [uiNewButton( text )](#uinewbutton-text),
@@ -45,7 +46,7 @@ Description
 
 Simple example
 ```harbour
-
+uiButtonSetText( oButton, "New Open " )
 ```
 ## uiButtonText (uiButton)
 Arguments
@@ -57,7 +58,7 @@ Description
 
 Simple example
 ```harbour
-
+uiButtonText( oButton )
 ```
 ## Sample source code
 ```harbour

@@ -1,6 +1,7 @@
 # **uiSlider**
 
-## Description
+## Description <br>
+uiSlider allow users to choose from a continuous range of values.
 
 ## Functions
 - [uiNewSlider( min, max )](#uinewslider-min-max)

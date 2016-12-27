@@ -1,6 +1,7 @@
 # **uiEntry**
 
-## Description
+## Description <br>
+uiEntry is a flexible control with several possible use
 
 ## Functions
 - [uiNewEntry()](#uinewentry)
@@ -17,7 +18,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiEntry allow users to display, enter, or edit a text or numeric value.
 
 Simple example
 ```harbour
@@ -28,7 +30,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+A single-line, unconstrained text box used to enter passwords and PINs securely.
 
 Simple example
 ```harbour

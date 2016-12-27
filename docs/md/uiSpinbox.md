@@ -1,6 +1,7 @@
 # **uiSpinbox**
 
-## Description
+## Description <br>
+uiSpinbox allow users to change incrementally the value within its associated numeric text box.
 
 ## Functions
 - [uiNewSpinbox( min, max )](#uinewspinbox-min-max)

@@ -1,6 +1,7 @@
 # **uiRadiobuttons**
 
-## Description
+## Description <br>
+uiRadiobuttons allow users to make a choice among a set of mutually exclusive, related choices.
 
 ## Functions
 - [uiNewRadioButtons()](#uinewradiobuttons)

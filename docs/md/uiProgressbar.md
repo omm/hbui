@@ -1,6 +1,7 @@
 # **uiProgressbar**
 
-## Description
+## Description <br>
+uiProgressbar allow users to follow the progress of a lengthy operation.
 
 ## Functions
 - [uiNewProgressBar()](#uinewprogressbar)

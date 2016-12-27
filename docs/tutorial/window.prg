@@ -3,10 +3,11 @@
  */
 
 FUNCTION Main()
+  LOCAL error
   LOCAL oWindow
 
-  IF ! HB_ISNULL( uiInit() )
-    Alert( "Failed to initialize libui..." )
+  IF ! HB_ISNULL( error := uiInit() )
+    Alert( "Failed to initialize libui... " + error )
     RETURN NIL
   ENDIF
 

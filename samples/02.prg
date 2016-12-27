@@ -26,7 +26,6 @@ FUNCTION Main()
 
   oVerticalBox1 := uiNewVerticalBox()
   uiBoxSetPadded( oVerticalBox1, 1 )
-  uiWindowSetChild( oWindow, oVerticalBox1 ) 
 
   oHorizontalBox := uiNewHorizontalBox()
   uiBoxSetPadded( oHorizontalBox, 1 )
@@ -113,6 +112,7 @@ FUNCTION Main()
   uiTabAppend( oTab, "Page 3", uiNewHorizontalBox() )
   uiBoxAppend( oVerticalBox3, oTab, 1 )
 
+  uiWindowSetChild( oWindow, oVerticalBox1 ) 
   uiControlShow( oWindow )
 
   uiMain()

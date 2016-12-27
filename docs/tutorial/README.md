@@ -79,8 +79,8 @@ $ hbmk2 01.prg -run
 Welcome after the break. I hope that holidays were successful. Some people say that programming Windows is boring, undemanding and the programmer is wasted.
 
 ### We start
-Install Microsoft Visual Studio is an integrated development environment (IDE) from Microsoft.
-Visual Studio Community. Free, fully-featured IDE for students, open-source and individual developer.
+Install Microsoft Visual Studio Express is an integrated development environment (IDE) from Microsoft.
+Visual Studio Community. [Download](https://www.visualstudio.com/vs/visual-studio-express/)
 
 Then install
 `cmake` you can download [here](https://cmake.org/download/) <br>
@@ -101,9 +101,9 @@ In both cases it should show version, if don't,  you need to add the variable - 
 Now let's go to the Visual Studio after startup, select from the menu: <br>
 Tools->External Tools... configure to your need, click Add and in the empty field, write:
 - Title: HBUI
-- Command: C:\Windows\System32\cmd.exe
-- Arguments: /k "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat"
-- Initial directory: c:/hbui/samples
+- Command: c:\Windows\System32\cmd.exe
+- Arguments: /k "c:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat"
+- Initial directory: c:\hbui\samples
 - Apply OK
 
 Now we can start again from the menu Tools->HBUI:
@@ -111,8 +111,10 @@ Now we can start again from the menu Tools->HBUI:
 c:\hbui\samples>
 ```
 
-and go to the catalog where you installed libui and follow the instructions:
+and go to the catalog where you installed `libui` and follow the instructions:
 ```
+c:\libui>mkdir build
+c:\libui>cd build
 c:\libui\build>cmake -G "Unix Makefiles" ..
 c:\libui\build>make
 ```

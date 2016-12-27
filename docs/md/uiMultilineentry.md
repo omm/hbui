@@ -1,6 +1,7 @@
 # **uiMultilineentry**
 
-## Description
+## Description <br>
+uiMultilineentry, unconstrained text box used to enter or edit long strings.
 
 ## Functions
 - [uiNewMultilineEntry()](#uinewmultilineentry)

@@ -1,9 +1,8 @@
 # **uiCheckbox**
----
 
 ### Description
+uiCheckbox allow users to make a decision between two or more clearly differing choices.
 
----
 ### Functions
 
 - [uiNewCheckbox( text )](#uinewcheckbox-text)
@@ -13,7 +12,7 @@
 - [uiCheckboxSetText( uiCheckbox, text )](#uicheckboxsettext-uicheckbox-text)
 - [uiCheckboxText( uiCheckbox )](#uicheckboxtext-uicheckbox)
 
----
+
 #### uiNewCheckbox (text)
 Arguments
 - text
@@ -26,7 +25,6 @@ Simple example
 ```harbour
 oCheckbox := uiNewCheckbox( "GitHub" )
 ```
----
 #### uiCheckboxChecked (uiCheckbox)
 Arguments
 - uiCheckbox
@@ -39,7 +37,6 @@ Simple example
 ```harbour
 uiCheckboxChecked( oCheckbox )
 ```
----
 #### uiCheckboxOnToggled (uiCheckbox, uiCheckbox, data)
 Arguments
 - uiCheckbox
@@ -54,7 +51,6 @@ Simple example
 ```harbour
 uiCheckboxOnToggled( uiCheckbox, toggleSpaced, NULL )
 ```
----
 #### uiCheckboxSetChecked (uiCheckbox, checked)
 Arguments
 - uiCheckbox
@@ -68,7 +64,6 @@ Simple example
 ```harbour
 uiCheckboxSetChecked( oCheckbox, 1 )
 ```
----
 #### uiCheckboxSetText (uiCheckbox, text)
 Arguments
 - uiCheckbox
@@ -82,7 +77,6 @@ Simple example
 ```harbour
 uiCheckboxSetText( oCheckbox, "it's free" )
 ```
----
 #### uiCheckboxText (uiCheckbox)
 Arguments
 - uiCheckbox
@@ -95,7 +89,6 @@ Simple example
 ```harbour
 uiCheckboxText( oCheckbox )
 ```
----
 ### Sample source code
 ```harbour
 FUNCTION Main()
