@@ -23,8 +23,7 @@ $ git pull
 For all systems, use the command:
 - It is recommended to use Harbour ver. 3.2 
 - [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md)
-- (you must (i.e.) export HB_WITH_LIBUI="/the/path/to/libui")
--   ( Darwin: you must export where the LIBUI dynamic library is (i.e.): DYLD_LIBRARY_PATH="/the/path/to/libui/build/out" )  
+- Binary download 
 
 ```
 $ hbmk2 hbui.hbp

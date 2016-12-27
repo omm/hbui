@@ -134,6 +134,43 @@ c:\hbui\samples>hbmk2 01.prg -run
 
 Remember, you have to do a compilation Harbour from Visual Studio !!!
 
+### Binary download
+
+Harbour binary download from this page and unpack:
+- [Harbour binary](http://harbour.edu.pl/hbui/hb32.zip)
+unpack the:
+```
+C:\hb32
+```
+
+HBUI binary download from this page and unpack:
+- [HBUI binary](http://harbour.edu.pl/hbui/hbui.zip)
+unpack the:
+```
+c:\hbui
+```
+
+libui binary download from this page and unpack:
+- [libui binary](http://harbour.edu.pl/hbui/libui.zip)
+unpack the:
+```
+c:\libui
+```
+
+For the sake of peace of mind ;-) <br>
+Set the environment variables `set PATH=c:\libui\build\out` or then copy library `libui.dll`
+
+Open a developer command prompt
+
+If you have installed Visual Studio 2015 on Windows 10, open the Start menu and choose All apps. Scroll down and open the Visual Studio 2015 folder (not the Visual Studio 2015 app). Choose Developer Command Prompt for VS2015 to open the command prompt window.
+If you have installed Microsoft Visual C++ Build Tools 2015 on Windows 10, open the Start menu and choose All apps. Scroll down and open the Visual C++ Build Tools folder. Choose Visual C++ 2015 x86 Native Tools Command Prompt to open the command prompt window.
+
+In the developer command prompt window, enter
+```
+C:\>cd hbui\samples
+c:\hbui\samples>hbmk2 01.prg -run
+```
+
 The only mistake lies in that I'm not able to perceive what it is that someone else did. ;-)
 
 Do not worry, will be an easier way compilation.
