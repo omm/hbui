@@ -50,22 +50,18 @@ RETURN NIL
 ```
 
 ### Screenshots
+
+
+
+![Windows](samples/window_window.gif "Windows 10 desktop")
+
 ![Windows](samples/window_window_samples_02.png "Windows 10 desktop")
+
+![GNU/Linux](samples/window_ubuntu.gif "With family Linux Ubuntu desktop, based on GNOME")
+
 ![GNU/Linux](samples/window_ubuntu_samples_02.png "With family Linux Ubuntu desktop, based on GNOME")
 
-![Windows](samples/window_window_01.png "Windows 10 desktop")
-![Windows](samples/window_window_02.png "Windows 10 desktop")
-![Windows](samples/window_window_03.png "Windows 10 desktop")
-
-![GNU/Linux](samples/window_elementary.png "With family Linux Elementary desktop Pantheon, based on GNOME")
-
-![GNU/Linux](samples/window_ubuntu_01.png "With family Linux Ubuntu desktop, based on GNOME")
-![GNU/Linux](samples/window_ubuntu_02.png "With family Linux Ubuntu desktop, based on GNOME")
-![GNU/Linux](samples/window_ubuntu_03.png "With family Linux Ubuntu desktop, based on GNOME")
-
-![OS X](samples/window_darwin_01.png "Desktop Aqua in OS X  1/3")
-![OS X](samples/window_darwin_02.png "Desktop Aqua in OS X  2/3")
-![OS X](samples/window_darwin_03.png "Desktop Aqua in OS X  3/3")
+![OS X](samples/window_darwin.gif "Desktop Aqua in OS X  1/3")
 
 ### License
 ---
