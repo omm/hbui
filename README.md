@@ -23,7 +23,7 @@ $ git pull
 For all systems, use the command:
 - It is recommended to use Harbour ver. 3.2 
 - [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md)
-- Binary download 
+- Binary download [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md#binary-download)
 
 ```
 $ hbmk2 hbui.hbp
