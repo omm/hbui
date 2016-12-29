@@ -21,10 +21,6 @@ $ git pull
 
 ### How to build
 For all systems, use the command:
-- It is recommended to use Harbour ver. 3.2 
-- [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md)
-- Binary download [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md#binary-download)
-
 ```
 $ hbmk2 hbui.hbp
 ```
@@ -33,6 +29,10 @@ To test it, type:
 $ cd samples
 $ hbmk2 window.prg -run
 ```
+- It is recommended to use Harbour 3.2 
+- [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md)
+- Binary download, [read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md#binary-download)
+
 
 ### Sample source code
 ```harbour
@@ -50,8 +50,6 @@ RETURN NIL
 ```
 
 ### Screenshots
-
-
 
 ![Windows](samples/window_window.gif "Windows 10 desktop")
 
