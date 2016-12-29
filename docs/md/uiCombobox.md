@@ -1,6 +1,7 @@
 # **uiCombobox**
 
 ## Description
+uiCombobox is a Control that represents a drop-down list of strings that the user can choose one of at any time. An editable Combobox also has an entry field that the user can type an alternate choice into.
 
 ## Functions
 - [uiNewCombobox()](#uinewcombobox)
@@ -14,7 +15,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewCombobox creates a new Combobox.
 
 Simple example
 ```harbour

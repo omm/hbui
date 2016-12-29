@@ -1,6 +1,7 @@
 # **uiDatetimepicker**
 
 ## Description
+uiDateTimePicker is a Control that represents a field where the user can enter a date and/or a time.
 
 ## Functions
 - [uiNewTimePicker()](#uinewtimepicker)
@@ -12,7 +13,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewTimePicker creates a new DateTimePicker that shows only a time.
 
 Simple example
 ```harbour
@@ -23,7 +25,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewDatePicker creates a new DateTimePicker that shows only a date.
 
 Simple example
 ```harbour
@@ -34,7 +37,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewDateTimePicker creates a new DateTimePicker that shows both a date and a time.
 
 Simple example
 ```harbour

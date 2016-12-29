@@ -1,6 +1,9 @@
 # **uiBox**
 
-## Description
+## Description 
+uiBox is a Control that holds a group of Controls horizontally or vertically. If horizontally, then all controls have the same height. If vertically, then all controls have the same width.
+By default, each control has its preferred width (horizontal) or height (vertical); if a control is marked "stretchy", it will take whatever space is left over. If multiple controls are marked
+stretchy, they will be given equal shares of the leftover space. There can also be space between each control ("padding").
 
 ## Functions
 - [uiNewHorizontalBox()](#uinewhorizontalbox)
@@ -15,7 +18,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewHorizontalBox creates a new horizontal Box.
 
 Simple example
 ```harbour
@@ -26,7 +30,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+NewVerticalBox creates a new vertical Box.
 
 Simple example
 ```harbour

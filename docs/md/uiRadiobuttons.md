@@ -1,6 +1,7 @@
 # **uiRadiobuttons**
 
-## Description <br>
+## Description
+uiRadioButtons is a Control that represents a set of checkable buttons from which exactly one may be chosen by the user.
 uiRadiobuttons allow users to make a choice among a set of mutually exclusive, related choices.
 
 ## Functions
@@ -15,7 +16,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewRadioButtons creates a new RadioButtons.
 
 Simple example
 ```harbour

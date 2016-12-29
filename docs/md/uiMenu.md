@@ -98,9 +98,9 @@ Simple example
 
 ```
 ## Sample source code
+Please see the directory:
 ```harbour
-
-
+samples\menu\
 ```
 ## Screenshots
-![Linux](../tutorial/uiMenu_Linux.png "With family Linux Elementary desktop Pantheon, based on GNOME")
+![Linux](ss/menu_01.png "Windows 10 desktop")

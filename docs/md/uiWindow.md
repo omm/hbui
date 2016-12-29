@@ -1,7 +1,7 @@
 # **uiWindow**
 
-
-## Description <br>
+## Description
+uiWindow is a Control that represents a top-level window. A Window contains one child Control that occupies the entirety of the window. Though a Window is a Control, a Window cannot be the child of another Control.
 Provides the ability to create, configure, show, and manage the lifetime of windows and dialog boxes.
 
 ## Functions
@@ -45,7 +45,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewWindow creates a new Window.
 
 Simple example
 ```harbour

@@ -1,6 +1,7 @@
 # **uiSpinbox**
 
-## Description <br>
+## Description
+uiSpinbox is a Control that represents a space where the user can enter integers. The space also comes with buttons to add or subtract 1 from the integer.
 uiSpinbox allow users to change incrementally the value within its associated numeric text box.
 
 ## Functions
@@ -16,7 +17,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewSpinbox creates a new Spinbox. If min >= max, they are swapped.
 
 Simple example
 ```harbour

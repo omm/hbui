@@ -1,6 +1,7 @@
 # **uiLabel**
 
 ## Description
+uiLabel is a Control that represents a line of text that cannot be interacted with. TODO rest of documentation.
 
 ## Functions
 - [uiNewLabel( text )](#uinewlabel-text)
@@ -13,7 +14,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewLabel creates a new Label with the given text.
 
 Simple example
 ```harbour

@@ -1,7 +1,8 @@
 # **uiTab**
 
-## Description <br>
-Tab provide a way to present related information on separate labeled pages.
+## Description
+uiTab is a Control that holds tabbed pages of Controls. Each tab has a label. The user can click on the tabs themselves to switch pages. Individual pages can also have margins.
+uiTab provide a way to present related information on separate labeled pages.
 
 ## Functions
 - [uiNewTab()](#uinewtab)
@@ -17,7 +18,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewTab creates a new Tab.
 
 Simple example
 ```harbour

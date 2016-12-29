@@ -1,6 +1,7 @@
 # **uiSlider**
 
-## Description <br>
+## Description
+uiSlider is a Control that represents a horizontal bar that represents a range of integers. The user can drag a pointer on the bar to select an integer.
 uiSlider allow users to choose from a continuous range of values.
 
 ## Functions
@@ -16,7 +17,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewSlider creates a new Slider. If min >= max, they are swapped.
 
 Simple example
 ```harbour

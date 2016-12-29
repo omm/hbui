@@ -1,6 +1,7 @@
 # **uiProgressbar**
 
-## Description <br>
+## Description
+uiProgressBar is a Control that represents a horizontal bar that is filled in progressively over time as a process completes.
 uiProgressbar allow users to follow the progress of a lengthy operation.
 
 ## Functions
@@ -13,7 +14,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewProgressBar creates a new ProgressBar.
 
 Simple example
 ```harbour

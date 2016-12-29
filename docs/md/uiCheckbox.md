@@ -1,6 +1,7 @@
 # **uiCheckbox**
 
 ### Description
+uiCheckbox is a Control that represents a box with a text label at its side. When the user clicks the checkbox, a check mark will appear in the box; clicking it again removes the check.
 uiCheckbox allow users to make a decision between two or more clearly differing choices.
 
 ### Functions
@@ -19,7 +20,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewCheckbox creates a new Checkbox with the given text as its label.
 
 Simple example
 ```harbour

@@ -1,6 +1,7 @@
 # **uiButton**
 
 ### Description
+uiButton is a Control that represents a button that the user can click to perform an action. A Button has a text label that should describe what the button does.
 uiButton allow users to perform an immediate action.
 
 ## Functions
@@ -15,7 +16,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewButton creates a new Button with the given text as its label.
 
 Simple example
 ```harbour

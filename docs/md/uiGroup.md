@@ -1,6 +1,8 @@
 # **uiGroup**
 
 ## Description <br>
+uiGroup is a Control that holds another Control and wraps it around a labelled box (though some systems make this box invisible).
+You can use this to group related controls together.
 uiGroup is a labeled rectangular frame that surrounds a set of related controls
 
 ## Functions
@@ -17,7 +19,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewGroup creates a new Group.
 
 Simple example
 ```harbour
@@ -162,7 +165,7 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-![Linux](ss/group_02.png "With family Linux Ubuntu desktop, based on GNOME")
+![Linux](ss/group_02.png "Windows 10 desktop")
 ## Sample source code
 ```harbour
 FUNCTION Main()
@@ -198,7 +201,7 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-![Linux](ss/group_03.png "With family Linux Ubuntu desktop, based on GNOME")
+![Linux](ss/group_03.png "Windows 10 desktop")
 ## Sample source code
 ```harbour
 FUNCTION Main()
@@ -241,4 +244,4 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-![Linux](ss/group_04.png "With family Linux Ubuntu desktop, based on GNOME")
+![Linux](ss/group_04.png "Windows 10 desktop")

@@ -1,6 +1,7 @@
 # **uiEntry**
 
 ## Description <br>
+uiEntry is a Control that represents a space that the user can type a single line of text into.
 uiEntry is a flexible control with several possible use
 
 ## Functions

@@ -1,6 +1,7 @@
 # **uiSeparator**
 
 ## Description
+uiSeparator is a Control that represents a horizontal line that visually separates controls.
 
 ## Functions
 - [uiNewHorizontalSeparator()](#uinewhorizontalseparator)
@@ -12,7 +13,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewSeparator creates a new horizontal Separator.
 
 Simple example
 ```harbour
@@ -23,7 +25,8 @@ Arguments
 
 Return value
 
-Description
+Description <br>
+uiNewSeparator creates a new vertical Separator.
 
 Simple example
 ```harbour
