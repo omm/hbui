@@ -55,11 +55,23 @@ RETURN NIL
 
 ![Windows](samples/window_window_samples_02.png "Windows 10 desktop")
 
+---
+
 ![GNU/Linux](samples/window_ubuntu.gif "With family Linux Ubuntu desktop, based on GNOME")
 
 ![GNU/Linux](samples/window_ubuntu_samples_02.png "With family Linux Ubuntu desktop, based on GNOME")
 
+---
+
 ![OS X](samples/window_darwin.gif "Desktop Aqua in OS X  1/3")
+
+![OS X](samples/window_darwin_samples_02.png "Desktop Aqua in OS X  1/3")
+
+---
+
+![With family Unix](samples/window_freebsd.gif "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
+
+![With family Unix](samples/window_freebsd_samples_02.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
 
 ### License
 ---
