@@ -48,7 +48,6 @@ FUNCTION Main()
 
 RETURN NIL
 ```
-
 ### Screenshots
 
 ![Windows](samples/window_window.gif "Windows 10 desktop")
@@ -63,9 +62,9 @@ RETURN NIL
 
 ---
 
-![OS X](samples/window_darwin.gif "Desktop Aqua in OS X  1/3")
+![OS X](samples/window_darwin.gif "Desktop Aqua in OS X" )
 
-![OS X](samples/window_darwin_samples_02.png "Desktop Aqua in OS X  1/3")
+![OS X](samples/window_darwin_samples_02.png "Desktop Aqua in OS X")
 
 ---
 
@@ -73,8 +72,9 @@ RETURN NIL
 
 ![With family Unix](samples/window_freebsd_samples_02.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
 
-### License
 ---
+
+### License
 MIT
 
 **Free Software, Hell Yeah!** ;-)
