@@ -6,7 +6,6 @@
 -olib/${hb_plat}/${hb_comp}/${hb_name}
 
 -w3 -es2
--gc3 -l
 
 -depurlbase=libui:https://github.com/andlabs/libui
 -depkeyhead=libui:ui.h
