@@ -5,9 +5,3 @@
      git log --pretty=medium --no-merges --date=iso --abbrev-commit HEAD~50..HEAD
    See license at the end of file. */
 
-2017-02-09 01:37 UTC Rafał Jopek (rjopek users.noreply.github.com)
-   * hbui.hbp
-      - removed the line -gc3 -l
-      
-   * .editorconfig
-      + added file
