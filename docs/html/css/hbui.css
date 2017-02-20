@@ -1,0 +1,47 @@
+/*
+  Last modified - Tuesday, 21 February 2017  00:06:54
+*/
+
+header, footer {
+  padding: 8em;
+  color: white;
+  background-color: #323232;
+  clear: left;
+  text-align: center;
+}
+
+nav {
+  float: left;
+  max-width: 280px;
+  margin: 0;
+  padding: 2em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 220px;
+  background-color: #F1F1F1;
+}
+
+nav ul a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family: Arial, Helvetica, Verdana, sans-serif
+}
+
+nav li a:hover {
+  background-color: #323232;
+  color: white;
+}
+
+article {
+  margin-left: 270px;
+  border-left: 1px solid #323232;
+  padding: 1em;
+  overflow: hidden;
+  font-size: 16px;
+}
