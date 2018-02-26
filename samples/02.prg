@@ -21,7 +21,7 @@ FUNCTION Main()
       RETURN NIL
    ENDIF
 
-   oWindow := uiNewWindow( "Welcome to Harbour HBUI (https://github.com/rjopek/HBUI)", 640, 480, 1 )
+   oWindow := uiNewWindow( "Welcome to Harbour HBUI (https://github.com/rjopek/hbui)", 640, 480, 1 )
    uiWindowSetMargined( oWindow, 1 )
 // uiWindowOnClosing( oWindow, onClosing(), NIL )
 

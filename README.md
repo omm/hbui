@@ -29,7 +29,10 @@ To test it, type:
 $ cd samples
 $ hbmk2 window.prg -run
 ```
-- It is recommended to use Harbour 3.2 
+### Documentation
+
+- [Documentation and examples](https://github.com/rjopek/hbui/blob/master/docs/md/documentation.md)
+- It is recommended to use [Harbour 3.4](https://github.com/vszakats/harbour-core)
 - [Read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md)
 - Binary download, [read tutorial](https://github.com/rjopek/HBUI/blob/master/docs/tutorial/README.md#binary-download)
 
@@ -73,6 +76,13 @@ RETURN NIL
 ![With family Unix](samples/window_freebsd_samples_02.png "With family Unix FreeBSD desktop MATE, based on GNOME 2.32.")
 
 ---
+
+# Contributors
+
+[![Viktor Szakats](https://avatars3.githubusercontent.com/u/1446897?s=400&v=4)](https://github.com/vszakats) | [![Teo Fonrouge](https://avatars2.githubusercontent.com/u/1561244?s=400&v=4)](https://github.com/tfonrouge) | [![Bogdan Kunert](https://avatars0.githubusercontent.com/u/6351667?s=400&v=4)](https://github.com/bkunert)
+---|---|---
+[Viktor Szakats](https://github.com/vszakats) | [Teo Fonrouge](https://github.com/tfonrouge) | [Bogdan Kunert](https://github.com/bkunert)
+
 
 ### License
 MIT
