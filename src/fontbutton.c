@@ -6,7 +6,7 @@ static void onFontButtonChanged( uiFontButton * control, void * data ) {
     hbui_onControlChanged( data );
 }
 
-//_UI_EXTERN uiDrawTextFont *uiFontButtonFont(uiFontButton *b);
+//_UI_EXTERN void uiFontButtonFont(uiFontButton *b, uiFontDescriptor *desc);
 HB_FUNC( UIFONTBUTTONFONT ) {
     uiFontButton *b = hbui_param( 1 );
     if( b ) {
