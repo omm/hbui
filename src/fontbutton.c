@@ -10,7 +10,9 @@ static void onFontButtonChanged( uiFontButton * control, void * data ) {
 HB_FUNC( UIFONTBUTTONFONT ) {
     uiFontButton *b = hbui_param( 1 );
     if( b ) {
-        hbui_ret( uiFontButtonFont( b ) );
+        uiFontDescriptor fontDescriptor;
+        uiFontButtonFont( b, &fontDescriptor );
+        uiFreeFontButtonFont( &fontDescriptor );
     }
 }
 
